@@ -1,6 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Profile\{
+    PPIDController,
+    MaklumatController,
+    SOPController,
+    StrukturController,
+    TugasController,
+    VisiController,
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +23,35 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('layouts.header');
-    // return view('index');
 });
+Route::get('/ppid', function () {
+    return view('profile.ppid.index');
+});
+Route::get('/tugas&fungsi', function () {
+    return view('profile.tugas&fungsi.index');
+});
+Route::get('/visi&misi', function () {
+    return view('profile.visi&misi.index');
+});
+Route::get('/SOPppid', function () {
+    return view('profile.SOPppid.index');
+});
+Route::get('/SK', function () {
+    return view('regulasi.SK.index');
+});
+Route::get('/informasi', function () {
+    return view('daftarinformasi.index');
+});
+Route::get('/berkala', function () {
+    return view('daftarinformasi.berkala.index');
+});
+Route::get('/sertamerta', function () {
+    return view('daftarinformasi.sertamerta.index');
+});
+Route::get('/setiapsaat', function () {
+    return view('daftarinformasi.setiapsaat.index');
+});
+Route::get('/dikecualikan', function () {
+    return view('daftarinformasi.dikecualikan.index');
+});
+// Route::get('/profile/ppid/index', [PPIDController::class, 'index'])->name('ppid.index');

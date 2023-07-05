@@ -12,12 +12,12 @@
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
             <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                  <li><a href="#">Seputar PPID</a></li>
+                  <li><a href="/ppid">Seputar PPID</a></li>
                   <li><a href="#">Struktur Organisasi</a></li>
-                  <li><a href="#">Tugas dan Fungsi PPID</a></li>
-                  <li><a href="#">Visi dan Misi PPID</a></li>
+                  <li><a href="/tugas&fungsi">Tugas dan Fungsi PPID</a></li>
+                  <li><a href="/visi&misi">Visi dan Misi PPID</a></li>
                   <li><a href="#">Maklumat Pelayanan Informasi Publik</a></li>
-                  <li><a href="#">SOP PPID</a></li>
+                  <li><a href="/SOPppid">SOP PPID</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Regulasi</span> <i class="bi bi-chevron-down"></i></a>
@@ -29,12 +29,12 @@
                   <li><a href="/storage/regulasi/UU No. 43 Tahun 2009.pdf">UNDANG-UNDANG 43 TAHUN 2009</a></li>
                   <li><a href="/storage/regulasi/UU No.14 Tahun 2008.pdf">UNDANG-UNDANG 14 TAHUN 2008</a></li>
                   <li><a href="/storage/regulasi/Perki No. 1 tahun 2021.pdf">PERKI NO 1 TAHUN 2021</a></li>
-                  <li><a href="#">SK PPID</a></li>
+                  <li><a href="/SK">SK PPID</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                  <li><a href="#">Layanan Informasi Daring</a></li>
+                  <li><a href="">Layanan Informasi Daring</a></li>
                   <li><a href="#">Permohonan Informasi Datang Langsung</a></li>
                   <li><a href="#">Mekanisme/Proses</a></li>
                   <li><a href="#">Pengajuan Keberatan</a></li>
@@ -42,7 +42,15 @@
                   <li><a href="#">Laporan Akses Informasi Publik</a></li>
                   <li><a href="#">Laporan Pelayanan Informasi Publik</a></li>
             </ul>
-        </li>
+          </li>
+          <li class="dropdown"><a href="/informasi"><span>Daftar Infromasi</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+                  <li><a href="/berkala">Informasi Berkala</a></li>
+                  <li><a href="/sertamerta">Informasi Serta Merta</a></li >
+                  <li><a href="/setiapsaat">Informasi Setiap Saat</a></li >
+                  <li><a href="/dikecualikan">Informasi Yang Dikecualikan</a></li>
+            </ul>
+          </li>
         <li><a class="nav-link scrollto" href="https://katalog.satudata.go.id/dataset/?res_format=WMS&organization=pemerintah-kabupaten-probolinggo">Data</a></li>
         <li class="dropdown"><a href="#"><span>Kegiatan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
