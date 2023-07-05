@@ -31,8 +31,9 @@
 </head>
 
 <body>
-
-  @include('layouts.header')
+  <!-- ======= Header ======= -->
+    @include('layouts.header')
+  <!-- End Header -->
   
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -53,7 +54,8 @@
       </div>
     </div>
 
-  </section>End Hero
+  </section>
+  <!-- End Hero -->
 
   <main id="main">
 
