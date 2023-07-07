@@ -22,7 +22,9 @@ use App\Http\Controllers\Profile\{
 */
 
 Route::get('/', function () {
-    return view('layouts.header');
+    // return view('layouts.header');
+    return view('layouts.firstpage');
+    // return view('index');                   
 });
 Route::get('/ppid', function () {
     return view('profile.ppid.index');
@@ -54,4 +56,6 @@ Route::get('/setiapsaat', function () {
 Route::get('/dikecualikan', function () {
     return view('daftarinformasi.dikecualikan.index');
 });
-// Route::get('/profile/ppid/index', [PPIDController::class, 'index'])->name('ppid.index');
+Route::get('/kontak', function () {
+    return view('kontak.index');
+});

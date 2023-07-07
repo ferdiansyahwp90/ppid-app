@@ -1,39 +1,62 @@
-<!-- ======= Footer ======= -->
-<footer id="footer">
-
-
-<div class="footer-top">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-lg-3 col-md-6 footer-contact">
-        <h3>PPID Kabupaten Probolinggo</h3> 
-        <h4>Dinas Kominfo, Statistik dan Persandian</h4>
-        <p>
-          Jalan: Raya Panglima Sudirman No. 134 <br>
-          Kraksaan, Probolinggo 67282 <br>
-          Tel: +62335 846665 <br>
-          Fax: +62335 846665 <br><br>
-          <strong>Phone:</strong> +62 335 846 665<br>
-          <strong>Fax:</strong> +62 335 846 665<br>
-          <strong>Email:</strong> info@example.com<br>
-        </p>
-      </div>
-
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">PPID Kabupaten Probolinggo</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jalan: Raya Panglima Sudirman No. 134 Kraksaan, Probolinggo 67282 
+          Tel: +62335 846665 
+          Fax: +62335 846665 </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62335 846665</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ppid.kabprob@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Services</h4>
+                    <a class="btn btn-link" href="">Landscaping</a>
+                    <a class="btn btn-link" href="">Pruning plants</a>
+                    <a class="btn btn-link" href="">Urban Gardening</a>
+                    <a class="btn btn-link" href="">Garden Maintenance</a>
+                    <a class="btn btn-link" href="">Green Technology</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Newsletter</h4>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative w-100">
+                        <input class="form-control bg-light border-light w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+    <!-- Footer End -->
 
-<div class="container footer-bottom clearfix">
-  <div class="copyright">
-    &copy; Copyright <strong><span>Dinas Komunikasi dan Informatika.</span></strong>. All Rights Reserved
-  </div>
-  <div class="credits">
-    <!-- All the links in the footer should remain intact. -->
-    <!-- You can delete the links only if you purchased the pro version. -->
-    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
-    <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
-  </div>
-</div>
-</footer><!-- End Footer -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">PPID KABUPATEN PROBOLINGGO</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    Designed By <a class="border-bottom" href="#">Ferdiansyah</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
