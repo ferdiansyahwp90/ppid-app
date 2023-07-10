@@ -1,5 +1,5 @@
-<!DOCTYPE Html>
-<html lang="en">
+@extends('layouts.firstpage')
+@section('content')
     <h2>Tugas dan Fungsi PPID</h2>
     <h4>Tugas dan Fungsi PPID :</h4> 
     <ol>
@@ -13,5 +13,4 @@
                 d) Penyelesaian sengketa informasi. 
             </ol>
         </li>
-</ol>
-</html>
+@endsection

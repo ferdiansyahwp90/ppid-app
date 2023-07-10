@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.firstpage')
+@section('content')
+
     <h1>Informasi Serta Merta</h1>
     <div>
         <h3>A. <strong>Informasi Yang Dapat Mengancam Hajat Hidup Orang Banyak dan Ketertiban Umum</strong></h3>
@@ -16,4 +17,5 @@
         <h3>B. <strong>Informasi terkait Pandemi Covid 19</strong></h3>
         <li><a href="#">Informasi terkait peta persebaran Covid 19 dan layanan call center</a></li>
     </div>
-</html>
+
+@endsection

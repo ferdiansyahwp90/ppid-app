@@ -38,7 +38,7 @@
         <!-- End Header -->
 
         <!-- Content -->
-            @include('layouts.index')
+            @yield('content')
         <!-- End Content -->
 
         <!-- Footer -->

@@ -53,9 +53,9 @@
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                     &copy; <a class="border-bottom" href="#">PPID KABUPATEN PROBOLINGGO</a>, All Right Reserved.
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    Designed By <a class="border-bottom" href="#">Ferdiansyah</a>
-                </div>
+                <!-- <div class="col-md-6 text-center text-md-end">
+                    Designed By <a class="border-bottom" href="#">PPI</a>
+                </div> -->
             </div>
         </div>
     </div>
