@@ -1,6 +1,6 @@
 @extends('layouts.firstpage')
 @section('content')
-
+<div class="container">
     <h1>Informasi Setiap Saat</h1>
     <div>
         <ol>
@@ -32,5 +32,5 @@
             </div>
         </ol>
     </div>
-
+</div>
 @endsection
