@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <div class="text-center">
-    <h1>Informasi Setiap Saat</h1>
+    <h2>Informasi Setiap Saat</h2>
     </div>
     <div>
         <ol>
