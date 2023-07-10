@@ -44,7 +44,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profile</a>
                     <div class="dropdown-menu bg-light m-0">
                         <a href="/ppid" class="dropdown-item">Seputar PPID</a>
-                        <a href="#" class="dropdown-item">Struktur Organisasi</a>
+                        <a href="assets/img/struktur_organisasi.png" class="dropdown-item" >Struktur Organisasi</a>
                         <a href="/tugas&fungsi" class="dropdown-item">Tugas dan Fungsi PPID</a>
                         <a href="/visi&misi" class="dropdown-item">Visi dan Misi PPID</a>
                         <a href="/SOPppid" class="dropdown-item">SOP PPID</a>

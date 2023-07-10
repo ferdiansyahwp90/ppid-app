@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 <div class="text-center">
-    <h1>Informasi Yang Dikecualikan</h1>
+    <h2>Informasi Yang Dikecualikan</h2>
 </div>
     <ol>
         <li>Lembar Pengujian Konsekuensi Tahun 2021 | <a href="#">Download</a> </li> 
