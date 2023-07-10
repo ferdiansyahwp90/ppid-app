@@ -47,7 +47,6 @@
                         <a href="#" class="dropdown-item">Struktur Organisasi</a>
                         <a href="/tugas&fungsi" class="dropdown-item">Tugas dan Fungsi PPID</a>
                         <a href="/visi&misi" class="dropdown-item">Visi dan Misi PPID</a>
-                        <a href="#" class="dropdown-item">Maklumat Pelayanan Informasi Publik</a>
                         <a href="/SOPppid" class="dropdown-item">SOP PPID</a>
                     </div>
                 </div>

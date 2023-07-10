@@ -2,7 +2,9 @@
 @section('content')
 <div class="container">       
         <div class="header-ppid">
+            <div class="text-center">
             <h2>Profil PPID</h2>
+            </div>
             <p>Undang Undang No 14 Tahun 2008 tentang Keterbukaan Informasi Publik (KIP) mengamanatkan,
                 setiap Badan Publik Pemerintah maupun Badan Publik Non Pemerintah mempunyai kewajiban 
                 untuk menyediakan Informasi Publik yang berada di bawah kewenangannya kepada masyarakat dengan cepat, aktual, tepat waktu, biaya ringan dan cara sederhana.</p>

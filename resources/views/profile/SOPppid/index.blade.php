@@ -1,7 +1,9 @@
 @extends('layouts.firstpage')
 @section('content')
 <div class="container">
+    <div class="text-center">
     <h1>SOP PPID</h1>
+    </div>
     <ol>
         <li>SOP Pelayanan Permohonan Informasi Publik | <a href="/storage/SOP/sop-pelayanan-permohonan-informasi-ttd.pdf">Download</a></li>
         <li>SOP Penanganan Keberatan Informasi Publik | <a href="/storage/SOP/sop-penanganan-keberatan-informasi-publik-ttd.pdf">Download</a></li>

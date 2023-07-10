@@ -1,9 +1,11 @@
 @extends('layouts.firstpage')
 @section('content')
 <div class="container">
+    <div class="text-center">
     <h1>Informasi Serta Merta</h1>
+    </div>
     <div>
-        <h3>A. <strong>Informasi Yang Dapat Mengancam Hajat Hidup Orang Banyak dan Ketertiban Umum</strong></h3>
+        <h5>A. <strong>Informasi Yang Dapat Mengancam Hajat Hidup Orang Banyak dan Ketertiban Umum</strong></h5>
         <ol>
             <li>Informasi tentang bencana alam seperti kekeringan, kebakaran hutan karena factor alam, hama penyakit tanaman, epidemic, wabah, kejadian luar biasa, kejadian antariksa atau benda benda angkasa</li>
             <li>Informasi tentang keadaan bencana non alam seperti kegagalan industry atau teknologi, dampak industry, ledakan nuklir, pencemaran lingkungan dan kegiatan keantariksaan</li>
@@ -14,7 +16,7 @@
         </ol>
     </div>
     <div>
-        <h3>B. <strong>Informasi terkait Pandemi Covid 19</strong></h3>
+        <h5>B. <strong>Informasi terkait Pandemi Covid 19</strong></h5>
         <li><a href="#">Informasi terkait peta persebaran Covid 19 dan layanan call center</a></li>
     </div>
 </div>

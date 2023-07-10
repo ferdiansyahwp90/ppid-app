@@ -1,7 +1,9 @@
 @extends('layouts.firstpage')
 @section('content')
 <div class="container">
+    <div class="text-center">
     <h1>Informasi Setiap Saat</h1>
+    </div>
     <div>
         <ol>
             <div>
