@@ -4,9 +4,7 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">PPID Kabupaten Probolinggo</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jalan: Raya Panglima Sudirman No. 134 Kraksaan, Probolinggo 67282 
-          Tel: +62335 846665 
-          Fax: +62335 846665 </p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jalan: Raya Panglima Sudirman No. 134 Kraksaan, Probolinggo 67282</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62335 846665</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>ppid.kabprob@gmail.com</p>
                     <div class="d-flex pt-2">
@@ -17,20 +15,26 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Services</h4>
-                    <a class="btn btn-link" href="">Landscaping</a>
-                    <a class="btn btn-link" href="">Pruning plants</a>
-                    <a class="btn btn-link" href="">Urban Gardening</a>
-                    <a class="btn btn-link" href="">Garden Maintenance</a>
-                    <a class="btn btn-link" href="">Green Technology</a>
+                    <h4 class="text-white mb-4">Layanan</h4>
+                    <a class="btn btn-link" href="">Layanan Informasi Daring </a>
+                    <a class="btn btn-link" href="">Permohonan Informasi Datang Langsung</a>
+                    <a class="btn btn-link" href="">Mekanisme / Proses</a>
+                    <a class="btn btn-link" href="">Pengajuan Keberatan</a>
+                    <a class="btn btn-link" href="">Prosedur Penyelesaian Sengketa</a>
+                    <a class="btn btn-link" href="">Laporan Akses Informasi Publik</a>
+                    <a class="btn btn-link" href="">Laporan Pelayanan Informasi Publik</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="/">Home</a>
+                    <a class="btn btn-link" href="">Profile</a>
+                    <a class="btn btn-link" href="">Regulasi</a>
+                    <a class="btn btn-link" href="">Layanan</a>
+                    <a class="btn btn-link" href="">Daftar Informasi</a>
+                    <a class="btn btn-link" href="">Data</a>
+                    <a class="btn btn-link" href="">Kegiatan</a>
+                    <a class="btn btn-link" href="">Kontak</a>
+                    <a class="btn btn-link" href="">Formulir</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Newsletter</h4>

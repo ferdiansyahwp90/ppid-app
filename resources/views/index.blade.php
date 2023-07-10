@@ -198,7 +198,7 @@
 
 
     <!-- Features Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -241,7 +241,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Features End -->
 
 
@@ -249,8 +249,8 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="fs-5 fw-bold text-primary">Our Services</p>
-                <h1 class="display-5 mb-5">Services That We Offer For You</h1>
+                <p class="fs-5 fw-bold text-primary">Berita Terbaru</p>
+                <h1 class="display-5 mb-5">Kegitan </h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
