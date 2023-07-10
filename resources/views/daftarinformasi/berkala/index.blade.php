@@ -1,6 +1,6 @@
 @extends('layouts.firstpage')
 @section('content')
-<div>
+<div class="container">
     <h1>Informasi Yang Wajib Disediakan dan Diumumkan Secara Berkala</h1>
         <div>
             <div>

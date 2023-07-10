@@ -1,5 +1,6 @@
 @extends('layouts.firstpage')
 @section('content')
+<div class="container">
     <h1>SOP PPID</h1>
     <ol>
         <li>SOP Pelayanan Permohonan Informasi Publik | <a href="/storage/SOP/sop-pelayanan-permohonan-informasi-ttd.pdf">Download</a></li>
@@ -10,5 +11,5 @@
         <li>SOP Pendokumentasian Informasi Publik | <a href="/storage/SOP/sop-dokumentasian-inf-publik.pdf">Download</a></li>
         <li>SOP Pendokumentasian Informasi Dikecualikan | <a href="/storage/SOP/sop-dokumentasian-inf-publik-dikecualikan.pdf">Download</a></li>
     </ol>
-
+</div>
 @endsection

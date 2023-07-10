@@ -1,6 +1,6 @@
 @extends('layouts.firstpage')
 @section('content')
-
+<div class="container">
     <h1>Visi dan Misi PPID</h1>
 
     <h3>Visi</h3>
@@ -12,5 +12,5 @@
     b) Menata dan menyimpan informasi publik dari seluruh OPD di Pemerintah Provinsi Jawa Timur;<br>
     c) Melaksanakan konsultasi informasi publik  kategori dikecualikan dari informasi yang terbuka untuk publik;<br>
     d) Menyelesaikan sengketa informasi.<br>
-
+</div>
 @endsection
