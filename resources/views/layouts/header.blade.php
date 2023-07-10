@@ -8,7 +8,7 @@
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <span class="fa fa-phone-alt me-2"></span>
-                    <a href="https://wa.me/+62335 846665">+62335 846665</a>
+                    <a href="https://wa.me/+62335846665">+62335 846665</a>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
                     <span class="fa fa-envelope me-2"></span>
@@ -39,7 +39,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="/" class="nav-item nav-link active">Home</a>
 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profile</a>

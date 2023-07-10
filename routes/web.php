@@ -22,9 +22,7 @@ use App\Http\Controllers\Profile\{
 */
 
 Route::get('/', function () {
-    // return view('layouts.header');
-    return view('layouts.firstpage');
-    // return view('index');                   
+    return view('index');                   
 });
 Route::get('/ppid', function () {
     return view('profile.ppid.index');
