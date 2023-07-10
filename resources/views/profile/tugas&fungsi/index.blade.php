@@ -1,7 +1,9 @@
 @extends('layouts.firstpage')
 @section('content')
 <div class="container">
+    <div class="text-center">
     <h2>Tugas dan Fungsi PPID</h2>
+    </div>
     <h4>Tugas dan Fungsi PPID :</h4> 
     <ol>
         <li><strong>Tugas PPID </strong>yaitu merencanakan, mengorganisasikan, melaksanakan, mengawasi, dan mengevaluasi pelaksanaan kegiatan pengelolaan dan pelayanan informasi di Iingkungan Pemerintah Provinsi Jawa Timur.</li>

@@ -1,12 +1,13 @@
 @extends('layouts.firstpage')
 @section('content')
 <div class="container">
-    <h1>Visi dan Misi PPID</h1>
-
-    <h3>Visi</h3>
+    <div class="text-center">
+    <h2>Visi dan Misi PPID</h2>
+    </div>
+    <h4>Visi</h4>
     <p>Terwujudnya penyelenggaraan pemerintahan yang baik, transparan, efektif dan efisien, akuntabel serta meningkatkan pengelolaan dan pelayanan informasi dan dokumentasi di Pemerintah Provinsi untuk menghasilkan layanan informasi dan dokumentasi yang berkualitas.</p>
 
-    <h3>Misi</h3>
+    <h4>Misi</h4>
 
     a) Menghimpun informasi publik dari seluruh OPD di Iingkungan Pemerintah Provinsi Jawa Timur;<br>
     b) Menata dan menyimpan informasi publik dari seluruh OPD di Pemerintah Provinsi Jawa Timur;<br>
