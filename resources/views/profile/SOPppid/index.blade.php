@@ -10,8 +10,6 @@
         <li>SOP Penyusunan DIP | <a href="/storage/SOP/sop-penyusunan-daftar-informasi-dan-dokumentasi-publik-ttd.pdf">Download</a></li>
         <li>SOP Uji Konsekuensi | <a href="/storage/SOP/sop-uji-konsekuensi-ttd.pdf">Download</a></li>
         <li>SOP Fasilitasi Sengketa Informasi | <a href="/storage/SOP/sop-fasilitasi-sengketa-informasi-ttd.pdf">Download</a></li>
-        <li>SOP Pendokumentasian Informasi Publik | <a href="/storage/SOP/sop-dokumentasian-inf-publik.pdf">Download</a></li>
-        <li>SOP Pendokumentasian Informasi Dikecualikan | <a href="/storage/SOP/sop-dokumentasian-inf-publik-dikecualikan.pdf">Download</a></li>
-    </ol>
+      </ol>
 </div>
 @endsection

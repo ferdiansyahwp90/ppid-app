@@ -17,7 +17,7 @@
     </div>
     <div>
         <h4>B. <strong>Informasi terkait Pandemi Covid 19</strong></h4>
-        <li><a href="#">Informasi terkait peta persebaran Covid 19 dan layanan call center</a></li>
+        <li><a href="https://infocovid19.jatimprov.go.id/">Informasi terkait peta persebaran Covid 19 dan layanan call center</a></li>
     </div>
 </div>
 @endsection

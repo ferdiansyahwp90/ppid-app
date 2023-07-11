@@ -61,7 +61,7 @@
                         <a href="/storage/regulasi/UU No. 43 Tahun 2009.pdf" class="dropdown-item">UNDANG-UNDANG 43 TAHUN 2009</a>
                         <a href="/storage/regulasi/UU No.14 Tahun 2008.pdf" class="dropdown-item">UNDANG-UNDANG 14 TAHUN 2008</a>
                         <a href="/storage/regulasi/Perki No. 1 tahun 2021.pdf" class="dropdown-item">PERKI NO 1 TAHUN 2021</a>
-                        <a href="/SK" class="dropdown-item">SK PPID</a></li>
+                        <a href="/storage/regulasi/SK_PENUNJUKAN PEJABAT PLID.pdf" class="dropdown-item">SK PPID</a></li>
                     </div>
                 </div>
 

@@ -9,7 +9,7 @@
                 <h4>A. Informasi tentang Profil Badan Publik</h4>
                 <ol>
                     <li><a href=#>Kedudukan, Domisili dan Alamat Lengkap</a></li>
-                    <li><a href=#>Struktur Organisasi</a></li>
+                    <li><a href="assets/img/struktur_organisasi.png">Struktur Organisasi</a></li>
                     <li><a href=#>Gambaran Umum</a></li>
                     <li><a href=#>Profil Singkat Pejabat</a></li>
                     <li><a href=#>Visi dan Misi</a></li>
@@ -29,8 +29,8 @@
                         <li><a href="#">Tahun 2021</a></li>
                     </li>
                     <li><a href=#>Informasi Khusus Lainnya Yang Berkaitan Langsung Dengan Hak-Hak Masyarakat</a></li>
-                    <li><a href=#>Penerimaan Calon Pegawai dan/atau Pejabat Badan Publik Negara</a></li>
-                    <li><a href=#>Penerimaan Calon Peserta Didik Pada Badan Publik yang menyelenggarakan pendidikan untuk umum</a></li>
+                    <li><a href=https://bkpsdm.probolinggokab.go.id/>Penerimaan Calon Pegawai dan/atau Pejabat Badan Publik Negara</a></li>
+                    <li><a href=https://ppdbjatim.net/>Penerimaan Calon Peserta Didik Pada Badan Publik yang menyelenggarakan pendidikan untuk umum</a></li>
                 </ol>
                <h4> C. Ringkasan Informasi tentang Kinerja Badan Publik<br> </h4>
                <h4> D. Ringkasan Laporan Keuangan </h4>
@@ -54,8 +54,8 @@
                 <h4>E. <a href="#">Ringkasan LaporanAkses Informasi Publik</a><br></h4>
                <h4> F. Peraturan, Keputusan, dan/atau Kebijakan </h4>
                 <ol>
-                    <li><a href="#">Daftar rancangan dan tahap pembentukan peraturan perundang-undangan, keputusan, dan/atau kebijakan yang sedang dalam proses pembuatan</a></li>
-                    <li><a href="#">Daftar peraturan perundang-undangan keputusan, dan/atau kebijakan yang telah disahkan atau ditetapkan</a></li>
+                    <li><a href="https://jdih.probolinggokab.go.id/">Daftar rancangan dan tahap pembentukan peraturan perundang-undangan, keputusan, dan/atau kebijakan yang sedang dalam proses pembuatan</a></li>
+                    <li><a href="https://jdih.probolinggokab.go.id/produk-hukum">Daftar peraturan perundang-undangan keputusan, dan/atau kebijakan yang telah disahkan atau ditetapkan</a></li>
                 </ol>
                <h4> G. Prosedur Memperoleh Informasi Publik </h4>
                 <ol>
@@ -65,18 +65,18 @@
                 </ol>
                <h4>  H. Pengaduan Penyalahgunaan Wewenang atau Pelanggaran Badan Publik </h4>
                 <ol>
-                    <li><a href="#">Lapor Jatim</a></li>
+                    <li><a href="https://www.lapor.go.id/">Lapor Kabupaten Probolinggo</a></li>
                     <li><a href="#">Tata Cara Pengaduan</a></li>
                 </ol>
                <h4> I. Pengadaan Barang dan Jasa Pemerintah </h4>
                 <ol>
-                    <li><a href="#">LPSE Jatim</a></li>
-                    <li><a href="#">Sirup Jatim</a></li>
+                    <li><a href="https://lpse.probolinggokab.go.id/">LPSE Kabupaten Probolinggo</a></li>
+                    <li><a href="https://sirup.lkpp.go.id/sirup/ro/login">Sirup Jatim</a></li>
                 </ol>
-               <h4> J. <a href="#">Ketenagakerjaan</a><br> </h4>
+               <h4> J. <a href="https://disnaker.probolinggokab.go.id/">Ketenagakerjaan</a><br> </h4>
               <h4>  K. Prosedur Peringatan Dini dan Prosedur Evakuasi Keadaan Darurat </h4>
                 <ol>
-                    <li><a href="#">BMKG Jatim</a></li>
+                    <li><a href="https://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Kabupaten%20Probolinggo&AreaID=5002270&Prov=12">BMKG Jatim</a></li>
                     <li><a href="#">Petunjuk Evakuasi Dalam Keadaan Darurat</a></li>
                 </ol>
             </div>
