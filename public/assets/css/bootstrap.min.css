@@ -3741,6 +3741,7 @@ fieldset:disabled .btn {
     max-height: var(--bs-scroll-height, 75vh);
     overflow-y: auto;
 }
+
 @media (min-width: 576px) {
     .navbar-expand-sm {
         flex-wrap: nowrap;

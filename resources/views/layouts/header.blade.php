@@ -98,9 +98,9 @@
                     </div>
                 </div>
 
-                <a href="#" class="nav-item nav-link">Kontak</a>
+                <a href="/kontak" class="nav-item nav-link">Kontak</a>
 
-                <a href="/storage/formulir/Form Permohonan Informasi_PPID KAB PROB.pdf" class="nav-item nav-link">Formulir</a>
+                <a href="/formulir" class="nav-item nav-link">Formulir</a>
 
             </div>
             <a href="#" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Masuk <i class="fa fa-arrow-right ms-3"></i></a>

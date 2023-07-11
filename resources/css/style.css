@@ -5,3 +5,9 @@
 .text-center {
     text-align: center;
 }
+.email:hover i,
+.phone:hover i,
+.address:hover i {
+    background: #47b2e4;
+    color: #fff;
+}

@@ -57,3 +57,6 @@ Route::get('/dikecualikan', function () {
 Route::get('/kontak', function () {
     return view('kontak.index');
 });
+Route::get('/formulir', function () {
+    return view('formulir.index');
+});

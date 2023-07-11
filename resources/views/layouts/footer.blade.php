@@ -4,7 +4,7 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">PPID Kabupaten Probolinggo</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jalan: Raya Panglima Sudirman No. 134 Kraksaan, Probolinggo 67282</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jln. Raya Panglima Sudirman No. 134 Kraksaan, Probolinggo 67282</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62335 846665</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>ppid.kabprob@gmail.com</p>
                     <div class="d-flex pt-2">
