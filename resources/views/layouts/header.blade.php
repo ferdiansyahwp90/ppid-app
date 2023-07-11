@@ -8,19 +8,19 @@
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <span class="fa fa-phone-alt me-2"></span>
-                    <a href="https://wa.me/+62335846665">+62335 846665</a>
+                    <a style="color:white;" href="https://wa.me/+62335846665">+62335 846665</a>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
                     <span class="fa fa-envelope me-2"></span>
-                    <a href="ppid.kabprob@gmail.com">ppid.kabprob@gmail.com</a>
+                    <a style="color:white;" href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=diskominfo@problinggokab.co.id" >diskominfo@problinggokab.co.id</a>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center mx-n2">
                     <span>Follow Us:</span>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-link text-light" href="https://www.youtube.com/@infokabupatenprobolinggo606"><i class="fa fa-youtube-play"></i></a>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-link text-light" href="https://www.facebook.com/infoprobolinggokab/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-link text-light" class="youtube" href="https://www.youtube.com/@infokabupatenprobolinggo606" ><i class="fa-youtube-play" class="youtube"></i></a>
+                    <a class="btn btn-link text-light"  href=""><i class="fab fa-linkedin-in"></i></a>
                     <a class="btn btn-link text-light" href="https://www.instagram.com/diskominfo_kabprobolinggo/"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                     </div>
                 </div>
 
-                <a class="nav-link scrollto" href="https://katalog.satudata.go.id/dataset/?res_format=WMS&organization=pemerintah-kabupaten-probolinggo" class="nav-item nav-link">Data</a>
+                <a class="nav-link scrollto"  href="https://katalog.satudata.go.id/dataset/?res_format=WMS&organization=pemerintah-kabupaten-probolinggo" class="nav-item nav-link">Data</a>
                 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Kegiatan</a>
@@ -103,7 +103,7 @@
                 <a href="#" class="nav-item nav-link">Formulir</a>
 
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Masuk<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="#" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Masuk <i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->

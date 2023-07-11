@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Layanan</h4>
+                    <h4 class="text-white mb-4">Layanan Kami</h4>
                     <a class="btn btn-link" href="">Layanan Informasi Daring </a>
                     <a class="btn btn-link" href="">Permohonan Informasi Datang Langsung</a>
                     <a class="btn btn-link" href="">Mekanisme / Proses</a>
