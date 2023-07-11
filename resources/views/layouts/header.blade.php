@@ -8,7 +8,7 @@
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <span class="fa fa-phone-alt me-2"></span>
-                    <a style="color:white;" href="https://wa.me/+62335846665">+62335 846665</a>
+                    <a style="color:white;" href="https://wa.me/+6281334302285">+6281334302285</a>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
                     <span class="fa fa-envelope me-2"></span>
@@ -74,7 +74,7 @@
                         <a href="#" class="dropdown-item">Pengajuan Keberatan</a>
                         <a href="#" class="dropdown-item">Prosedur Penyelesaian Sengketa</a>
                         <a href="#" class="dropdown-item">Laporan Akses Informasi Publik</a>
-                        <a href="#" class="dropdown-item">Laporan Pelayanan Informasi Publik</a>
+                        <a href="/layanan" class="dropdown-item">Laporan Pelayanan Informasi Publik</a>
                     </div>
                 </div>
 

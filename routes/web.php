@@ -22,7 +22,7 @@ use App\Http\Controllers\Profile\{
 */
 
 Route::get('/', function () {
-    return view('index');                   
+    return view('index');
 });
 Route::get('/ppid', function () {
     return view('profile.ppid.index');
@@ -59,4 +59,10 @@ Route::get('/kontak', function () {
 });
 Route::get('/formulir', function () {
     return view('formulir.index');
+});
+Route::get('/layanan', function () {
+    return view('layanan.lkjip.index');
+});
+Route::get('/layanan', function () {
+    return view('layanan.permohonan.index');
 });
