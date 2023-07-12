@@ -106,7 +106,7 @@
                 </div>
 
             </div>
-            <a href="#" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Masuk <i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="/login" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Masuk <i class="fa fa-arrow-right ms-3"></i></a>
 
         </div>
     </nav>
