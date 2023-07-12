@@ -17,24 +17,13 @@
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Layanan Kami</h4>
                     <a class="btn btn-link" href="/permohonan">Permohonan Informasi Datang Langsung</a>
-                    <a class="btn btn-link" href="">Mekanisme / Proses</a>
-                    <a class="btn btn-link" href="">Pengajuan Keberatan</a>
-                    <a class="btn btn-link" href="">Prosedur Penyelesaian Sengketa</a>
+                    <a class="btn btn-link" href="/assets/video/Mekanisme atau proses.mp4">Mekanisme / Proses</a>
+                    <a class="btn btn-link" href="/assets/video/Pengajuan Keberatan.mp4">Pengajuan Keberatan</a>
+                    <a class="btn btn-link" href="/assets/video/fasilitasi sengketa informasi.mp4">Prosedur Penyelesaian Sengketa</a>
                     <a class="btn btn-link" href="/laip">Laporan Akses Informasi Publik</a>
                     <a class="btn btn-link" href="/lkjip">Laporan Pelayanan Informasi Publik</a>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="/">Home</a>
-                    <a class="btn btn-link" href="/profile/ppid">Profile</a>
-                    <a class="btn btn-link" href="">Regulasi</a>
-                    <a class="btn btn-link" href="">Layanan</a>
-                    <a class="btn btn-link" href="">Daftar Informasi</a>
-                    <a class="btn btn-link" href="">Data</a>
-                    <a class="btn btn-link" href="">Kegiatan</a>
-                    <a class="btn btn-link" href="">Kontak</a>
-                    <a class="btn btn-link" href="/formulir/online">Formulir</a>
-                </div>
+                
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Kritik & Saran</h4>
                     <p>Sampaikan saran dan kritikan untuk Pelayanan PPID</p>

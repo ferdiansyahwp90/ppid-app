@@ -68,9 +68,9 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Layanan</a>
                     <div class="dropdown-menu bg-light m-0">
                         <a href="/permohonan" class="dropdown-item">Permohonan Informasi Datang Langsung</a>
-                        <a href="#" class="dropdown-item">Mekanisme/Proses</a>
-                        <a href="#" class="dropdown-item">Pengajuan Keberatan</a>
-                        <a href="#" class="dropdown-item">Prosedur Penyelesaian Sengketa</a>
+                        <a href="/assets/video/Mekanisme atau proses.mp4" class="dropdown-item">Mekanisme/Proses</a>
+                        <a href="/assets/video/Pengajuan Keberatan.mp4" class="dropdown-item">Pengajuan Keberatan</a>
+                        <a href="/assets/video/fasilitasi sengketa informasi.mp4" class="dropdown-item">Prosedur Penyelesaian Sengketa</a>
                         <a href="/laip" class="dropdown-item">Laporan Akses Informasi Publik</a>
                         <a href="/lkjip" class="dropdown-item">Laporan Pelayanan Informasi Publik</a>
                     </div>
