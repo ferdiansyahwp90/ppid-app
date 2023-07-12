@@ -71,6 +71,9 @@ Route::get('/laip', function () {
 });
 
 //admin
+Route::get('/user', function () {
+    return view('admin.index');
+});
 Route::get('/login', function () {
     return view('admin.login');
 });
