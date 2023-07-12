@@ -40,7 +40,9 @@
             @include('layouts.admin.navbar');
         <!-- End Navbar -->
 
-
+        <!-- Main -->
+        @include('layouts.admin.index');
+        <!-- End Main -->
 
         <!-- Footer -->
             @include('layouts.admin.footer');
