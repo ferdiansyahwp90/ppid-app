@@ -16,29 +16,28 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Layanan Kami</h4>
-                    <a class="btn btn-link" href="">Layanan Informasi Daring </a>
-                    <a class="btn btn-link" href="">Permohonan Informasi Datang Langsung</a>
+                    <a class="btn btn-link" href="/permohonan">Permohonan Informasi Datang Langsung</a>
                     <a class="btn btn-link" href="">Mekanisme / Proses</a>
                     <a class="btn btn-link" href="">Pengajuan Keberatan</a>
                     <a class="btn btn-link" href="">Prosedur Penyelesaian Sengketa</a>
-                    <a class="btn btn-link" href="">Laporan Akses Informasi Publik</a>
-                    <a class="btn btn-link" href="">Laporan Pelayanan Informasi Publik</a>
+                    <a class="btn btn-link" href="/laip">Laporan Akses Informasi Publik</a>
+                    <a class="btn btn-link" href="/lkjip">Laporan Pelayanan Informasi Publik</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Quick Links</h4>
                     <a class="btn btn-link" href="/">Home</a>
-                    <a class="btn btn-link" href="">Profile</a>
+                    <a class="btn btn-link" href="/profile/ppid">Profile</a>
                     <a class="btn btn-link" href="">Regulasi</a>
                     <a class="btn btn-link" href="">Layanan</a>
                     <a class="btn btn-link" href="">Daftar Informasi</a>
                     <a class="btn btn-link" href="">Data</a>
                     <a class="btn btn-link" href="">Kegiatan</a>
                     <a class="btn btn-link" href="">Kontak</a>
-                    <a class="btn btn-link" href="">Formulir</a>
+                    <a class="btn btn-link" href="/formulir/online">Formulir</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h4 class="text-white mb-4">Kritik & Saran</h4>
+                    <p>Sampaikan saran dan kritikan untuk Pelayanan PPID</p>
                     <div class="position-relative w-100">
                         <input class="form-control bg-light border-light w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>

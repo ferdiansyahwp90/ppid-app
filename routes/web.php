@@ -60,9 +60,12 @@ Route::get('/kontak', function () {
 Route::get('/formulir', function () {
     return view('formulir.index');
 });
-Route::get('/layanan', function () {
+Route::get('/lkjip', function () {
     return view('layanan.lkjip.index');
 });
-Route::get('/layanan', function () {
+Route::get('/permohonan', function () {
     return view('layanan.permohonan.index');
+});
+Route::get('/laip', function () {
+    return view('layanan.laip.index');
 });

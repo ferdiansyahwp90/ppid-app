@@ -19,9 +19,8 @@
                 <div class="h-100 d-inline-flex align-items-center mx-n2">
                     <span>Follow Us:</span>
                     <a class="btn btn-link text-light" href="https://www.facebook.com/infoprobolinggokab/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-link text-light" class="youtube" href="https://www.youtube.com/@infokabupatenprobolinggo606" ><i class="fa-youtube-play" class="youtube"></i></a>
-                    <a class="btn btn-link text-light"  href=""><i class="fab fa-linkedin-in"></i></a>
                     <a class="btn btn-link text-light" href="https://www.instagram.com/diskominfo_kabprobolinggo/"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-link text-light" href="https://www.youtube.com/@infokabupatenprobolinggo606" ><i class="fa fa-youtube-play"></i></a>
                 </div>
             </div>
         </div>
@@ -68,13 +67,12 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Layanan</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="#" class="dropdown-item">Layanan Informasi Daring</a>
-                        <a href="#" class="dropdown-item">Permohonan Informasi Datang Langsung</a>
+                        <a href="/permohonan" class="dropdown-item">Permohonan Informasi Datang Langsung</a>
                         <a href="#" class="dropdown-item">Mekanisme/Proses</a>
                         <a href="#" class="dropdown-item">Pengajuan Keberatan</a>
                         <a href="#" class="dropdown-item">Prosedur Penyelesaian Sengketa</a>
-                        <a href="#" class="dropdown-item">Laporan Akses Informasi Publik</a>
-                        <a href="/layanan" class="dropdown-item">Laporan Pelayanan Informasi Publik</a>
+                        <a href="/laip" class="dropdown-item">Laporan Akses Informasi Publik</a>
+                        <a href="/lkjip" class="dropdown-item">Laporan Pelayanan Informasi Publik</a>
                     </div>
                 </div>
 
@@ -99,11 +97,17 @@
                 </div>
 
                 <a href="/kontak" class="nav-item nav-link">Kontak</a>
-
-                <a href="/formulir" class="nav-item nav-link">Formulir</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Formulir</a>
+                    <div class="dropdown-menu bg-light m-0">
+                          <a href="/formulir" class="dropdown-item">Online</a>
+                          <a href="/storage/formulir/Form Permohonan Informasi_PPID KAB PROB.pdf" class="dropdown-item">Offline</a>
+                    </div>
+                </div>
 
             </div>
             <a href="#" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Masuk <i class="fa fa-arrow-right ms-3"></i></a>
+
         </div>
     </nav>
     <!-- Navbar End -->
