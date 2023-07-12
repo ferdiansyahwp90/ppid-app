@@ -69,3 +69,11 @@ Route::get('/permohonan', function () {
 Route::get('/laip', function () {
     return view('layanan.laip.index');
 });
+
+//admin
+Route::get('/user', function () {
+    return view('admin.index');
+});
+Route::get('/login', function () {
+    return view('admin.login');
+});

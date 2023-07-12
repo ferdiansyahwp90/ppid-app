@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap");
+* {
+    font-family: "poppins", sans-serif;
+}
+body {
+    /* background-image: url("images/1.jpg"); */
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+.container {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+}
+span {
+    color: #000000;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+}
+header {
+    color: #070707;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+}
+
+.input-field .input {
+    height: 45px;
+    width: 87%;
+    border: none;
+    border-radius: 30px;
+    color: #fce9e9;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgb(44, 43, 43);
+    outline: none;
+}
+i {
+    position: relative;
+    top: -33px;
+    left: 17px;
+    color: #f3efef;
+}
+::-webkit-input-placeholder {
+    color: #f3ecec;
+}
+.submit {
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 100%;
+    color: black;
+    background: rgb(104, 149, 233);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.submit:hover {
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+.two-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #000000;
+    font-size: small;
+    margin-top: 10px;
+}
+.one {
+    display: flex;
+}
+label a {
+    text-decoration: none;
+    color: #000000;
+}
