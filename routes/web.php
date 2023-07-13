@@ -75,7 +75,7 @@ Route::get('/user', function () {
     return view('admin.index');
 });
 Route::get('/login', function () {
-    return view('admin.login');
+    return view('auth.login');
 });
 
 Auth::routes();

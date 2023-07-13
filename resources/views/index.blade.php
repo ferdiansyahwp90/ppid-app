@@ -9,6 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
+    <link href="assets/img/logo.jpg" rel="icon">
     <link href="assets/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
