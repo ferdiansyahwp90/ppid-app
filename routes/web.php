@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Profile\{
     PPIDController,
     MaklumatController,
@@ -75,7 +76,7 @@ Route::get('/user', function () {
     return view('admin.index');
 });
 Route::get('/login', function () {
-    return view('admin.login');
+    return view('auth.login');
 });
 
 Auth::routes();
