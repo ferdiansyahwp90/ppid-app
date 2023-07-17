@@ -4,9 +4,9 @@ namespace App\Http\Controllers\profile;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\Profile\PPID;
+// use App\Models\Profile\PPID;
 
-class PPIDController extends Controller
+class SetiapsaatController extends Controller
 {
     /**
      * Display a listing of the resource.

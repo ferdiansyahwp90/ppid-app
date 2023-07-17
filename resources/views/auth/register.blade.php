@@ -16,10 +16,10 @@
             @csrf
 
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">REGISTER</h3>
-
+  
             <div class="form-outline mb-4">
               <label class="form-label" for="form2Example18">Name</label>
-              <input type="name" id="form2Example18" name="name" value="{{ old('name') }}" class="form-control form-control-lg  @error('name') is-invalid @enderror" />
+              <input type="name" id="form2Example18" name="name" value="{{('name')}}" class="form-control form-control-lg  @error('name') is-invalid @enderror" />
               @error('name')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -29,7 +29,7 @@
 
             <div class="form-outline mb-4">
               <label class="form-label" for="form2Example18">Email address</label>
-              <input type="email" id="form2Example18" name="email" value="{{ old('email') }}" class="form-control form-control-lg  @error('email') is-invalid @enderror" />
+              <input type="email" id="form2Example18" name="email" value="{{ ('email') }}" class="form-control form-control-lg  @error('email') is-invalid @enderror" />
               @error('email')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>

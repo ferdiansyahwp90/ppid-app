@@ -10,6 +10,7 @@ use App\Http\Controllers\Profile\{
     TugasController,
     VisiController,
 };
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,14 +72,22 @@ Route::get('/laip', function () {
     return view('layanan.laip.index');
 });
 
+Route::get('/login', function () {
+    return view('auth.login');
+});
+Auth::routes();
 //admin
 Route::get('/user', function () {
     return view('admin.index');
 });
-Route::get('/login', function () {
-    return view('auth.login');
+Route::get('/pemohon', function () {
+    return view('pemohon.index');
 });
 
-Auth::routes();
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+// Route::get('/home',HomeController::class)->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Pemohon
+Route::get('/profilepemohon', function () {
+    return view('pemohon.profile.index');
+});

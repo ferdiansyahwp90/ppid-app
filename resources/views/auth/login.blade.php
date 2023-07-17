@@ -1,5 +1,4 @@
 @extends('layouts.firstpage')
-
 @section('content')
 <section class="vh-100">
   <div class="container-fluid">
@@ -46,7 +45,6 @@
             <a href="/" class="link-info text-decoration-none">Kembali ke Home</a>
 
           </form>
-
         </div>
 
       </div>

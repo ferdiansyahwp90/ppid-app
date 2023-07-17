@@ -33,19 +33,19 @@
     <body>
 
         <!-- Header -->
-            @include('admin.elements.header');
+            @include('pemohon.elements.header');
         <!-- End Header -->
 
         <!-- Navbar -->
-            @include('admin.elements.navbar');
+            @include('pemohon.elements.navbar');
         <!-- End Navbar -->
 
         <!-- Main -->
-        @include('admin.elements.index');
+        @include('pemohon.elements.index');
         <!-- End Main -->
 
         <!-- Footer -->
-            @include('admin.elements.footer');
+            @include('pemohon.elements.footer');
         <!-- End Footer -->
 
         <!-- Vendor JS Files -->
