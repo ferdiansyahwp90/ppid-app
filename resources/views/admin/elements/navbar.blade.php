@@ -124,9 +124,13 @@
               <i class="bi bi-circle"></i><span>Berita</span>
             </a>
           </li>
-        </ul>
+         </ul>
       </li><!-- End Charts Nav -->
-
+      <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">                     
+        <i class="bi bi-box-arrow-right "></i>Logout</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+          @csrf
+      </li>
     </ul>
 
   </aside>
