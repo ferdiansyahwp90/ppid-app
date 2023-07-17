@@ -83,6 +83,9 @@ Route::get('/user', function () {
 Route::get('/pemohon', function () {
     return view('pemohon.index');
 });
+Route::get('/home', function () {
+    return view('home');
+});
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 // Route::get('/home',HomeController::class)->name('home');
