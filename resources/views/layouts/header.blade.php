@@ -15,13 +15,7 @@
                     <a style="color:white;" href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=diskominfo@problinggokab.co.id" >diskominfo@problinggokab.co.id</a>
                 </div>
             </div>
-            <div class="col-lg-5 px-5 text-end">
-                <div class="h-100 d-inline-flex align-items-center mx-n2">
-                    <span>Follow Us:</span>
-                    <a class="btn btn-link text-light" href="https://www.facebook.com/infoprobolinggokab/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-link text-light" href="https://www.instagram.com/diskominfo_kabprobolinggo/"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-link text-light" href="https://www.youtube.com/@infokabupatenprobolinggo606" ><i class="fa fa-youtube-play"></i></a>
-                </div>
+           
             </div>
         </div>
     </div>
@@ -53,13 +47,12 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Regulasi</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="/storage/regulasi/UU No.14 Tahun 2008.pdf" class="dropdown-item">UNDANG-UNDANG 14 TAHUN 2008</a>
+                        <a href="/storage/regulasi/UU No. 14 Thn 2008.pdf" class="dropdown-item">UNDANG-UNDANG 14 TAHUN 2008</a>
                         <a href="/storage/regulasi/UU No. 43 Tahun 2009.pdf" class="dropdown-item">UNDANG-UNDANG 43 TAHUN 2009</a>
                         <a href="/storage/regulasi/PP No. 61 tahun 2010.pdf" class="dropdown-item">PERATURAN PEMERINTAH NO 61 TAHUN 2010</a>
                         <a href="/storage/regulasi/Perki No. 1 tahun 2013.pdf" class="dropdown-item">PERKI NO 1 TAHUN 2013</a>
                         <a href="/storage/regulasi/Perki No. 1 tahun 2021.pdf" class="dropdown-item">PERKI NO 1 TAHUN 2021</a>
-                       
-                        <a href="/storage/regulasi/Permendagri No. 3 tahun 2017.pdf" class="dropdown-item">PERMENDAGRI NO 3 TAHUN 2017</a>
+                       <a href="/storage/regulasi/Permendagri No. 3 tahun 2017.pdf" class="dropdown-item">PERMENDAGRI NO 3 TAHUN 2017</a>
                        <a href="/storage/regulasi/Pergub No. 8 Tahun 2018 ttg Pedoman PPID.pdf" class="dropdown-item">PERGUB JATIM NO 8 TAHUN 2018</a>
                         <a href="/storage/regulasi/SK_PENUNJUKAN PEJABAT PLID.pdf" class="dropdown-item">SK PPID</a></li>
                     </div>
