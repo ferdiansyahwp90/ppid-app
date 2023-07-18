@@ -88,7 +88,6 @@ Route::get('/home', function () {
 });
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-// Route::get('/home',HomeController::class)->name('home');
 
 //Pemohon
 Route::get('/profilepemohon', function () {
