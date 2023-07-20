@@ -5,12 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class galeri extends Model
+class Galeri extends Model
 {
+    protected $table = 'galeri';
+    protected $primaryKey = 'id_galeri';
+
     use HasFactory;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'name_galeri',
-        'description',
+        'name',
+        'deskripsi',
+        'tanggal',
         'photo'
     ];
 }

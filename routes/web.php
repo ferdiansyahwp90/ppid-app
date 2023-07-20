@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Profile\{
@@ -11,6 +12,7 @@ use App\Http\Controllers\Profile\{
     VisiController,
 };
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Admin\GaleriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,9 +74,10 @@ Route::get('/laip', function () {
     return view('layanan.laip.index');
 });
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+
 Auth::routes();
 //admin
 Route::get('/user', function () {
@@ -86,6 +89,16 @@ Route::get('/pemohon', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('galeri', function () {
+    return view('admin.kegiatan.galeri.index');
+});
+
+// Route::resource('galeri', GaleriController::class);
+
+Route::get('/berita', function () {
+    return view('admin.kegiatan.berita.index');
+});
+
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 

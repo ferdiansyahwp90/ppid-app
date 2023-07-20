@@ -115,12 +115,12 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="charts-chartjs.html">
+            <a href="galeri">
               <i class="bi bi-circle"></i><span>Galeri</span>
             </a>
           </li>
           <li>
-            <a href="charts-apexcharts.html">
+            <a href="/berita">
               <i class="bi bi-circle"></i><span>Berita</span>
             </a>
           </li>
