@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use Auth;
+use Auth;   
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -37,12 +37,12 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember_me)) {
 
             $user = Auth::user();
-            if ($user->level == 'admin') {
-                return redirect()->route('HomePageAdmin');
+            if ($user->role == 'admin') {
+                return redirect()->route('home','index');
             }
 
-            if ($user->level == 'user') {
-                return redirect()->route('HomePage');
+            if ($user->role == 'pemohon') {
+                return redirect()->route('home', 'index');
             }
         }
         return back()->with('loginError', 'Login Failed!');

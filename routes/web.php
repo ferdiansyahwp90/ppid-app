@@ -13,6 +13,7 @@ use App\Http\Controllers\Profile\{
 };
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin\GaleriController;
+use App\Http\Controllers\Pemohon\PemohonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,16 +76,44 @@ Route::get('/laip', function () {
 });
 
 Route::get('/login', [LoginController::class, 'index']);
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/login', [LoginController::class, 'authenticate']);
 
 
 Auth::routes();
-//admin
-Route::get('/user', function () {
-    return view('admin.index');
+Route::middleware(['auth', 'isAdmin'])->group(function(){
+    Route::prefix('admin')->group(function(){
+        Route::controller(AdminController::class)->group(function(){
+            Route::get('home', 'index'  );
+            Route::put('update_profile', 'update_profile');
+            Route::get('change_password', 'change_password');
+            Route::put('update_password', 'update_password');
+        });
+        Route::resource('galeri', GaleriController::class);
+        // Route::resource('type', AdminTypeController::class);
+        // Route::resource('product', AdminProductController::class);
+        // Route::resource('user', AdminUserController::class);
+    });
 });
+
+Route::middleware(['auth'])->group(function(){
+    Route::controller(PemohonController::class)->group(function(){
+        Route::get('home', 'index');
+        Route::put('update_profile', 'update_profile');
+        Route::get('change_password', 'change_password');
+        Route::put('update_password', 'update_password');
+    });
+    // Route::resource('galeri', GaleriController::class);
+    // Route::resource('type', AdminTypeController::class);
+    // Route::resource('product', AdminProductController::class);
+    // Route::resource('user', AdminUserController::class);
+});
+
+//admin
+// Route::get('/admin', function () {
+//     return view('admin.index');
+// });
 Route::get('/pemohon', function () {
-    return view('pemohon.index');
+    return view('pemohon.home.index');
 });
 Route::get('/home', function () {
     return view('home');
@@ -102,7 +131,9 @@ Route::get('/berita', function () {
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-//Pemohon
-Route::get('/profilepemohon', function () {
-    return view('pemohon.profile.index');
-});
+// //Pemohon
+// Route::get('/profilepemohon', function () {
+//     return view('pemohon.profile.index');
+// });
+
+

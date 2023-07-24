@@ -115,7 +115,7 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="galeri">
+            <a href="admin/kegiatan/galeri">
               <i class="bi bi-circle"></i><span>Galeri</span>
             </a>
           </li>

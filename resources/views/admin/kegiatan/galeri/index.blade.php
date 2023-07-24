@@ -36,49 +36,25 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Brandon Jacob</td>
-                    <td>Designer</td>
-                    <td>Foto1</td>
-                    <td>2016-05-25</td>
-                    <td>Bagus</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Bridie Kessler</td>
-                    <td>Developer</td>
-                    <td>35</td>
-                    <td>2014-12-05</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Ashleigh Langosh</td>
-                    <td>Finance</td>
-                    <td>45</td>
-                    <td>2011-08-12</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Angus Grady</td>
-                    <td>HR</td>
-                    <td>34</td>
-                    <td>2012-06-11</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Raheem Lehner</td>
-                    <td>Dynamic Division Officer</td>
-                    <td>47</td>
-                    <td>2011-04-19</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">6</th>
-                    <td>Ashleigh Langosh</td>
-                    <td>Finance</td>
-                    <td>45</td>
-                    <td>2011-08-12</td>
-                  </tr>
+                    @forelse ($galeri as $item)    
+                        <tr>
+                            <td>{{ $item->id }}</td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->deskripsi }}</td>
+                            <td>{{ $item->tanggal }}</td>
+                            <td>{{ $item->photo }}</td>
+                            <td>
+                                <a href="/admin/penjualan/{{ $item->id }}/edit" class="btn btn-primary">Terbayar ?</a>
+                            </td>
+                        </tr>
+                        @empty
+                        <tr>
+                            <td colspan="4" align="center">
+                                Data Kosong
+                            </td>
+                        </tr>
+                    @endforelse
+                    
                 </tbody>
               </table>
               <!-- End Table with stripped rows -->

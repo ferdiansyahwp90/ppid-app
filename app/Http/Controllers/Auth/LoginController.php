@@ -40,10 +40,10 @@ class LoginController extends Controller
          $role = Auth::user()->role;
          switch ($role) {
              case 'admin':
-                 return '/admin/index';
+                 return '/admin/home';
                  break;
              default:
-                 return '/user';
+                 return '/pemohon';
                  break;
          }
      } 
