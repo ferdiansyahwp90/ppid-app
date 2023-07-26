@@ -21,6 +21,7 @@
 
           <div class="card">
             <div class="card-body">
+              <a href="/admin/galeri/create" class="float-end btn btn-success text-light">Tambah Data</a>
               <h5 class="card-title">Databerita</h5>
         
               <!-- Table with stripped rows -->
@@ -30,8 +31,8 @@
                     <th scope="col">#</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Deskripsi</th>
-                    <th scope="col">Foto</th>
                     <th scope="col">Tanggal</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -44,13 +45,20 @@
                             <td>{{ $item->tanggal }}</td>
                             <td>{{ $item->photo }}</td>
                             <td>
-                                <a href="/admin/penjualan/{{ $item->id }}/edit" class="btn btn-primary">Terbayar ?</a>
-                            </td>
+                              <form action="/admin/galeri/{{ $item->id }}" method="post">
+
+                                  <a href="/admin/galeri/{{ $item->id }}/edit" class="btn btn-primary text-light">Edit</a>
+
+                                  @csrf
+                                  @method('DELETE')
+                                  <button type="submit" class="btn btn-danger text-light">Delete</button>
+                              </form>
+                          </td>
                         </tr>
                         @empty
                         <tr>
                             <td colspan="4" align="center">
-                                Data Kosong
+                                Data Galeri Kosong
                             </td>
                         </tr>
                     @endforelse

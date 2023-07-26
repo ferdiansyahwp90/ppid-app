@@ -12,7 +12,10 @@ use App\Http\Controllers\Profile\{
     VisiController,
 };
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\Admin\GaleriController;
+use App\Http\Controllers\Admin\{
+    GaleriController,
+    BeritaController
+};
 use App\Http\Controllers\Pemohon\PemohonController;
 
 /*
@@ -76,22 +79,19 @@ Route::get('/laip', function () {
 });
 
 Route::get('/login', [LoginController::class, 'index']);
-Route::get('/login', [LoginController::class, 'authenticate']);
+Route::post('/login', [LoginController::class, 'authenticate']);
 
-
-Auth::routes();
+Route::middleware(['preventBackHistory'])->group(function () {
+    Auth::routes();
+});
+// Auth::routes();
 Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::prefix('admin')->group(function(){
         Route::controller(AdminController::class)->group(function(){
             Route::get('home', 'index'  );
-            Route::put('update_profile', 'update_profile');
-            Route::get('change_password', 'change_password');
-            Route::put('update_password', 'update_password');
         });
         Route::resource('galeri', GaleriController::class);
-        // Route::resource('type', AdminTypeController::class);
-        // Route::resource('product', AdminProductController::class);
-        // Route::resource('user', AdminUserController::class);
+        Route::resource('berita', BeritaController::class);
     });
 });
 
@@ -102,38 +102,24 @@ Route::middleware(['auth'])->group(function(){
         Route::get('change_password', 'change_password');
         Route::put('update_password', 'update_password');
     });
-    // Route::resource('galeri', GaleriController::class);
-    // Route::resource('type', AdminTypeController::class);
-    // Route::resource('product', AdminProductController::class);
-    // Route::resource('user', AdminUserController::class);
 });
 
-//admin
-// Route::get('/admin', function () {
-//     return view('admin.index');
-// });
 Route::get('/pemohon', function () {
     return view('pemohon.home.index');
 });
 Route::get('/home', function () {
     return view('home');
 });
-Route::get('galeri', function () {
-    return view('admin.kegiatan.galeri.index');
+
+// Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/logout', function () {
+    Auth::logout();
+
+    request()->session()->invalidate();
+
+    request()->session()->regenerateToken();
+
+    return redirect('/');
 });
-
-// Route::resource('galeri', GaleriController::class);
-
-Route::get('/berita', function () {
-    return view('admin.kegiatan.berita.index');
-});
-
-
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-
-// //Pemohon
-// Route::get('/profilepemohon', function () {
-//     return view('pemohon.profile.index');
-// });
 
 

@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class BeritaSeeder extends Seeder
 {
@@ -13,12 +15,22 @@ class BeritaSeeder extends Seeder
      */
     public function run()
     {
-        $arrays = [
+        $berita = [
             [
-                'name_berita' => "logo",
-                'description' => "berita logo-ppid",
+                'name' => "logo1",
+                'deskripsi' => "logo-ppid",
+                'tanggal' => "2023-07-25",
                 'photo' => "assets/img/logo.jpg",
-            ]
+                'link' => "https://probolinggokab.go.id/",
+            ],
+            [
+                'name' => "logo2",
+                'deskripsi' => "logo-ppid",
+                'tanggal' => "2023-07-25",
+                'photo' => "assets/img/logo.jpg",
+                'link' => "https://probolinggokab.go.id/",
+            ],
         ];
+        DB::table('berita')->insert($berita);
     }
 }

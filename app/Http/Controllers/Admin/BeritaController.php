@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Galeri;
+use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 
-class GaleriController extends Controller
+class BeritaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class GaleriController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $galeries = Galeri::all(); // Mengambil semua isi tabel
-        $paginate = Galeri::orderBy('id', 'asc')->paginate(5);
-        return view('admin.kegiatan.galeri.index', ['galeri' => $galeries,'paginate'=>$paginate]);
+        $berita = Berita::all(); // Mengambil semua isi tabel
+        $paginate = Berita::orderBy('id', 'asc')->paginate(5);
+        return view('admin.kegiatan.berita.index', ['berita' => $berita,'paginate'=>$paginate]);
     }
 
     /**
@@ -25,9 +25,9 @@ class GaleriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin.kegiatan.galeri.create');
+        return view('admin.kegiatan.berita.create');
     }
 
     /**
@@ -40,16 +40,29 @@ class GaleriController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'id_galeri' => 'required',
             'name' => 'required',
             'deskripsi' => 'required',
             'tanggal' => 'required',
             'photo' => 'required',
+            'link' => 'required',
         ]);
         //fungsi eloquent untuk menambah data
-        Galeri::create($request->all());//jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('kegiatan.galeri.index')
-            ->with('success', 'galeri Berhasil Ditambahkan');
+        // Berita::create($request->all());//jika data berhasil ditambahkan, akan kembali ke halaman utama
+        
+        if ($request->file('photo')) {
+            $photo = $request->file('photo')->store('berita', 'public');
+        }
+        
+        //fungsi eloquent untuk menambah data
+        Berita::create([
+            'name' => $request-> name,
+            'deskripsi' => $request-> deskripsi,
+            'tanggal' => $request-> tanggal,
+            'photo' => $photo,
+            'link' => $request-> link,
+        ]);
+        return redirect()->route('kegiatan.berita.index')
+            ->with('success', 'berita Berhasil Ditambahkan');
     }
 
     /**
@@ -58,10 +71,10 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\response
      */
-    public function show($id_galeri)
+    public function show($id_berita)
     {
-        $galeries = Galeri::where('id', $id_galeri)->first();
-        return view('kegiatan.galeri.detail', compact('galeri'));
+        $berita = Berita::where('id', $id_berita)->first();
+        return view('kegiatan.berita.detail', compact('berita'));
     }
 
     /**
@@ -70,10 +83,10 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_galeri)
+    public function edit($id_berita)
     {
-        $galeries = DB::table('galeri')->where('id', $id_galeri)->first();
-        return view('admin.kegiatan.galeri.edit', compact('galeri'));
+        $berita = DB::table('berita')->where('id', $id_berita)->first();
+        return view('admin.kegiatan.berita.edit', compact('berita'));
     }
 
     /**
@@ -83,28 +96,28 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_galeri)
+    public function update(Request $request, $id_berita)
     {
         //melakukan validasi data
         $request->validate([
-            'id_galeri' => 'required',
             'name' => 'required',
             'deskripsi' => 'required',
             'tanggal' => 'required',
             'photo' => 'required',
+            'link' => 'required',
         ]);
         //fungsi eloquent untuk mengupdate data inputan kita
-           Galeri::where('id', $id_galeri)
+           Berita::where('id', $id_berita)
                 ->update([
-                    'id_galeri' => $request->id_galeri,
                     'name' => $request-> name,
                     'deskripsi' => $request-> deskripsi,
                     'tanggal' => $request-> tanggal,
                     'photo' => $request-> photo,
+                    'link' => $request-> link,
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.kegiatan.galeri.index')
-                ->with('success', 'Pengjualan Berhasil Diupdate');
+            return redirect()->route('admin.kegiatan.berita.index')
+                ->with('success', 'Berita Berhasil Diupdate');
     }
 
     /**
@@ -113,11 +126,11 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id_galeri)
+    public function destroy($id_berita)
     {
         //fungsi eloquent untuk menghapus data
-        Galeri::where('id', $id_galeri)->delete();
-        return redirect()->route('kegiatan.galeri.index')
-            -> with('Success', 'Foto Berhasil Dihapus');       
+        Berita::where('id', $id_berita)->delete();
+        return redirect()->route('kegiatan.berita.index')
+            -> with('success', 'Berita Berhasil Dihapus');       
     }
 }

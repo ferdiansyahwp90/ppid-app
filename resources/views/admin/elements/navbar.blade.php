@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="#">
+        <a class="nav-link" href="#">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -16,27 +16,27 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Seputar PPID</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Struktur Organisasi</span>
             </a>
           </li>
           <li>
-            <a href="components-badges.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Tugas dan Fungsi PPID</span>
             </a>
           </li>
           <li>
-            <a href="components-breadcrumbs.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Visi dan Misi PPID</span>
             </a>
           </li>
           <li>
-            <a href="components-buttons.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>SOP PPID</span>
             </a>
           </li>
@@ -49,32 +49,32 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="forms-elements.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Permohonan Informasi Datang Langsung</span>
             </a>
           </li>
           <li>
-            <a href="forms-layouts.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Mekanisme/Proses</span>
             </a>
           </li>
           <li>
-            <a href="forms-editors.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Pengajuan Keberatan</span>
             </a>
           </li>
           <li>
-            <a href="forms-validation.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Prosedur Penyelesaian Sengketa</span>
             </a>
           </li>
           <li>
-            <a href="forms-validation.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Laporan Akses Informasi Publik</span>
             </a>
           </li>
           <li>
-            <a href="forms-validation.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Laporan Pelayanan Informasi Publik</span>
             </a>
           </li>
@@ -87,22 +87,22 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="tables-general.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Informasi Berkala</span>
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Informasi Serta Merta</span>
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Informasi Setiap Saat</span>
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Informasi Yang Dikecualikan</span>
             </a>
           </li>
@@ -115,12 +115,12 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="admin/kegiatan/galeri">
+            <a href="/admin/galeri">
               <i class="bi bi-circle"></i><span>Galeri</span>
             </a>
           </li>
           <li>
-            <a href="/berita">
+            <a href="/admin/berita">
               <i class="bi bi-circle"></i><span>Berita</span>
             </a>
           </li>

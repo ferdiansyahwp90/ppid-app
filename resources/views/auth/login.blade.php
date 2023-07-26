@@ -13,12 +13,11 @@
         
           <form method="POST" action="{{ route('login') }}" class="w-100">
             @csrf
-
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
 
             <div class="form-outline mb-4">
               <label class="form-label" for="email">Email address</label>
-              <input type="email" id="email" name="email" value="{{ old('email') }}" class="form-control form-control-lg  @error('email') is-invalid @enderror" autofocus required/>
+              <input type="email" id="email" name="email" value="{{ old('email') }}" class="form-control form-control-lg  @error('email') is-invalid @enderror" required/>
               @error('email')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>

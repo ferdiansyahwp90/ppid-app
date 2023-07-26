@@ -3,12 +3,11 @@
 @section('content')
 
 <main id="main" class="main">
-
     <div class="pagetitle">
       <h1>Data Berita</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Kegiatan</a></li>
+          <li class="breadcrumb-item"><a href="">Kegiatan</a></li>
           <li class="breadcrumb-item active">berita</li>
         </ol>
       </nav>
@@ -18,70 +17,55 @@
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
-
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Databerita</h5>
-        
+              <a href="/admin/berita/create" class="float-end btn btn-success text-light">Tambah Data</a>
+              <h5 class="card-title">Data berita</h5>
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">id</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Deskripsi</th>
+                    <th scope="col">Tanggal</th>
                     <th scope="col">Foto</th>
                     <th scope="col">Link</th>
-                    <th scope="col">Tanggal</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Brandon Jacob</td>
-                    <td>Designer</td>
-                    <td>Berita1</td>
-                    <td>hhtp:://</td>
-                    <td>2016-05-25</td>
-                    <td>Bagus</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Bridie Kessler</td>
-                    <td>Developer</td>
-                    <td>35</td>
-                    <td>2014-12-05</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Ashleigh Langosh</td>
-                    <td>Finance</td>
-                    <td>45</td>
-                    <td>2011-08-12</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Angus Grady</td>
-                    <td>HR</td>
-                    <td>34</td>
-                    <td>2012-06-11</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Raheem Lehner</td>
-                    <td>Dynamic Division Officer</td>
-                    <td>47</td>
-                    <td>2011-04-19</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">6</th>
-                    <td>Ashleigh Langosh</td>
-                    <td>Finance</td>
-                    <td>45</td>
-                    <td>2011-08-12</td>
-                  </tr>
-                </tbody>
+                  @forelse ($berita as $item)    
+                      <tr>
+                          <td>{{ $item->id }}</td>
+                          <td>{{ $item->name }}</td>
+                          <td>{{ $item->deskripsi }}</td>
+                          <td>{{ $item->tanggal }}</td>
+                          {{-- <td>{{ $item->photo }}</td> --}}
+                          <td>
+                            <img src="{{ asset('storage/'.$item->photo) }}" class="w-50" alt="">
+                          </td>
+                          <td>{{ $item->link }}</td>
+                          <td>
+                            <form action="/admin/berita/{{ $item->id }}" method="post">
+
+                                <a href="/admin/berita/{{ $item->id }}/edit" class="btn btn-primary text-light">Edit</a>
+
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger text-light">Delete</button>
+                            </form>
+                        </td>
+                      </tr>
+                      @empty
+                      <tr>
+                          <td colspan="4" align="center">
+                              Data Berita Kosong
+                          </td>
+                      </tr>
+                  @endforelse
+                  
+              </tbody>
               </table>
               <!-- End Table with stripped rows -->
 
