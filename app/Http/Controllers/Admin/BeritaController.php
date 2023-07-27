@@ -25,7 +25,7 @@ class BeritaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         return view('admin.kegiatan.berita.create');
     }
@@ -61,8 +61,8 @@ class BeritaController extends Controller
             'photo' => $photo,
             'link' => $request-> link,
         ]);
-        return redirect()->route('kegiatan.berita.index')
-            ->with('success', 'berita Berhasil Ditambahkan');
+        return redirect('/admin/berita')
+            ->with('success', 'Berita Berhasil Ditambahkan');
     }
 
     /**
@@ -74,7 +74,7 @@ class BeritaController extends Controller
     public function show($id_berita)
     {
         $berita = Berita::where('id', $id_berita)->first();
-        return view('kegiatan.berita.detail', compact('berita'));
+        return view('admin.kegiatan.berita.detail', compact('berita'));
     }
 
     /**
@@ -130,7 +130,7 @@ class BeritaController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         Berita::where('id', $id_berita)->delete();
-        return redirect()->route('kegiatan.berita.index')
+        return redirect('/admin/berita')
             -> with('success', 'Berita Berhasil Dihapus');       
     }
 }

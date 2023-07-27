@@ -84,14 +84,26 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::middleware(['preventBackHistory'])->group(function () {
     Auth::routes();
 });
-// Auth::routes();
+
 Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::prefix('admin')->group(function(){
         Route::controller(AdminController::class)->group(function(){
             Route::get('home', 'index'  );
         });
-        Route::resource('galeri', GaleriController::class);
-        Route::resource('berita', BeritaController::class);
+
+        Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri');
+        Route::get('/galeri/create', [GaleriController::class, 'create']);
+        Route::post('/galeri/store', [GaleriController::class, 'store']);
+        Route::get('/galeri/{id_galeri}/edit', [GaleriController::class, 'edit']);
+        Route::put('/galeri/{id_galeri}', [GaleriController::class, 'update']);
+        Route::delete('/galeri/{id_galeri}', [GaleriController::class, 'destroy']);
+
+        Route::get('/berita', [BeritaController::class, 'index'])->name('berita');
+        Route::get('/berita/create', [BeritaController::class, 'create']);
+        Route::post('/berita/store', [BeritaController::class, 'store']);
+        Route::get('/berita/{id_berita}/edit', [BeritaController::class, 'edit']);
+        Route::put('/berita/{id_berita}', [BeritaController::class, 'update']);
+        Route::delete('/berita/{id_berita}', [BeritaController::class, 'destroy']);
     });
 });
 

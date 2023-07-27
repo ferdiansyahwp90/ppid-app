@@ -23,7 +23,7 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h1 class="m-0">PPID</h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -94,7 +94,7 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Formulir</a>
                     <div class="dropdown-menu bg-light m-0">
-                          <a href="/formulir" class="dropdown-item">Online</a>
+                          <a href="/login" class="dropdown-item">Online</a>
                           <a href="/storage/formulir/Form Permohonan Informasi_PPID KAB PROB.pdf" class="dropdown-item">Offline</a>
                     </div>
                 </div>

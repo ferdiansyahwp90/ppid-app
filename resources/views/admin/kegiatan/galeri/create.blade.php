@@ -13,6 +13,7 @@
       </nav>
     </div>
     <!-- End Page Title -->
+    
 
     <section class="section">
       <div class="row">
@@ -20,6 +21,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Tambah Galeri</h5>
+              <a href="/admin/galeri" class="btn btn-primary mx-2 py-2 shadow-sm fs-normal align-self-center px-3 mt-n3">Kembali</a>
 
               <div class="card-body">
                 @if ($errors->any())
@@ -32,30 +34,31 @@
                     </ul>
                 </div>
                 @endif
+                <div>
+                  <form method="post" action="/admin/galeri/store" enctype="multipart/form-data" id="myForm">
+                      @csrf
+                      <div class="form-group">
+                          <label for="nama">Nama</label>
+                          <input type="text" name="nama" class="form-control" id="nama"  aria-describedby="nama" >
+                      </div>
 
-                <form method="post" action="/admin/kegiatan/berita" enctype="multipart/form-data" id="myForm">
-                    @csrf
-                    <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" name="nama" class="form-control" id="nama"  aria-describedby="nama" >
-                    </div>
+                      <div class="form-group">
+                          <label for="deskripsi">Deskripsi</label>
+                          <input type="text" name="deskripsi" class="form-control" id="deskripsi"  aria-describedby="deskripsi" >
+                      </div>
 
-                    <div class="form-group">
-                        <label for="deskripsi">Deskripsi</label>
-                        <input type="text" name="deskripsi" class="form-control" id="deskripsi"  aria-describedby="deskripsi" >
-                    </div>
+                      <div class="form-group">
+                          <label for="tanggal">Tanggal</label>
+                          <input type="date" name="tanggal" class="form-control" id="tanggal" aria-describedby="tanggal" >
+                      </div>
 
-                    <div class="form-group">
-                        <label for="tanggal">Tanggal</label>
-                        <input type="date" name="tanggal" class="form-control" id="tanggal" aria-describedby="tanggal" >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="File">Foto</label>
-                        <input type="file" name="photo" class="form-control" id="photo" ariadescribedby="photo" >
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                      <div class="form-group">
+                          <label for="File">Foto</label>
+                          <input type="file" name="photo" class="form-control" id="photo" ariadescribedby="photo" >
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
             </div>
 
             </div>

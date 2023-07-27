@@ -33,26 +33,26 @@
                 </div>
                 @endif
 
-                <form method="post" action="/admin/kegiatan/berita{{ $berita->id }}" enctype="multipart/form-data" id="myForm">
+                <form method="post" action="/admin/kegiatan/galeri{{ $galeri->id }}" enctype="multipart/form-data" id="myForm">
                     @csrf
                     <div class="form-group">
                         <label for="nama">Nama</label>
-                        <input type="text" name="nama" class="form-control" id="nama"  value="{{ $berita->name }}" aria-describedby="nama" >
+                        <input type="text" name="nama" class="form-control" id="nama"  value="{{ $galeri->name }}" aria-describedby="nama" >
                     </div>
 
                     <div class="form-group">
                         <label for="deskripsi">Deskripsi</label>
-                        <input type="text" name="deskripsi" class="form-control" id="deskripsi"  value="{{ $berita->deskripsi }}" aria-describedby="deskripsi" >
+                        <input type="text" name="deskripsi" class="form-control" id="deskripsi"  value="{{ $galeri->deskripsi }}" aria-describedby="deskripsi" >
                     </div>
 
                     <div class="form-group">
                         <label for="tanggal">Tanggal</label>
-                        <input type="date" name="tanggal" class="form-control" id="tanggal" value="{{ $berita->tanggal }}" aria-describedby="tanggal" >
+                        <input type="date" name="tanggal" class="form-control" id="tanggal" value="{{ $galeri->tanggal }}" aria-describedby="tanggal" >
                     </div>
 
                     <div class="form-group">
                         <label for="File">Foto</label>
-                        <input type="file" name="photo" class="form-control" id="photo" value="{{ $berita->photo }}" aria-describedby="photo" >
+                        <input type="file" name="photo" class="form-control" id="photo" value="{{ $galeri->photo }}" aria-describedby="photo" >
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

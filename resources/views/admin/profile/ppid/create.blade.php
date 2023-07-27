@@ -36,28 +36,9 @@
                 <form method="post" action="/admin/berita/store" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="name">Nama</label>
-                        <input type="text" name="name" class="form-control" id="name"  aria-describedby="name" >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="deskripsi">Deskripsi</label>
-                        <input type="text" name="deskripsi" class="form-control" id="deskripsi"  aria-describedby="deskripsi" >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="tanggal">Tanggal</label>
-                        <input type="date" name="tanggal" class="form-control" id="tanggal" aria-describedby="tanggal" >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="photo">Foto</label>
-                        <input type="file" name="photo" class="form-control" id="photo" ariadescribedby="photo" >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="link">Link</label>
-                        <input type="text" name="link" class="form-control" id="link" ariadescribedby="link" >
+                        <label for="body">body</label>
+                        <input id="x" type="hidden" name="content">
+                        <trix-editor input="x"></trix-editor>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

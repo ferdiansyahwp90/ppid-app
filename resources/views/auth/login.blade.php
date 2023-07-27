@@ -17,7 +17,8 @@
 
             <div class="form-outline mb-4">
               <label class="form-label" for="email">Email address</label>
-              <input type="email" id="email" name="email" value="{{ old('email') }}" class="form-control form-control-lg  @error('email') is-invalid @enderror" required/>
+              {{-- <input type="email" id="email" name="email" value="{{ old('email') }}" class="form-control form-control-lg  @error('email') is-invalid @enderror" required/> --}}
+              <input type="email" id="email" name="email" value="admin@gmail.com" class="form-control form-control-lg  @error('email') is-invalid @enderror" required/>
               @error('email')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -27,7 +28,8 @@
 
             <div class="form-outline mb-4">
               <label class="form-label" for="password">Password</label>
-              <input type="password" id="password" name="password" class="form-control form-control-lg @error('password') is-invalid @enderror" required/>
+              {{-- <input type="password" id="password" name="password" class="form-control form-control-lg @error('password') is-invalid @enderror" required/> --}}
+              <input type="password" id="password" name="password" value="admin"class="form-control form-control-lg @error('password') is-invalid @enderror" required/>
               @error('password')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>

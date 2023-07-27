@@ -15,9 +15,9 @@ class GaleriController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $galeries = Galeri::all(); // Mengambil semua isi tabel
+        $galeri = Galeri::all(); // Mengambil semua isi tabel
         $paginate = Galeri::orderBy('id', 'asc')->paginate(5);
-        return view('admin.kegiatan.galeri.index', ['galeri' => $galeries,'paginate'=>$paginate]);
+        return view('admin.kegiatan.galeri.index', ['galeri' => $galeri,'paginate'=>$paginate]);
     }
 
     /**
@@ -60,7 +60,7 @@ class GaleriController extends Controller
      */
     public function show($id_galeri)
     {
-        $galeries = Galeri::where('id', $id_galeri)->first();
+        $galeri = Galeri::where('id', $id_galeri)->first();
         return view('kegiatan.galeri.detail', compact('galeri'));
     }
 
@@ -72,7 +72,7 @@ class GaleriController extends Controller
      */
     public function edit($id_galeri)
     {
-        $galeries = DB::table('galeri')->where('id', $id_galeri)->first();
+        $galeri = DB::table('galeri')->where('id', $id_galeri)->first();
         return view('admin.kegiatan.galeri.edit', compact('galeri'));
     }
 
@@ -117,7 +117,7 @@ class GaleriController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         Galeri::where('id', $id_galeri)->delete();
-        return redirect()->route('kegiatan.galeri.index')
+        return redirect('/admin/galeri')
             -> with('Success', 'Foto Berhasil Dihapus');       
     }
 }
