@@ -34,7 +34,7 @@
 
     <body>
         <!-- Header -->
-            @include('layouts.header');
+            @include('layouts.header')
         <!-- End Header -->
 
         <!-- Content -->

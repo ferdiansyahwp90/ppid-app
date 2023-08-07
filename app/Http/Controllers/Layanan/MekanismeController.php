@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\profile;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\SOP;
+use App\Models\Mekanisme;
 use Illuminate\Support\Facades\DB;
 
-class SOPController extends Controller
+class MekanismeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class SOPController extends Controller
      */
     public function index()
     {
-        $sop = SOP::all(); // Mengambil semua isi tabel
-        $paginate = SOP::orderBy('id', 'asc')->paginate(5);
-        return view('admin.profile.sop.index', ['sop' => $sop,'paginate'=>$paginate]);
+        $mekanisme = Mekanisme::all(); // Mengambil semua isi tabel
+        $paginate = Mekanisme::orderBy('id', 'asc')->paginate(5);
+        return view('admin.layanan.Mekanisme.index', ['mekanisme' => $mekanisme,'paginate'=>$paginate]);
     }
 
     /**
@@ -28,7 +28,7 @@ class SOPController extends Controller
      */
     public function create()
     {
-        return view('admin.profile.sop.create');
+        return view('admin.layanan.mekanisme.create');
     }
 
     /**
@@ -41,15 +41,15 @@ class SOPController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'deskripsi' => 'required',
+            'nama' => 'required',
+            'file' => 'required',
         ]);
         
         //fungsi eloquent untuk menambah data
-        SOP::create([
-            'deskripsi' => $request-> deskripsi,
-        ]);
-        return redirect('/admin/sop')
-            ->with('success', 'Standart Operasional Prosedur Berhasil Ditambahkan');
+        Mekanisme::create($request->all());
+
+        return redirect('/admin/mekanisme')
+                ->with('success', 'Mekanisme Berhasil Ditambahkan');
     }
 
     /**
@@ -58,10 +58,10 @@ class SOPController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\response
      */
-    public function show($id_sop)
+    public function show($id_mekanisme)
     {
-        $berita = SOP::where('id', $id_sop)->first();
-        return view('admin.profile.sop.detail', compact('sop'));
+        $berita = Mekanisme::where('id', $id_mekanisme)->first();
+        return view('admin.layanan.mekanisme.detail', compact('mekanisme'));
     }
 
     /**
@@ -70,10 +70,10 @@ class SOPController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_sop)
+    public function edit($id_mekanisme)
     {
-        $berita = DB::table('ppid')->where('id', $id_sop)->first();
-        return view('admin.profile.sop.edit', compact('ppid'));
+        $berita = DB::table('mekanisme')->where('id', $id_mekanisme)->first();
+        return view('admin.layanan.mekanisme.edit', compact('mekanisme'));
     }
 
     /**
@@ -83,20 +83,22 @@ class SOPController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_sop)
+    public function update(Request $request, $id_mekanisme)
     {
         //melakukan validasi data
         $request->validate([
-            'deskripsi' => 'required',
+            'nama' => 'required',
+            'file' => 'required',
         ]);
         //fungsi eloquent untuk mengupdate data inputan kita
-           SOP::where('id', $id_sop)
+           Mekanisme::where('id', $id_mekanisme)
                 ->update([
-                    'deskripsi' => $request-> deskripsi,
+                    'nama' => $request-> nama,
+                    'file' => $request-> file,
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.profile.sop.index')
-                ->with('success', 'Standart Operasional Prosedur Berhasil Diupdate');
+            return redirect()->route('admin.layanan.Mekanisme.index')
+                ->with('success', 'Mekanisme Berhasil Diupdate');
     }
 
     /**
@@ -105,11 +107,11 @@ class SOPController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id_sop)
+    public function destroy($id_mekanisme)
     {
         //fungsi eloquent untuk menghapus data
-        SOP::where('id', $id_sop)->delete();
-        return redirect('/admin/sop')  
-            -> with('success', 'Standart Operasional Prosedur Berhasil Dihapus');       
+        Mekanisme::where('id', $id_mekanisme)->delete();
+        return redirect('/admin/mekanisme')  
+            -> with('success', 'Mekanisme Berhasil Dihapus');       
     }
 }

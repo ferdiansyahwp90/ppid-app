@@ -16,27 +16,27 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
+            <a href="/admin/ppid">
               <i class="bi bi-circle"></i><span>Seputar PPID</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/admin/struktur">
               <i class="bi bi-circle"></i><span>Struktur Organisasi</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/admin/tugas">
               <i class="bi bi-circle"></i><span>Tugas dan Fungsi PPID</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/admin/visi">
               <i class="bi bi-circle"></i><span>Visi dan Misi PPID</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/admin/sop">
               <i class="bi bi-circle"></i><span>SOP PPID</span>
             </a>
           </li>
@@ -54,27 +54,27 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/admin/mekanisme">
               <i class="bi bi-circle"></i><span>Mekanisme/Proses</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/admin/pengajuanKeberatan">
               <i class="bi bi-circle"></i><span>Pengajuan Keberatan</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/admin/penyelesaianSengketa">
               <i class="bi bi-circle"></i><span>Prosedur Penyelesaian Sengketa</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/admin/laporanAkses">
               <i class="bi bi-circle"></i><span>Laporan Akses Informasi Publik</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/admin/laporanPelayanan">
               <i class="bi bi-circle"></i><span>Laporan Pelayanan Informasi Publik</span>
             </a>
           </li>

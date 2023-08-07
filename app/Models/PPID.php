@@ -9,7 +9,9 @@ class PPID extends Model
 {
     use HasFactory;
 
-    protected $table = 'ppid';
-    protected $primaryKey = 'id_ppid';
-    protected $guarded = [];
+    protected $table = 'seputar';
+    protected $primaryKey = 'id_seputar';
+    protected $fillable = [
+        'deskripsi',
+    ];
 }

@@ -40,7 +40,6 @@ class GaleriController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'id_galeri' => 'required',
             'name' => 'required',
             'deskripsi' => 'required',
             'tanggal' => 'required',
