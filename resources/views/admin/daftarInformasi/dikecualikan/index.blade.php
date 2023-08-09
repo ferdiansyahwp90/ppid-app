@@ -4,11 +4,11 @@
 
 <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Laporan Pelayanan Informasi Publik</h1>
+      <h1>Infromasi Yang Dikecualikan</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="">Layanan</a></li>
-          <li class="breadcrumb-item active">Laporan Pelayanan Informasi Publik</li>
+          <li class="breadcrumb-item active">Infromasi Yang Dikecualikan</li>
         </ol>
       </nav>
     </div>
@@ -19,7 +19,7 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Laporan Pelayanan Informasi Publik</h5>
+              <h5 class="card-title">Infromasi Yang Dikecualikan</h5>
               <a href="{{ url('admin/ppid/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
 
               <!-- Table with stripped rows -->
@@ -33,7 +33,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @forelse ($laporanPelayanan as $item)    
+                  @forelse ($dikecualikan as $item)    
                       <tr>
                           <td>{{ $item->id }}</td>
                           <td>{{ $item->Nama }}</td>
@@ -52,7 +52,7 @@
                       @empty
                       <tr>
                           <td colspan="4" align="center">
-                              Laporan Pelayanan Informasi Publik Kosong
+                              Infromasi Yang Dikecualikan Kosong
                           </td>
                       </tr>
                   @endforelse

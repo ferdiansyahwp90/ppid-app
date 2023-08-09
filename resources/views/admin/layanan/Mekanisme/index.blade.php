@@ -33,7 +33,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @forelse ($Mekanisme as $item)    
+                  @forelse ($mekanisme as $item)    
                       <tr>
                           <td>{{ $item->id }}</td>
                           <td>{{ $item->Nama }}</td>

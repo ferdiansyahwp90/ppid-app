@@ -17,7 +17,8 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->role == 'admin'){
+        $role = Auth::user()->role;
+        if ($role == 'admin'){
             return $next($request);
         } else {
             return redirect('/pemohon');

@@ -3,7 +3,8 @@
 use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Profile\{
+use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\Admin\profile\{
     PPIDController,
     SOPController,
     StrukturController,
@@ -11,11 +12,11 @@ use App\Http\Controllers\Profile\{
     VisiController,
 };
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\Admin\{
+use App\Http\Controllers\Admin\Kegiatan\{
     GaleriController,
     BeritaController
 };
-use App\Http\Controllers\{
+use App\Http\Controllers\Admin\Layanan\{
     LaporanAksesController,
     LaporanPelayananController,
     MekanismeController,
@@ -23,11 +24,16 @@ use App\Http\Controllers\{
     PenyelesaianSengketaController,
     PermohonanLangsungController,
 };
+use App\Http\Controllers\Admin\DaftarInformasi\{
+    BerkalaController,
+    DikecualikanController,
+    SertamertaController,
+    SetiapsaatController,
+};
 use App\Http\Controllers\Pemohon\PemohonController;
-use App\Models\LaporanAkses;
-use App\Models\PengajuanKeberatan;
-use App\Models\PenyelesaianSengketa;
-use App\Models\PermohonanLangsung;
+use App\Models\Admin\DaftarInformasi\Dikecualikan;
+use App\Models\Admin\DaftarInformasi\Sertamerta;
+use App\Models\Admin\DaftarInformasi\Setiapsaat;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,9 +107,10 @@ Route::middleware(['preventBackHistory'])->group(function () {
 
 Route::middleware(['auth', 'isAdmin'])->group(function(){
     Route::prefix('admin')->group(function(){
-        Route::controller(AdminController::class)->group(function(){
-            Route::get('home', 'index');
-        });
+        // Route::controller(AdminController::class)->group(function(){
+        //     Route::get('home', 'index');
+        // });
+        Route::get('/home', [AdminController::class, 'index'])->name('home');
 
         //Profile
 
@@ -208,6 +215,43 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
             Route::delete('/permohonanLangsung/{id_permohonanLangsung}', 'destroy');
         });
 
+        //Daftar Informasi
+        Route::controller(BerkalaController::class)->group(function () {
+            Route::get('/berkala', 'index');
+            Route::get('/berkala/create', 'create');
+            Route::post('/berkala/store', 'store');
+            Route::get('/berkala/{id_berkala}/edit', 'edit');
+            Route::put('/berkala/{id_berkala}', 'update');
+            Route::delete('/berkala/{id_berkala}', 'destroy');
+        });
+
+        Route::controller(DikecualikanController::class)->group(function () {
+            Route::get('/dikecualikan', 'index');
+            Route::get('/dikecualikan/create', 'create');
+            Route::post('/dikecualikan/store', 'store');
+            Route::get('/dikecualikan/{id_dikecualikan}/edit', 'edit');
+            Route::put('/dikecualikan/{id_dikecualikan}', 'update');
+            Route::delete('/dikecualikan/{id_dikecualikan}', 'destroy');
+        });
+
+        Route::controller(SertamertaController::class)->group(function () {
+            Route::get('/sertamerta', 'index');
+            Route::get('/sertamerta/create', 'create');
+            Route::post('/sertamerta/store', 'store');
+            Route::get('/sertamerta/{id_sertamerta}/edit', 'edit');
+            Route::put('/sertamerta/{id_sertamerta}', 'update');
+            Route::delete('/sertamerta/{id_sertamerta}', 'destroy');
+        });
+
+        Route::controller(SetiapsaatController::class)->group(function () {
+            Route::get('/setiapsaat', 'index');
+            Route::get('/setiapsaat/create', 'create');
+            Route::post('/setiapsaat/store', 'store');
+            Route::get('/setiapsaat/{id_setiapsaat}/edit', 'edit');
+            Route::put('/setiapsaat/{id_setiapsaat}', 'update');
+            Route::delete('/setiapsaat/{id_setiapsaat}', 'destroy');
+        });
+
         //Kegiatan
         Route::controller(GaleriController::class)->group(function () {
             Route::get('/galeri', 'index');
@@ -255,6 +299,20 @@ Route::get('/logout', function () {
     request()->session()->regenerateToken();
 
     return redirect('/');
+});
+Route::get('/config', function () {
+    Artisan::call(
+        'migrate:fresh',
+        [
+            '--force' => true
+        ]
+    );
+    Artisan::call(
+        'db:seed',
+        [
+            '--force' => true
+        ]
+    );
 });
 
 

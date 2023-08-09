@@ -102,7 +102,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/admin/dikecualikan">
               <i class="bi bi-circle"></i><span>Informasi Yang Dikecualikan</span>
             </a>
           </li>

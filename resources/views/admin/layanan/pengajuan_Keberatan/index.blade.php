@@ -30,10 +30,10 @@
                     <th scope="col">Nama</th>
                     <th scope="col">File</th>
                     <th scope="col">Action</th>
-                  </tr>
+                  </tr> 
                 </thead>
                 <tbody>
-                  @forelse ($PengajuanKeberatan as $item)    
+                  @forelse ($pengajuanKeberatan as $item)    
                       <tr>
                           <td>{{ $item->id }}</td>
                           <td>{{ $item->Nama }}</td>

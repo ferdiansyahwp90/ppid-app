@@ -33,7 +33,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @forelse ($PenyelesaianSengketa as $item)    
+                  @forelse ($penyelesaianSengketa as $item)    
                       <tr>
                           <td>{{ $item->id }}</td>
                           <td>{{ $item->Nama }}</td>

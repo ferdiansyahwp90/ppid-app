@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\profile;
+namespace App\Http\Controllers\Admin\DaftarInformasi;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-// use App\Models\Profile\PPID;
+use App\Models\Admin\DaftarInformasi\Sertamerta;
 
 class SertamertaController extends Controller
 {
