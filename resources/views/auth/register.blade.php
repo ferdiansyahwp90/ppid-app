@@ -18,8 +18,8 @@
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">REGISTER</h3>
   
             <div class="form-outline mb-4">
-              <label class="form-label" for="form2Example18">Name</label>
-              <input type="name" id="form2Example18" name="name" class="form-control form-control-lg  @error('name') is-invalid @enderror" />
+              <label class="form-label" for="name">Name</label>
+              <input type="text" id="name" name="name" class="form-control form-control-lg  @error('name') is-invalid @enderror" />
               @error('name')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -28,8 +28,8 @@
             </div>
 
             <div class="form-outline mb-4">
-              <label class="form-label" for="form2Example18">Email address</label>
-              <input type="email" id="form2Example18" name="email" class="form-control form-control-lg  @error('email') is-invalid @enderror" />
+              <label class="form-label" for="email">Email address</label>
+              <input type="text" id="email" name="email" class="form-control form-control-lg  @error('email') is-invalid @enderror" />
               @error('email')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -38,18 +38,8 @@
             </div>
 
             <div class="form-outline mb-4">
-              <label class="form-label" for="form2Example18">Phone</label>
-              <input type="notelp" id="form2Example18" name="notelp" class="form-control form-control-lg  @error('notelp') is-invalid @enderror" />
-              @error('notelp')
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-              @enderror
-            </div>
-
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form2Example28">Password</label>
-              <input type="password" id="form2Example28" name="password" class="form-control form-control-lg @error('password') is-invalid @enderror" />
+              <label class="form-label" for="password">Password</label>
+              <input type="password" id="password" name="password" class="form-control form-control-lg @error('password') is-invalid @enderror" />
               @error('password')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -58,8 +48,8 @@
             </div>
 
             <div class="form-outline mb-4">
-              <label class="form-label" for="form2Example28">Password Confirmation</label>
-              <input type="password" id="form2Example28" name="password_confirmation" class="form-control form-control-lg @error('password_confirmation') is-invalid @enderror" />
+              <label class="form-label" for="password_confirmation">Password Confirmation</label>
+              <input type="password" id="password_confirmation" name="password_confirmation" class="form-control form-control-lg @error('password_confirmation') is-invalid @enderror" />
               @error('password_confirmation')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>

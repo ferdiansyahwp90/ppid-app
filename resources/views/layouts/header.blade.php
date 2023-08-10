@@ -28,9 +28,6 @@
             <img src="assets/img/logo.png" alt="Portal Kabupaten Probolinggo" decoding="async" width="262" height="70 ">
             {{-- <h1 class="m-0">PPID</h1> --}}
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="/" class="nav-item nav-link active">Home</a>

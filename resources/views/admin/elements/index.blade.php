@@ -35,15 +35,15 @@
             </div>
 
             <div class="card-body">
-              <h5 class="card-title">Sales <span>| Today</span></h5>
+              <h5 class="card-title">Permintaan <span>| Today</span></h5>
 
               <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                  <i class="bi bi-cart"></i>
+                  <i class="bi bi-envelope-plus-fill"></i>
                 </div>
                 <div class="ps-3">
                   <h6>145</h6>
-                  <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                  <span class="text-success small pt-1 fw-bold">57%</span> <span class="text-muted small pt-2 ps-1">process</span>
 
                 </div>
               </div>
@@ -70,15 +70,15 @@
             </div>
 
             <div class="card-body">
-              <h5 class="card-title">Revenue <span>| This Month</span></h5>
+              <h5 class="card-title">Selesai <span>| This Month</span></h5>
 
               <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                  <i class="bi bi-currency-dollar"></i>
+                  <i class="bi bi-envelope-check-fill"></i>
                 </div>
                 <div class="ps-3">
-                  <h6>$3,264</h6>
-                  <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                  <h6>70</h6>
+                  <span class="text-success small pt-1 fw-bold">43%</span> <span class="text-muted small pt-2 ps-1">finished</span>
 
                 </div>
               </div>
@@ -106,7 +106,7 @@
             </div>
 
             <div class="card-body">
-              <h5 class="card-title">Customers <span>| This Year</span></h5>
+              <h5 class="card-title">Pengguna <span>| This Year</span></h5>
 
               <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -151,13 +151,13 @@
                 document.addEventListener("DOMContentLoaded", () => {
                   new ApexCharts(document.querySelector("#reportsChart"), {
                     series: [{
-                      name: 'Sales',
+                      name: 'Permintaan',
                       data: [31, 40, 28, 51, 42, 82, 56],
                     }, {
-                      name: 'Revenue',
+                      name: 'Selesai',
                       data: [11, 32, 45, 32, 34, 52, 41]
                     }, {
-                      name: 'Customers',
+                      name: 'Pengguna',
                       data: [15, 11, 32, 18, 9, 24, 11]
                     }],
                     chart: {

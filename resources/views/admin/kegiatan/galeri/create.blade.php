@@ -21,8 +21,6 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Tambah Galeri</h5>
-              <a href="/admin/galeri" class="btn btn-primary mx-2 py-2 shadow-sm fs-normal align-self-center px-3 mt-n3">Kembali</a>
-
               <div class="card-body">
                 @if ($errors->any())
                 <div class="alert alert-danger">
@@ -34,29 +32,55 @@
                     </ul>
                 </div>
                 @endif
-                <div>
-                  <form method="post" action="/admin/galeri/store" enctype="multipart/form-data" id="myForm">
+                <div class="card-body">
+                  <form method="post" action="/admin/galeri/store">
                       @csrf
                       <div class="form-group">
                           <label for="nama">Nama</label>
-                          <input type="text" name="nama" class="form-control" id="nama"  aria-describedby="nama" >
+                          <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama"
+                                name="nama" placeholder="Masukkan nama foto" value="{{ old('nama') }}">
+                            @error('nama')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                       </div>
 
                       <div class="form-group">
                           <label for="deskripsi">Deskripsi</label>
-                          <input type="text" name="deskripsi" class="form-control" id="deskripsi"  aria-describedby="deskripsi" >
+                          <input type="text" class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi"
+                                name="deskripsi" placeholder="Masukkan deskripsi foto" value="{{ old('deskripsi') }}">
+                            @error('deskripsi')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                       </div>
 
                       <div class="form-group">
                           <label for="tanggal">Tanggal</label>
-                          <input type="date" name="tanggal" class="form-control" id="tanggal" aria-describedby="tanggal" >
+                          <input type="date" class="form-control @error('tanggal') is-invalid @enderror" id="tanggal"
+                                name="tanggal" placeholder="Masukkan tanggal foto" value="{{ old('tanggal') }}">
+                            @error('tanggal')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                       </div>
 
                       <div class="form-group">
                           <label for="File">Foto</label>
-                          <input type="file" name="photo" class="form-control" id="photo" ariadescribedby="photo" >
+                          <input type="file" class="form-control @error('photo') is-invalid @enderror" id="photo"
+                                name="photo" placeholder="Masukkan photo foto" value="{{ old('photo') }}">
+                            @error('photo')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                      <div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <a class="btn btn-secondary" href="/admin/galeri">Cancel</a>
                       </div>
-                      <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
                 </div>
             </div>
