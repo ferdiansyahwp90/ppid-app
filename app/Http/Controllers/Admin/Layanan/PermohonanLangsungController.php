@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Layanan;
+namespace App\Http\Controllers\Admin\Layanan;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -28,7 +28,7 @@ class PermohonanLangsungController extends Controller
      */
     public function create()
     {
-        return view('admin.layanan.permohonan_Langsung.create');
+        // return view('admin.layanan.permohonan_Langsung.create'); 
     }
 
     /**

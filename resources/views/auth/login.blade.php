@@ -18,7 +18,7 @@
             <div class="form-outline mb-4">
               <label class="form-label" for="email">Email address</label>
               {{-- <input type="email" id="email" name="email" value="{{ old('email') }}" class="form-control form-control-lg  @error('email') is-invalid @enderror" required/> --}}
-              <input type="email" id="email" name="email" value="admin@gmail.com" class="form-control form-control-lg  @error('email') is-invalid @enderror" required/>
+              <input type="email" id="email" name="email" value="admin@ppid.com" class="form-control form-spacer-25x20 rad-10 fs-normal  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email"/>
               @error('email')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -29,7 +29,7 @@
             <div class="form-outline mb-4">
               <label class="form-label" for="password">Password</label>
               {{-- <input type="password" id="password" name="password" class="form-control form-control-lg @error('password') is-invalid @enderror" required/> --}}
-              <input type="password" id="password" name="password" value="admin"class="form-control form-control-lg @error('password') is-invalid @enderror" required/>
+              <input id="password" type="password" data-id="inputPassword" value="admin" class="form-control rad-10 form-spacer-25x20 fs-normal @error('password') is-invalid @enderror" name="password" autocomplete="current-password" placeholder="Password">
               @error('password')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -37,12 +37,23 @@
               @enderror
             </div>
 
-            <div class="pt-1 mb-4">
-              <button class="btn btn-dark px-5 btn-lg btn-block text-white" type="submit">Login</button>
+            <div class="form-check mb-3 fs-normal">
+              <input class="form-check-input" name="remember" id="inputRememberPassword" type="checkbox" id="remember" {{ old('remember') ? 'checked' : '' }}/>
+              <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
             </div>
-
-            <p>Don't have an account? <a href="/register" class="link-info">Register here</a></p>
-            <a href="/" class="link-info text-decoration-none">Kembali ke Home</a>
+            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+              
+              <a class="small color-primary text-decoration-none" href="/">
+                  <span class="fas fa-arrow-left px-2"></span>
+                  {{ __('Kembali') }}
+              </a>
+              
+              <button type="submit" data-id="btnLogin" class="btn btn-primary py-2 px-5 rad-10 font-medium">
+                  {{ __('Login') }}
+              </button>
+            </div>
+            <div class="p-3"></div>
+            <p class="fs-normal text-center">Belum punya akun? <a href="/register">Register</a></p>
 
           </form>
         </div>

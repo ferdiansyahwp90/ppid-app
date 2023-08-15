@@ -37,23 +37,22 @@ class LoginController extends Controller
 
      public function redirectTo()
      {
-         $role = Auth::user()->role;
-         switch ($role) {
-             case 'admin':
-                 return '/admin/home';
-                 break;
-             default:
-                 return '/pemohon';
-                 break;
-         }
+        $role = Auth::user()->role_id; 
+        switch ($role) {
+            case 1:
+                return '/admin/home';
+                break;
+            case 2:
+                return '/pemohon';
+                break;
+            default:
+                return '/'; 
+                break;
+        }
      } 
 
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
-    public function name()
-    {
-        return 'name';
     }
 }

@@ -18,13 +18,13 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'email' => 'required|email:dns',
-            'password' => 'required'
+            'email' => ['required', 'email'],
+            'password' => ['required']
         ]);
 
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->intended('/home');
+            return redirect()->intended('/');
         }
 
         return back()->with('loginError', 'Login failed');
@@ -37,11 +37,11 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember_me)) {
 
             $user = Auth::user();
-            if ($user->role == 'admin') {
+            if ($user->role_id == 1) {
                 return redirect()->route('home','index');
             }
 
-            if ($user->role == 'pemohon') {
+            if ($user->role_id == 2) {
                 return redirect()->route('home', 'index');
             }
         }

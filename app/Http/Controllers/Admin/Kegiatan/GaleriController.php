@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Kegiatan;
 
+use Illuminate\Support\Facades\Route;
 use App\Models\Admin\Kegiatan\Galeri;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -17,6 +18,7 @@ class GaleriController extends Controller
     public function index(){
         $galeri = Galeri::all(); // Mengambil semua isi tabel
         $paginate = Galeri::orderBy('id', 'asc')->paginate(5);
+           
         return view('admin.kegiatan.galeri.index', ['galeri' => $galeri,'paginate'=>$paginate]);
     }
 
@@ -38,6 +40,10 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
+
+        $requested_data = $request->all();
+         
+        return response()->json($requested_data);
         //melakukan validasi data
         $request->validate([
             'name' => 'required',

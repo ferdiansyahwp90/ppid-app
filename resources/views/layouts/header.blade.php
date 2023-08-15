@@ -1,6 +1,6 @@
-        <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
-        </div> -->
+            <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+                <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+            </div> -->
     
     <!-- Topbar Start -->
     <div class="container-fluid bg-dark text-light px-0 py-2">
@@ -15,8 +15,6 @@
                     <a style="color:white;" href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=diskominfo@problinggokab.co.id" >diskominfo@problinggokab.co.id</a>
                 </div>
             </div>
-           
-            </div>
         </div>
     </div>
     <!-- Topbar End -->
@@ -28,6 +26,9 @@
             <img src="assets/img/logo.png" alt="Portal Kabupaten Probolinggo" decoding="async" width="262" height="70 ">
             {{-- <h1 class="m-0">PPID</h1> --}}
         </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="/" class="nav-item nav-link active">Home</a>

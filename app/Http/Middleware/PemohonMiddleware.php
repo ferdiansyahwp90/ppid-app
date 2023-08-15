@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdminMiddleware
+class PemohonMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,11 +17,10 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        switch(Auth::user()->role_id){
-            case 1:
-                return $next($request);
-            default:
-                return redirect('/admin/home');
+        if (Auth::user()->role_id == 2){
+            return $next($request);
+        } else {
+            return redirect('/pemohon');
         }
     }
 }

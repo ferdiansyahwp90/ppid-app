@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -14,27 +16,27 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        $data = [
             [
-                'name' => 'Admin',
-                'email' => 'admin@gmail.com',
-                'password' => bcrypt('admin'),
-                'notelp' => '085856004598',
-                'alamat' => 'Jl. Raya Panglima Sudirman',
-                'foto' => 'admin/assets/img/profile-img.jpg',
-                'role' => 'admin',
-                'created_at' => now(),
+                'email' => 'admin@ppid.com',
+                'password' => Hash::make('admin'),
+                'role_id' => 1
             ],
             [
-                'name' => 'Pemohon',
-                'email' => 'pemohon@gmail.com',
-                'password' => bcrypt('pemohon'),
-                'notelp' => '08987654321',
-                'alamat' => 'Jl. Raya Kidul',
-                'foto' => 'admin/assets/img/profile-img.jpg',
-                'role' => 'pemohon',
-                'created_at' => now(),
+                'email' => 'pemohon@ppid.com',
+                'password' => Hash::make('pemohon'),
+                'role_id' => 2
             ],
-        ]);
+        ];
+
+        foreach($data as $row){
+            User::create([
+                'email' => $row['email'],
+                'password' => $row['password'],
+                'role_id' => $row['role_id'],
+                'status' => 'active',
+                'image' => null,
+            ]);
+        }
     }
 }

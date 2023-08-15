@@ -33,17 +33,13 @@
                 </div>
                 @endif
                 <div class="card-body">
-                  <form method="post" action="/admin/galeri/store">
+                  <form method="POST" action="{{route('galeri.store')}}" enctype="multipart/form-data">
                       @csrf
                       <div class="form-group">
                           <label for="nama">Nama</label>
                           <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama"
                                 name="nama" placeholder="Masukkan nama foto" value="{{ old('nama') }}">
-                            @error('nama')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                                @error('nama')<div class="invalid-feedback ml-1">Bidang ini wajib diisi</div>@enderror
                       </div>
 
                       <div class="form-group">

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\UserAdmin;
+use App\Models\UserPemohon;
 
 class HomeController extends Controller
 {
@@ -24,5 +27,25 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function add()
+    {
+        $role = Auth::user()->role_id;
+        $data = [
+            'user_id' => Auth::user()->id,
+            'name' => Auth::user()->email,
+            'phone' => null
+        ];
+        switch($role){
+            case 1:
+                UserAdmin::create($data);
+                break;
+            case 2:
+                UserPemohon::create($data);
+                break;
+        }
+        
+        return redirect()->to('/pemohon');
     }
 }

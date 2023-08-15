@@ -22,7 +22,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Data galeri</h5>
-              <a href="{{ url('admin/galeri/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm">Tambah Data</a>
+              <a href="{{ url('galeri/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm">Tambah Data</a>
               
               <!-- Table with stripped rows -->
               <table class="table datatable">
@@ -45,9 +45,9 @@
                             <td>{{ $item->tanggal }}</td>
                             <td>{{ $item->photo }}</td>
                             <td>
-                              <form action="/admin/galeri/{{ $item->id }}" method="post">
+                              <form action="/galeri/{{ $item->id }}" method="post">
 
-                                  <a href="/admin/galeri/{{ $item->id }}/edit" class="btn btn-primary text-light">ubah</a>
+                                  <a href="/galeri/{{ $item->id }}/edit" class="btn btn-primary text-light">ubah</a>
 
                                   @csrf
                                   @method('DELETE')
