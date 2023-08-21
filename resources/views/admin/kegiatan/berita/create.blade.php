@@ -14,14 +14,16 @@
     </div>
     <!-- End Page Title -->
 
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
+  
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <div>
               <h5 class="card-title">Tambah Berita</h5>
+            </div>
 
-              <div class="card-body">
+            <div class="card-body">
                 @if ($errors->any())
                 <div class="alert alert-danger">
                     <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -33,42 +35,54 @@
                 </div>
                 @endif
 
-                <form method="post" action="/admin/berita/store" enctype="multipart/form-data">
+                <form method="post" action="{{route('berita.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="name">Nama</label>
-                        <input type="text" name="name" class="form-control" id="name"  aria-describedby="name" >
-                    </div>
+                      <label for="name">Name</label>
+                      <input type="name" name="name" class="form-control rad-6 fs-normal" placeholder="name" >
+                      <div class="invalid-feedback">
+                        Bidang ini Wajib Diisi!.
+                      </div>
+                  </div>
 
-                    <div class="form-group">
-                        <label for="deskripsi">Deskripsi</label>
-                        <input type="text" name="deskripsi" class="form-control" id="deskripsi"  aria-describedby="deskripsi" >
-                    </div>
+                  <div class="form-group">
+                      <label for="deskripsi">Deskripsi</label>
+                      <input type="deskripsi" name="deskripsi" class="form-control rad-6 fs-normal @error('deskripsi') is-invalid @enderror" placeholder="deskripsi">
+                      <div class="invalid-feedback">
+                        Bidang ini Wajib Diisi!.
+                      </div>
+                  </div>
 
-                    <div class="form-group">
-                        <label for="tanggal">Tanggal</label>
-                        <input type="date" name="tanggal" class="form-control" id="tanggal" aria-describedby="tanggal" >
-                    </div>
+                  <div class="form-group">
+                      <label for="tanggal">Tanggal</label>
+                      <input type="datetime-local" name="tanggal" class="form-control rad-6 fs-normal @error('tanggal') is-invalid @enderror" placeholder="tanggal">
+                      <div class="invalid-feedback">
+                        Bidang ini Wajib Diisi!.
+                      </div>
+                  </div>
 
-                    <div class="form-group">
-                        <label for="photo">Foto</label>
-                        <input type="file" name="photo" class="form-control" id="photo" ariadescribedby="photo" >
-                    </div>
+                  <div class="form-group">
+                      <label for="photo">Foto</label>
+                      <input type="file" name="photo" class="form-control rad-6 fs-normal @error('photo') is-invalid @enderror" placeholder="photo" >
+                      <div class="invalid-feedback">
+                        Bidang ini Wajib Diisi!.
+                      </div>
+                  </div>
 
-                    <div class="form-group">
-                        <label for="link">Link</label>
-                        <input type="text" name="link" class="form-control" id="link" ariadescribedby="link" >
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                  <div class="form-group">
+                      <label for="link">Link</label>
+                      <input type="text" name="link" class="form-control" id="link" ariadescribedby="link" >
+                      <div class="invalid-feedback">
+                        Bidang ini Wajib Diisi!.
+                      </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-
-            </div>
           </div>
-
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+</main>
 
 @endsection

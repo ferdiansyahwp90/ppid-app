@@ -39,7 +39,7 @@
                 <tbody>
                     @forelse ($galeri as $item)    
                         <tr>
-                            <td>{{ $item->id }}</td>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->deskripsi }}</td>
                             <td>{{ $item->tanggal }}</td>

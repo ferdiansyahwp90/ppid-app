@@ -20,7 +20,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Data berita</h5>
-              <a href="{{ url('admin/berita/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
+              <a href="{{ url('berita/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">

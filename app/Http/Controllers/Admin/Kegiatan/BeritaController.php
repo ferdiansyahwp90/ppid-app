@@ -61,7 +61,7 @@ class BeritaController extends Controller
             'photo' => $photo,
             'link' => $request-> link,
         ]);
-        return redirect('/admin/berita')
+        return redirect('/berita')
             ->with('success', 'Berita Berhasil Ditambahkan');
     }
 

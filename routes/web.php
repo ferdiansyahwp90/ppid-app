@@ -11,12 +11,13 @@ use App\Http\Controllers\Admin\profile\{
     TugasController,
     VisiController,
 };
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\Kegiatan\{
    // GaleriController,
     BeritaController
 };
-use App\Http\Controllers\Admin\Kegiatan\GaleriController;
+use App\Http\Controllers\GaleriController;
+// use App\Http\Controllers\Admin\Kegiatan\GaleriController;    
 use App\Http\Controllers\Admin\Layanan\{
     LaporanAksesController,
     LaporanPelayananController,
@@ -32,7 +33,6 @@ use App\Http\Controllers\Admin\DaftarInformasi\{
     SetiapsaatController,
 };
 use App\Http\Controllers\Pemohon\PemohonController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,6 +45,16 @@ use App\Http\Controllers\Pemohon\PemohonController;
 */
 
 Route::get('/', function () {
+   if(Auth::check()){
+        $user = Auth::user();
+        if ($user->role_id == 1) {
+            return redirect()->route('dashboard','index');
+        }
+
+        if ($user->role_id == 2) {
+            return redirect('pemohon');
+        }
+   }
     return view('index');
 });
 Route::get('/ppid', function () {
@@ -97,7 +107,7 @@ Route::get('/laip', function () {
 });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/authCheck', [LoginController::class, 'authenticate']);
 
 Route::middleware(['preventBackHistory'])->group(function () {
     Auth::routes();
@@ -129,24 +139,24 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
 
         //Kegiatan
         Route::resource('galeri', GaleriController::class);
-        Route::resource('berita', GaleriController::class);
+        Route::resource('berita', BeritaController::class);
+        Route::post('/galeri/store', [GaleriController::class, 'store']);
 });
 
-Route::middleware(['auth', 'isPemohon'])->group(function(){
-    Route::controller(PemohonController::class)->group(function(){
-        Route::get('pemohon', 'index');
-        Route::put('update_profile', 'update_profile');
-        Route::get('change_password', 'change_password');
-        Route::put('update_password', 'update_password');
+Route::middleware(['auth'])->group(function(){
+    Route::middleware(['isPemohon'])->group(function() {
+        Route::controller(PemohonController::class)->group(function(){
+            Route::get('pemohon', 'index');
+            Route::put('update_profile', 'update_profile');
+            Route::get('change_password', 'change_password');
+            Route::put('update_password', 'update_password');
+        });
     });
 });
 
-// Route::get('/pemohon', function () {
-//     return view('pemohon.home.index');
-// });
 Route::get('/home', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/logout', function () {
     Auth::logout();

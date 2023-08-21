@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Kegiatan;
+namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Admin\Kegiatan\Galeri;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class GaleriController extends Controller
@@ -40,10 +41,6 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-
-        $requested_data = $request->all();
-         
-        return response()->json($requested_data);
         //melakukan validasi data
         $request->validate([
             'name' => 'required',
@@ -52,9 +49,15 @@ class GaleriController extends Controller
             'photo' => 'required',
         ]);
         //fungsi eloquent untuk menambah data
-        Galeri::create($request->all());//jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('kegiatan.galeri.index')
+        Galeri::create([
+            'name' => ucwords($request->name),
+            'deskripsi' => $request->deskripsi,
+            'tanggal' => $request->tanggal,
+            'photo' => $request->photo,
+        ]);
+        return redirect()->route('galeri.index')
             ->with('success', 'galeri Berhasil Ditambahkan');
+        return redirect('/galeri')->with('status', "Data '" . $request->nama . "' berhasil ditambahkan");//jika data berhasil ditambahkan, akan kembali ke halaman utama
     }
 
     /**
@@ -122,7 +125,7 @@ class GaleriController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         Galeri::where('id', $id_galeri)->delete();
-        return redirect('/admin/galeri')
+        return redirect('/galeri')
             -> with('Success', 'Foto Berhasil Dihapus');       
     }
 }

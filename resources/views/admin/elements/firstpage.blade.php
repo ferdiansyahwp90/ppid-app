@@ -13,6 +13,10 @@
         <link href="{{ asset('pageUsers/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
         <!-- Google Fonts -->
+         <!-- Google Fonts -->
+         <link href="https://fonts.gstatic.com" rel="preconnect">
+         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
@@ -29,6 +33,12 @@
         <link href="{{ asset('pageUsers/assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
         <link href="{{ asset('pageUsers/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
         <link href="{{ asset('pageUsers/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+
+
+        
+
+        <!-- Template Main CSS File -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
         <!-- Template Main CSS File -->
         <link href="{{ asset('pageUsers/assets/css/style.css') }}" rel="stylesheet">
@@ -57,9 +67,10 @@
         <!-- End Footer -->
 
         <!-- Vendor JS Files -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        {{-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="assets/lib/wow/wow.min.js"></script> --}}
         <script src="{{ asset('pageUsers/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
         <script src="{{ asset('pageUsers/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('pageUsers/assets/vendor/chart.js/chart.umd.js') }}"></script>
@@ -71,5 +82,11 @@
 
         <!-- Template Main JS File -->
         <script src="{{ asset('pageUsers/assets/js/main.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>flatpickr("input[type=datetime-local]", {})</script>
+
+
+
+        
     </body>
 </html>

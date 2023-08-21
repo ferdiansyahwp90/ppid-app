@@ -39,7 +39,7 @@
         <!-- Navbar -->
             @include('admin.elements.navbar');
         <!-- End Navbar -->
-
+        
         <!-- Main -->
             @include('admin.elements.index');
         <!-- End Main -->
@@ -48,6 +48,7 @@
             @include('admin.elements.footer');
         <!-- End Footer -->
         <!-- Vendor JS Files -->
+        
         <script src="{{ asset('pageUsers/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
         <script src="{{ asset('pageUsers/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('pageUsers/assets/vendor/chart.js/chart.umd.js') }}"></script>

@@ -17,9 +17,11 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        // dd($next($request));
         switch(Auth::user()->role_id){
             case 1:
                 return $next($request);
+                break;
             default:
                 return redirect('/admin/home');
         }

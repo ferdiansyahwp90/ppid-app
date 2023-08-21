@@ -24,7 +24,14 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            $user = Auth::user();
+            if ($user->role_id == 1) {
+                return redirect()->route('dashboard','index');
+            }
+
+            if ($user->role_id == 2) {
+                return redirect()->route('home', 'index');
+            }
         }
 
         return back()->with('loginError', 'Login failed');
@@ -38,7 +45,7 @@ class LoginController extends Controller
 
             $user = Auth::user();
             if ($user->role_id == 1) {
-                return redirect()->route('home','index');
+                return redirect()->route('dashboard','index');
             }
 
             if ($user->role_id == 2) {
