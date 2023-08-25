@@ -33,26 +33,52 @@
                 </div>
                 @endif
 
-                <form method="post" action="/admin/kegiatan/berita{{ $berita->id }}" enctype="multipart/form-data" id="myForm">
+                <form method="POST" action="/admin-berita/{{ $berita->id }}" enctype="multipart/form-data" id="myForm">
+                  @method("PUT")
                     @csrf
                     <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" name="nama" class="form-control" id="nama"  value="{{ $berita->name }}" aria-describedby="nama" >
+                        <label for="name">Nama</label>
+                        <input type="name" name="name" class="form-control @error('name') is-invalid @enderror" id="name"  value="{{ $berita->name }}" aria-describedby="name" >
+                        @error('name')
+                          <div class="invalid-feedback ml-1">Bidang ini wajib diisi</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="deskripsi">Deskripsi</label>
-                        <input type="text" name="deskripsi" class="form-control" id="deskripsi"  value="{{ $berita->deskripsi }}" aria-describedby="deskripsi" >
+                        <input type="deskripsi" name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi"  value="{{ $berita->deskripsi }}" aria-describedby="deskripsi" >
+                        @error('deskripsi')
+                          <div class="invalid-feedback ml-1">Bidang ini wajib diisi</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="tanggal">Tanggal</label>
-                        <input type="date" name="tanggal" class="form-control" id="tanggal" value="{{ $berita->tanggal }}" aria-describedby="tanggal" >
+                        <input type="date" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" id="tanggal" value="{{ $berita->tanggal }}" aria-describedby="tanggal" >
+                        @error('tanggal')
+                          <div class="invalid-feedback ml-1">Bidang ini wajib diisi</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="File">Foto</label>
-                        <input type="file" name="photo" class="form-control" id="photo" value="{{ $berita->photo }}" aria-describedby="photo" >
+                        <label for="photo">Foto</label>
+                        @if($berita->photo)
+                          <img src="{{ asset('storage/'.$berita->photo) }}" alt="" class="w-50">
+                        @else
+                          <img alt="" class="w-50">
+                        @endif
+                        <input type="file" name="photo" class="form-control @error('photo') is-invalid @enderror" id="photo" value="{{ $berita->photo }}" aria-describedby="photo" >
+                        @error('photo')
+                          <div class="invalid-feedback ml-1">Bidang ini wajib diisi</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="link">Link</label>
+                        <input type="link" name="link" class="form-control @error('link') is-invalid @enderror" id="link" value="{{ $berita->link }}" aria-describedby="link" >
+                        @error('link')
+                          <div class="invalid-feedback ml-1">Bidang ini wajib diisi</div>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

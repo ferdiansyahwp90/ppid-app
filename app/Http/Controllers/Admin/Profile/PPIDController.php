@@ -47,8 +47,8 @@ class PPIDController extends Controller
         //fungsi eloquent untuk menambah data
         PPID::create($request->all());
 
-        return redirect('/admin/ppid')
-                ->with('success', 'PPID Berhasil Ditambahkan');
+        return redirect('/admin-ppid')
+                ->with('success', 'Seputar PPID Berhasil Ditambahkan');
     }
 
     /**
@@ -59,8 +59,8 @@ class PPIDController extends Controller
      */
     public function show($id_ppid)
     {
-        $berita = PPID::where('id', $id_ppid)->first();
-        return view('admin.profile.ppid.detail', compact('ppid'));
+        $ppid = PPID::where('id', $id_ppid)->first();
+        return view('admin.profile.ppid.index', compact('ppid'));
     }
 
     /**
@@ -71,7 +71,7 @@ class PPIDController extends Controller
      */
     public function edit($id_ppid)
     {
-        $berita = DB::table('ppid')->where('id', $id_ppid)->first();
+        $ppid = DB::table('seputar')->where('id', $id_ppid)->first();
         return view('admin.profile.ppid.edit', compact('ppid'));
     }
 
@@ -84,6 +84,7 @@ class PPIDController extends Controller
      */
     public function update(Request $request, $id_ppid)
     {
+        // dd('ok');
         //melakukan validasi data
         $request->validate([
             'deskripsi' => 'required',
@@ -91,11 +92,11 @@ class PPIDController extends Controller
         //fungsi eloquent untuk mengupdate data inputan kita
            PPID::where('id', $id_ppid)
                 ->update([
-                    'deskripsi' => $request-> deskripsi,
+                    'deskripsi' => $request->deskripsi,
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.profile.ppid.index')
-                ->with('success', 'PPID Berhasil Diupdate');
+            return redirect('/admin-ppid')
+                ->with('success', 'Seputar PPID Berhasil Diupdate');
     }
 
     /**
@@ -108,7 +109,7 @@ class PPIDController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         PPID::where('id', $id_ppid)->delete();
-        return redirect('/admin/ppid')  
-            -> with('success', 'PPID Berhasil Dihapus');       
+        return redirect('/admin-ppid')  
+            -> with('success', 'Seputar PPID Berhasil Dihapus');       
     }
 }

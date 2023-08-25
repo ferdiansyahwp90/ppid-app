@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="https://probolinggokab.go.id/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <img src="assets/img/logo-endless.jpg" alt="Portal Kabupaten Probolinggo" decoding="async" width="100" height="70">
-            <img src="assets/img/logo.png" alt="Portal Kabupaten Probolinggo" decoding="async" width="262" height="70 ">
+            {{-- <img src="assets/img/logo.png" alt="Portal Kabupaten Probolinggo" decoding="async" width="262" height="70 "> --}}
             {{-- <h1 class="m-0">PPID</h1> --}}
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -31,16 +31,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="{{ url('/') }}" class="nav-item nav-link">Home</a>
 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profile</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="/ppid" class="dropdown-item">Seputar PPID</a>
-                        <a href="/struktur" class="dropdown-item" >Struktur Organisasi</a>
-                        <a href="/tugas&fungsi" class="dropdown-item">Tugas dan Fungsi PPID</a>
-                        <a href="/visi&misi" class="dropdown-item">Visi dan Misi PPID</a>
-                        <a href="/SOPppid" class="dropdown-item">SOP PPID</a>
+                        <a href="{{ url('profile-ppid') }}" class="dropdown-item" id="ppid">Seputar PPID</a>
+                        <a href="{{ url('profile-struktur')}}" class="dropdown-item" >Struktur Organisasi</a>
+                        <a href="{{ url('profile-tugas&fungsi')}}" class="dropdown-item">Tugas dan Fungsi PPID</a>
+                        <a href="{{ url('profile-visi&misi')}}" class="dropdown-item">Visi dan Misi PPID</a>
+                        <a href="{{ url('profile-SOPppid')}}" class="dropdown-item">SOP PPID</a>
                     </div>
                 </div>
 
@@ -62,9 +62,9 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Layanan</a>
                     <div class="dropdown-menu bg-light m-0">
                         <a href="/permohonan" class="dropdown-item">Permohonan Informasi Datang Langsung</a>
-                        <a href="/assets/video/Mekanisme atau proses.mp4" class="dropdown-item">Mekanisme/Proses</a>
-                        <a href="/assets/video/Pengajuan Keberatan.mp4" class="dropdown-item">Pengajuan Keberatan</a>
-                        <a href="/assets/video/fasilitasi sengketa informasi.mp4" class="dropdown-item">Prosedur Penyelesaian Sengketa</a>
+                        <a href="/mekanisme" class="dropdown-item">Mekanisme/Proses</a>
+                        <a href="/pengajuanKeberatan" class="dropdown-item">Pengajuan Keberatan</a>
+                        <a href="/penyelesaianSengketa" class="dropdown-item">Prosedur Penyelesaian Sengketa</a>
                         <a href="/laip" class="dropdown-item">Laporan Akses Informasi Publik</a>
                         <a href="/lkjip" class="dropdown-item">Laporan Pelayanan Informasi Publik</a>
                     </div>
@@ -85,8 +85,8 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Kegiatan</a>
                     <div class="dropdown-menu bg-light m-0">
-                          <a href="#" class="dropdown-item">Galeri</a>
-                          <a href="#" class="dropdown-item">Berita</a>
+                          <a href="/galeri" class="dropdown-item">Galeri</a>
+                          <a href="/berita" class="dropdown-item">Berita</a>
                     </div>
                 </div>
 

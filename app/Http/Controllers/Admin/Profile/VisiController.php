@@ -28,6 +28,7 @@ class VisiController extends Controller
      */
     public function create()
     {
+        // dd('OK');
         return view('admin.profile.visi.create');
     }
 
@@ -48,7 +49,7 @@ class VisiController extends Controller
         Visi::create([
             'deskripsi' => $request-> deskripsi,
         ]);
-        return redirect('/admin/visi')
+        return redirect('/admin-visi')
             ->with('success', 'Visi dan Misi Berhasil Ditambahkan');
     }
 
@@ -60,8 +61,8 @@ class VisiController extends Controller
      */
     public function show($id_visi)
     {
-        $berita = Visi::where('id', $id_visi)->first();
-        return view('admin.profile.visi.detail', compact('ppid'));
+        $visi = Visi::where('id', $id_visi)->first();
+        return view('admin.profile.visi.detail', compact('visi'));
     }
 
     /**
@@ -72,8 +73,8 @@ class VisiController extends Controller
      */
     public function edit($id_visi)
     {
-        $berita = DB::table('ppid')->where('id', $id_visi)->first();
-        return view('admin.profile.visi.edit', compact('ppid'));
+        $visi = DB::table('visi')->where('id', $id_visi)->first();
+        return view('admin.profile.visi.edit', compact('visi'));
     }
 
     /**
@@ -95,7 +96,7 @@ class VisiController extends Controller
                     'deskripsi' => $request-> deskripsi,
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.profile.visi.index')
+            return redirect('/admin-visi')
                 ->with('success', 'Visi dan Misi Berhasil Diupdate');
     }
 
@@ -109,7 +110,7 @@ class VisiController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         Visi::where('id', $id_visi)->delete();
-        return redirect('/admin/visi')  
+        return redirect('/admin-visi')  
             -> with('success', 'Visi dan Misi Berhasil Dihapus');       
     }
 }

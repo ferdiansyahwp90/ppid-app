@@ -20,13 +20,13 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Data berita</h5>
-              <a href="{{ url('berita/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
+              <a href="{{ url('admin-berita/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col">id</th>
+                    <th scope="col">#</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Deskripsi</th>
                     <th scope="col">Tanggal</th>
@@ -36,21 +36,21 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @forelse ($berita as $item)    
+                  @foreach ($berita as $item)    
                       <tr>
-                          <td>{{ $item->id }}</td>
-                          <td>{{ $item->name }}</td>
+                        <td>{{ $loop->iteration }}</td>
+                          <td>{{ $item->name}}</td>
                           <td>{{ $item->deskripsi }}</td>
                           <td>{{ $item->tanggal }}</td>
-                          {{-- <td>{{ $item->photo }}</td> --}}
-                          <td>
+                          <td>{{ $item->photo }}</td>
+                          {{-- <td>
                             <img src="{{ asset('storage/'.$item->photo) }}" class="w-50" alt="">
-                          </td>
+                          </td> --}}
                           <td>{{ $item->link }}</td>
                           <td>
-                            <form action="/admin/berita/{{ $item->id }}" method="post">
+                            <form action="/admin-berita/{{ $item->id }}" method="POST">
 
-                                <a href="/admin/berita/{{ $item->id }}/edit" class="btn btn-primary text-light">ubah</a>
+                                <a href="/admin-berita/{{ $item->id }}/edit" class="btn btn-primary text-light">ubah</a>
 
                                 @csrf
                                 @method('DELETE')
@@ -58,13 +58,13 @@
                             </form>
                         </td>
                       </tr>
-                      @empty
+                      {{-- @empty
                       <tr>
                           <td colspan="4" align="center">
                               Data Berita Kosong
                           </td>
-                      </tr>
-                  @endforelse
+                      </tr> --}}
+                      @endforeach
                   
               </tbody>
               </table>

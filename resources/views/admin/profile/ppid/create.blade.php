@@ -33,11 +33,11 @@
                 </div>
                 @endif
 
-                <form method="POST" action="/store" enctype="multipart/form-data">
+                <form method="POST" action="{{route('admin-ppid.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="deskripsi">Deskripsi</label>
-                        <input type="text" name="deskripsi" class="form-control" id="deskripsi"  aria-describedby="deskripsi">
+                      <label for="deskripsi">Deskripsi</label>
+                      <textarea name="deskripsi" class="form-control" id="deskripsi" aria-describedby="deskripsi" cols="30" rows="10"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

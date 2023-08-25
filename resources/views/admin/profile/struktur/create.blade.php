@@ -33,11 +33,11 @@
                 </div>
                 @endif
 
-                <form method="post" action="/admin/struktur" enctype="multipart/form-data">
+                <form method="post" action="{{route('admin-struktur.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                      <label for="File">Foto</label>
-                      <input type="file" name="photo" class="form-control" id="photo" ariadescribedby="photo" >
+                      <label for="photo">Deskripsi</label>
+                        <textarea name="photo" class="form-control" id="deskripsi" aria-describedby="photo" cols="30" rows="10"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -45,7 +45,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>  
     </section>
   </main>
 

@@ -15,9 +15,9 @@ class CreateGaleriTable extends Migration
     {
         Schema::create('galeri', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('deskripsi');
-            $table->date('tanggal');
+            $table->string('name')->nullable();
+            $table->text('deskripsi')->nullable();
+            $table->date('tanggal')->nullable();
             $table->string('photo')->nullable();
             $table->timestamps();
         });

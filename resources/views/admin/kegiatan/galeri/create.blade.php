@@ -22,12 +22,11 @@
               <h5 class="card-title">Tambah Galeri</h5>
               <div class="card-body">
                 <div class="card-body">
-                  <form method="POST" id="logout-form" action="{{route('galeri.store')}}" >
-                    {{-- {{ Form::open(array('url' => 'foo/bar')) }} --}}
+                  <form method="POST" id="logout-form" action="{{route('admin-galeri.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="name" name="name" class="form-control rad-6 fs-normal" placeholder="name" >
+                        <input type="name" name="name" class="form-control rad-6 fs-normal @error('name') is-invalid @enderror" placeholder="name" >
                         <div class="invalid-feedback">
                           Bidang ini Wajib Diisi!.
                         </div>

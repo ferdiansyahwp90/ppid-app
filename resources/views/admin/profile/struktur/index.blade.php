@@ -9,7 +9,7 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="">Profile</a></li>
           <li class="breadcrumb-item active">Struktur Organisasi</li>
-        </ol>
+        </ol> 
       </nav>
     </div>
     <!-- End Page Title -->
@@ -20,7 +20,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Struktur Organisasi</h5>
-              <a href="{{ url('admin/struktur/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
+              <a href="{{ url('admin-struktur/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
@@ -34,12 +34,12 @@
                 <tbody>
                   @forelse ($struktur as $item)    
                       <tr>
-                          <td>{{ $item->id }}</td>
-                          <td>{{ $item->deskripsi }}</td>
+                          <td>{{ $loop->iteration}}</td>
+                          <td>{!! $item->photo !!}</td>
                           <td>
-                            <form action="/admin/struktur/{{ $item->id }}" method="post">
+                            <form action="/admin-struktur/{{ $item->id }}" method="post">
 
-                                <a href="/admin/struktur/{{ $item->id }}/edit" class="btn btn-primary text-light">ubah</a>
+                                <a href="/admin-struktur/{{ $item->id }}/edit" class="btn btn-primary text-light">ubah</a>
 
                                 @csrf
                                 @method('DELETE')

@@ -4,11 +4,11 @@
 
 <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Tugas dan Fungsi PPID</h1>
+      <h1>Struktur Organisasi</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="">Profile</a></li>
-          <li class="breadcrumb-item active">Tugas dan Fungsi PPID</li>
+          <li class="breadcrumb-item active">Struktur Organisasi</li>
         </ol>
       </nav>
     </div>
@@ -19,7 +19,7 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Tambah Tugas dan Fungsi PPID</h5>
+              <h5 class="card-title">Edit Struktur Organisasi</h5>
 
               <div class="card-body">
                 @if ($errors->any())
@@ -33,17 +33,23 @@
                 </div>
                 @endif
 
-                <form method="post" action="{{route('admin-tugas.store')}}" enctype="multipart/form-data">
+                <form method="POST" action="/admin-struktur/{{ $struktur->id }}" enctype="multipart/form-data" >
+                    @method("PUT")
                     @csrf
                     <div class="form-group">
-                      <label for="deskripsi">Deskripsi</label>
-                        <textarea name="deskripsi" class="form-control" id="deskripsi" aria-describedby="deskripsi" cols="30" rows="10"></textarea>
+                        <label for="photo">Deskripsi</label>
+                        <textarea type="photo" name="photo" class="form-control @error('photo') is-invalid @enderror" id="deskripsi"  aria-describedby="photo" value={!! $struktur->photo !!}></textarea>
+                        @error('photo')
+                          <div class="invalid-feedback ml-1">Bidang ini wajib diisi</div>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\profile\{
     PPIDController,
     SOPController,
@@ -13,11 +14,9 @@ use App\Http\Controllers\Admin\profile\{
 };
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\Kegiatan\{
-   // GaleriController,
-    BeritaController
+    GaleriController,
+    BeritaController,
 };
-use App\Http\Controllers\GaleriController;
-// use App\Http\Controllers\Admin\Kegiatan\GaleriController;    
 use App\Http\Controllers\Admin\Layanan\{
     LaporanAksesController,
     LaporanPelayananController,
@@ -33,6 +32,7 @@ use App\Http\Controllers\Admin\DaftarInformasi\{
     SetiapsaatController,
 };
 use App\Http\Controllers\Pemohon\PemohonController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,7 +44,9 @@ use App\Http\Controllers\Pemohon\PemohonController;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', [DashboardController::class, 'index']);
+
+Route::get('/',function () {
    if(Auth::check()){
         $user = Auth::user();
         if ($user->role_id == 1) {
@@ -55,21 +57,22 @@ Route::get('/', function () {
             return redirect('pemohon');
         }
    }
-    return view('index');
+   return view('index');
 });
-Route::get('/ppid', function () {
+
+Route::get('/profile-ppid', function () {
     return view('profile.ppid.index');
 });
-Route::get('/struktur', function () {
+Route::get('/profile-struktur', function () {
     return view('profile.struktur.index');
 });
-Route::get('/tugas&fungsi', function () {
+Route::get('/profile-tugas&fungsi', function () {
     return view('profile.tugas&fungsi.index');
 });
-Route::get('/visi&misi', function () {
+Route::get('/profile-visi&misi', function () {
     return view('profile.visi&misi.index');
 });
-Route::get('/SOPppid', function () {
+Route::get('/profile-SOPppid', function () {
     return view('profile.SOPppid.index');
 });
 Route::get('/SK', function () {
@@ -105,9 +108,23 @@ Route::get('/permohonan', function () {
 Route::get('/laip', function () {
     return view('layanan.laip.index');
 });
+Route::get('/mekanisme', function () {
+    return view('layanan.mekanisme.index');
+});
+Route::get('/pengajuanKeberatan', function () {
+    return view('layanan.pengajuanKeberatan.index');
+});
+Route::get('/penyelesaianSengketa', function () {
+    return view('layanan.penyelesaianSengketa.index');
+});
+Route::get('/galeri', function () {
+    return view('kegiatan.galeri.index');
+});
+Route::get('/berita', function () {
+    return view('kegiatan.berita.index');
+});
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/authCheck', [LoginController::class, 'authenticate']);
 
 Route::middleware(['preventBackHistory'])->group(function () {
     Auth::routes();
@@ -115,32 +132,32 @@ Route::middleware(['preventBackHistory'])->group(function () {
 
 
 Route::middleware(['auth', 'isAdmin'])->group(function(){
-    Route::get('/admin/home', [AdminController::class, 'index'])->name('dashboard');
+        Route::get('/admin/home', [AdminController::class, 'index'])->name('dashboard');
+        
         //Profile
-        Route::resource('ppid', PPIDController::class);
-        Route::resource('sop', SOPController::class);
-        Route::resource('struktur', StrukturController::class);
-        Route::resource('tugas', TugasController::class);
-        Route::resource('visi', VisiController::class);
+        Route::resource('admin-ppid', PPIDController::class);
+        Route::resource('admin-sop', SOPController::class);
+        Route::resource('admin-struktur', StrukturController::class);
+        Route::resource('admin-tugas', TugasController::class);
+        Route::resource('admin-visi', VisiController::class);
 
         //Layanan
-        Route::resource('laporanAkses', LaporanAksesController::class);
-        Route::resource('laporanPelayanan', LaporanPelayananController::class);
-        Route::resource('mekanisme', MekanismeController::class);
-        Route::resource('pengajuanKeberatan', PengajuanKeberatanController::class);
-        Route::resource('penyelesaianSengketa', PenyelesaianSengketaController::class);
-        Route::resource('permohonanLangsung', PermohonanLangsungController::class);
+        Route::resource('admin-laporanAkses', LaporanAksesController::class);
+        Route::resource('admin-laporanPelayanan', LaporanPelayananController::class);
+        Route::resource('admin-mekanisme', MekanismeController::class);
+        Route::resource('admin-pengajuanKeberatan', PengajuanKeberatanController::class);
+        Route::resource('admin-penyelesaianSengketa', PenyelesaianSengketaController::class);
+        Route::resource('admin-permohonanLangsung', PermohonanLangsungController::class);
 
         //Daftar Informasi
-        Route::resource('bekala', BerkalaController::class);
-        Route::resource('dikecualikan', DikecualikanController::class);
-        Route::resource('sertamerta', SertamertaController::class);
-        Route::resource('setiapsaat', SetiapsaatController::class);
-
+        Route::resource('admin-bekala', BerkalaController::class);
+        Route::resource('admin-dikecualikan', DikecualikanController::class);
+        Route::resource('admin-sertamerta', SertamertaController::class);
+        Route::resource('admin-setiapsaat', SetiapsaatController::class);
+ 
         //Kegiatan
-        Route::resource('galeri', GaleriController::class);
-        Route::resource('berita', BeritaController::class);
-        Route::post('/galeri/store', [GaleriController::class, 'store']);
+        Route::resource('admin-galeri', GaleriController::class);
+        Route::resource('admin-berita', BeritaController::class);
 });
 
 Route::middleware(['auth'])->group(function(){

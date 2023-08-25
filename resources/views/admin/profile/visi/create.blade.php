@@ -32,15 +32,15 @@
                     </ul>
                 </div>
                 @endif
-
-                <form method="post" action="/admin/visi" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">
-                        <label for="deskripsi">Deskripsi</label>
-                        <input type="text" name="deskripsi" class="form-control" id="deskripsi"  aria-describedby="deskripsi" >
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                <form method="post" action="{{route('admin-visi.store')}}" enctype="multipart/form-data">
+                  @csrf
+                  <div class="form-group">
+                    <label for="deskripsi">Deskripsi</label>
+                      <textarea name="deskripsi" class="form-control" id="deskripsi" aria-describedby="deskripsi" cols="30" rows="10"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+          </div>
             </div>
             </div>
           </div>

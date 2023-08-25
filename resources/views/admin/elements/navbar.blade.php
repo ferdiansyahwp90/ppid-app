@@ -16,27 +16,27 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="/ppid">
+            <a href="/admin-ppid">
               <i class="bi bi-circle"></i><span>Seputar PPID</span>
             </a>
           </li>
           <li>
-            <a href="/struktur">
+            <a href="/admin-struktur">
               <i class="bi bi-circle"></i><span>Struktur Organisasi</span>
             </a>
           </li>
           <li>
-            <a href="/tugas">
+            <a href="/admin-tugas">
               <i class="bi bi-circle"></i><span>Tugas dan Fungsi PPID</span>
             </a>
           </li>
           <li>
-            <a href="/visi">
+            <a href="/admin-visi">
               <i class="bi bi-circle"></i><span>Visi dan Misi PPID</span>
             </a>
           </li>
           <li>
-            <a href="/sop">
+            <a href="/admin-sop">
               <i class="bi bi-circle"></i><span>SOP PPID</span>
             </a>
           </li>
@@ -54,27 +54,27 @@
             </a>
           </li>
           <li>
-            <a href="/mekanisme">
+            <a href="/admin-mekanisme">
               <i class="bi bi-circle"></i><span>Mekanisme/Proses</span>
             </a>
           </li>
           <li>
-            <a href="/pengajuanKeberatan">
+            <a href="/admin-pengajuanKeberatan">
               <i class="bi bi-circle"></i><span>Pengajuan Keberatan</span>
             </a>
           </li>
           <li>
-            <a href="/penyelesaianSengketa">
+            <a href="/admin-penyelesaianSengketa">
               <i class="bi bi-circle"></i><span>Prosedur Penyelesaian Sengketa</span>
             </a>
           </li>
           <li>
-            <a href="/laporanAkses">
+            <a href="/admin-laporanAkses">
               <i class="bi bi-circle"></i><span>Laporan Akses Informasi Publik</span>
             </a>
           </li>
           <li>
-            <a href="/laporanPelayanan">
+            <a href="/admin-laporanPelayanan">
               <i class="bi bi-circle"></i><span>Laporan Pelayanan Informasi Publik</span>
             </a>
           </li>
@@ -102,7 +102,7 @@
             </a>
           </li>
           <li>
-            <a href="/dikecualikan">
+            <a href="/admin-dikecualikan">
               <i class="bi bi-circle"></i><span>Informasi Yang Dikecualikan</span>
             </a>
           </li>
@@ -115,12 +115,12 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="/galeri">
+            <a href="/admin-galeri">
               <i class="bi bi-circle"></i><span>Galeri</span>
             </a>
           </li>
           <li>
-            <a href="/berita">
+            <a href="/admin-berita">
               <i class="bi bi-circle"></i><span>Berita</span>
             </a>
           </li>
