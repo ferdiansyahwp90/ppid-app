@@ -1,50 +1,78 @@
-@extends('admin.home.index')
+@extends('pemohon.home.index')
 
 @section('content')
 
-<div class="container">       
-    <div class="text-center">
-          <h3>PEMERINTAH KABUPATEN PROBOLINGGO</h3>
-          <h3>PEJABAT PENGELOLA INFORMASI DAN DOKUMENTASI</h3>
-          <p>Jl. Raya Panglima Sudirman No. 134 Kraksaan, diskominfo@probolinggokab.go.id <br> PROBOLINGGO, 67219</p>
-
-          <h3>FORMULIR PERMOHONAN INFROMASI <br> (RANGKAP DUA)</h3>
-          <h4>No. Pendaftaran (diisi petugas)*</h4>
+<main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Permintaan Informasi</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="">Permintaan Informasi</a></li>
+          <li class="breadcrumb-item active">Detail Informasi</li>
+        </ol>
+      </nav>
     </div>
+    <!-- End Page Title -->
 
-        <form action="#" class="container">
-            <label for="fname">Nama:</label>
-            <input type="text" id="fname" name="fname"><br>
-            
-            <label for="No">No. KTP/SIM/Paspor:</label>
-            <input type="text" id="No" name="No"><br>
-            
-            <label for="pekerjaan">Pekerjaan:</label>
-            <input type="text" id="pekerjaan" name="pekerjaan"><br>
-            
-            <label for="telp">No. Telp:</label>
-            <input type="text" id="telp" name="telp"><br>
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Permintaan Informasi</h5>
+              <a href="{{ url('/pemohon-permintaan/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
 
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email"><br>
-            
-            <label for="rincian">Rincian Infromasi yang Dibutuhkan:</label>
-            <input type="text" id="rincian" name="rincian"><br>
+              <!-- Table with stripped rows -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">No. KTP/SIM/Paspor:</th>
+                    <th scope="col">Pekerjaan:</th>
+                    <th scope="col">No. Telp:</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Detail Informasi Yang Dibutuhkan</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @forelse ($permintaan as $item)    
+                      <tr>
+                          <td>{{ $loop->iteration }}</td>
+                          <td>{{ $item->nama }}</td>
+                          <td>{{ $item->noidentitas }}</td>
+                          <td>{{ $item->pekerjaan }}</td>
+                          <td>{{ $item->notelp }}</td>
+                          <td>{{ $item->email }}</td>
+                          <td>{{ $item->detailinfo}}</td>
+                          <form action="/pemohon-permintaan/{{ $item->id }}" method="post">
 
-            <label for="lname">Cara Memperoleh Infromasi**:</label>
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-            <label for="vehicle1"> Melihat/membaca/mendengarkan/mencatat</label><br>
-            <input type="checkbox" id="vehicle2" name="vehicle1" value="Bike">
-            <label for="vehicle2"> Mendapatkan salinan infromasi (hardcopy/softcopy)</label><br>
+                          <td><a href="/pemohon-permintaan/{{ $item->id }}/edit" class="btn btn-primary text-light">UBAH</a></td>
 
-            <label for="salinan">Cara Mendapatkan Salinan Infromasi**:</label>
-            <input type="checkbox" id="langsung" name="langsung" value="Mengambil Langsung" >
-            <label for="1"> Mengambil Langsung</label><br>
-            <input type="checkbox" id="email" name="email" value="Email">
-            <label for="5">Email</label><br>
-            
-            <input type="submit" value="Submit">
-        </form> 
-</div>
+                                @csrf
+                                @method('DELETE')
+                          <td> <button type="submit" class="btn btn-danger text-light">HAPUS</button></td>
+                            </form>
+                        </td>
+                      </tr>
+                      @empty
+                      <tr>
+                          <td colspan="4" align="center">
+                              Data Permintaan Informasi Kosong
+                          </td>
+                      </tr>
+                  @endforelse
+                  
+              </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
 
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
 @endsection

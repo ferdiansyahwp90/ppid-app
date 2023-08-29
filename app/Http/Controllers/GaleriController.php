@@ -16,11 +16,12 @@ class GaleriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
         $galeri = Galeri::all(); // Mengambil semua isi tabel
         $paginate = Galeri::orderBy('id', 'asc')->paginate(5);
-           
-        return view('admin.kegiatan.galeri.index', ['galeri' => $galeri,'paginate'=>$paginate]);
+
+        return view('admin.kegiatan.galeri.index', ['galeri' => $galeri, 'paginate' => $paginate]);
     }
 
     /**
@@ -57,7 +58,7 @@ class GaleriController extends Controller
         ]);
         return redirect()->route('galeri.index')
             ->with('success', 'galeri Berhasil Ditambahkan');
-        return redirect('/galeri')->with('status', "Data '" . $request->nama . "' berhasil ditambahkan");//jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect('/galeri')->with('status', "Data '" . $request->nama . "' berhasil ditambahkan"); //jika data berhasil ditambahkan, akan kembali ke halaman utama
     }
 
     /**
@@ -102,17 +103,17 @@ class GaleriController extends Controller
             'photo' => 'required',
         ]);
         //fungsi eloquent untuk mengupdate data inputan kita
-           Galeri::where('id', $id_galeri)
-                ->update([
-                    'id_galeri' => $request->id_galeri,
-                    'name' => $request-> name,
-                    'deskripsi' => $request-> deskripsi,
-                    'tanggal' => $request-> tanggal,
-                    'photo' => $request-> photo,
+        Galeri::where('id', $id_galeri)
+            ->update([
+                'id_galeri' => $request->id_galeri,
+                'name' => $request->name,
+                'deskripsi' => $request->deskripsi,
+                'tanggal' => $request->tanggal,
+                'photo' => $request->photo,
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.kegiatan.galeri.index')
-                ->with('success', 'Pengjualan Berhasil Diupdate');
+        return redirect()->route('admin.kegiatan.galeri.index')
+            ->with('success', 'Pengjualan Berhasil Diupdate');
     }
 
     /**
@@ -126,6 +127,6 @@ class GaleriController extends Controller
         //fungsi eloquent untuk menghapus data
         Galeri::where('id', $id_galeri)->delete();
         return redirect('/galeri')
-            -> with('Success', 'Foto Berhasil Dihapus');       
+            ->with('Success', 'Foto Berhasil Dihapus');
     }
 }

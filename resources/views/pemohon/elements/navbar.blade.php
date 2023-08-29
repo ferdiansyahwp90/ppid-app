@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="#">
+        <a class="nav-link " href="/pemohon">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -17,7 +17,7 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="/pemohon/informasi">
+            <a href="/pemohon-permintaan">
               <i class="bi bi-circle"></i><span>Permintaan informasi</span>
             </a>
           </li>

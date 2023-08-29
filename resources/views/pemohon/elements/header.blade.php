@@ -211,6 +211,7 @@
               <i class="bi bi-box-arrow-right "></i>Sign Out</a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST">
                 @csrf
+              </form>
             </li>
 
           </ul><!-- End Profile Dropdown Items -->

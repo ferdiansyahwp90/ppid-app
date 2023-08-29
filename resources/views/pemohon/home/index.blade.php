@@ -41,7 +41,7 @@
         <!-- End Navbar -->
 
         <!-- Main -->
-            @include('pemohon.elements.index');
+            @yield('content');
         <!-- End Main -->
 
         <!-- Footer -->
