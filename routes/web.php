@@ -1,10 +1,13 @@
 <?php
 
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\Admin\AdminController;
+use App\Mail\VerificationEmail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Artisan;
-use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\Admin\profile\{
     PPIDController,
     SOPController,
@@ -117,19 +120,29 @@ Route::get('/pengajuanKeberatan', function () {
 Route::get('/penyelesaianSengketa', function () {
     return view('layanan.penyelesaianSengketa.index');
 });
-Route::get('/galeri', function () {
-    return view('kegiatan.galeri.index');
-});
-Route::get('/berita', function () {
-    return view('kegiatan.berita.index');
-});
+// Route::get('/galeri', function () {
+//     return view('kegiatan.galeri.index');
+// });
+// Route::get('/berita', function () {
+//     return view('kegiatan.berita.index');
+// });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 
 Route::middleware(['preventBackHistory'])->group(function () {
-    Auth::routes();
+    Auth::routes(['verified']);
 });
-
+// Route::get('/verify-email', function (){
+//     Mail::to('wardanaputraferdiansyah@gmail.com')
+//         ->send(new VerificationEmail());
+// });
+// Route::get('/email/verify', function () {
+//     return view('auth.verify');
+// })->middleware('auth')->name('verification.notice');
+// Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+//     $request->fulfill();
+//     return redirect('/pemohon');
+// })->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::middleware(['auth', 'isAdmin'])->group(function(){
         Route::get('/admin/home', [AdminController::class, 'index'])->name('dashboard');
@@ -160,7 +173,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function(){
         Route::resource('admin-berita', BeritaController::class);
 });
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth','verified'])->group(function(){
     Route::middleware(['isPemohon'])->group(function() {
         Route::controller(PemohonController::class)->group(function(){
             Route::get('pemohon', 'index');
