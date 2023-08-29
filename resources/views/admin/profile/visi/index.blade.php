@@ -8,7 +8,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="">Profile</a></li>
-          <li class="breadcrumb-item active">Tugas dan Fungsi PPID</li>
+          <li class="breadcrumb-item active">Visi dan Misi PPID</li>
         </ol>
       </nav>
     </div>
@@ -19,8 +19,8 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Visi dan Misi PPID</h5>
-              <a href="{{ url('admin/visi/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
+              <h5 class="card-title">Edit Visi dan Misi PPID</h5>
+              <a href="{{ url('admin-visi/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
@@ -34,12 +34,12 @@
                 <tbody>
                   @forelse ($visi as $item)    
                       <tr>
-                          <td>{{ $item->id }}</td>
-                          <td>{{ $item->deskripsi }}</td>
+                          <td>{{ $loop->iteration }}</td>
+                          <td>{!! $item->deskripsi !!}</td>
                           <td>
-                            <form action="/admin/visi/{{ $item->id }}" method="post">
+                            <form action="/admin-visi/{{ $item->id }}" method="post">
 
-                                <a href="/admin/visi/{{ $item->id }}/edit" class="btn btn-primary text-light">ubah</a>
+                                <a href="/admin-visi/{{ $item->id }}/edit" class="btn btn-primary text-light">ubah</a>
 
                                 @csrf
                                 @method('DELETE')

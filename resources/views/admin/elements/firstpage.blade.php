@@ -47,6 +47,10 @@
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
         <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
 
+        <!-- Tinymce -->
+        <script src="{{asset('js/tinymce/tinymce/tinymce.js')}}"></script>
+        content_css: 'css/content.css',
+
     </head>
     <body>
 
@@ -85,7 +89,16 @@
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script>flatpickr("input[type=datetime-local]", {})</script>
 
-
+        <!-- Tinymce -->
+            <script>
+                tinymce.init({
+                    selector: "textarea#deskripsi",
+                    plugins: ['advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak','searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime','media', 'table', 'emoticons', 'template', 'help'],
+                    toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
+                    menu: {favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }},
+                    menubar: 'favs file edit view insert format tools table help',
+                });
+            </script>
 
         
     </body>

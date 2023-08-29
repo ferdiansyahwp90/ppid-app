@@ -48,7 +48,7 @@ class TugasController extends Controller
         Tugas::create([
             'deskripsi' => $request-> deskripsi,
         ]);
-        return redirect('/admin/tugas')
+        return redirect('/admin-tugas')
             ->with('success', 'Tugas dan Fungsi Berhasil Ditambahkan');
     }
 
@@ -60,8 +60,8 @@ class TugasController extends Controller
      */
     public function show($id_tugas)
     {
-        $berita = Tugas::where('id', $id_tugas)->first();
-        return view('admin.profile.tugas.detail', compact('ppid'));
+        $tugas = Tugas::where('id', $id_tugas)->first();
+        return view('admin.profile.tugas.detail', compact('tugas'));
     }
 
     /**
@@ -72,8 +72,8 @@ class TugasController extends Controller
      */
     public function edit($id_tugas)
     {
-        $berita = DB::table('ppid')->where('id', $id_tugas)->first();
-        return view('admin.profile.tugas.edit', compact('ppid'));
+        $tugas = DB::table('tugas')->where('id', $id_tugas)->first();
+        return view('admin.profile.tugas.edit', compact('tugas'));
     }
 
     /**
@@ -95,7 +95,7 @@ class TugasController extends Controller
                     'deskripsi' => $request-> deskripsi,
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.profile.tugas.index')
+            return redirect('/admin-tugas')
                 ->with('success', 'Tugas dan Fungsi Berhasil Diupdate');
     }
 
@@ -109,7 +109,7 @@ class TugasController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         Tugas::where('id', $id_tugas)->delete();
-        return redirect('/admin/tugas')  
+        return redirect('/admin-tugas')  
             -> with('success', 'Tugas dan Fungsi Berhasil Dihapus');       
     }
 }

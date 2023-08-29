@@ -48,7 +48,7 @@ class SOPController extends Controller
         SOP::create([
             'deskripsi' => $request-> deskripsi,
         ]);
-        return redirect('/admin/sop')
+        return redirect('/admin-sop')
             ->with('success', 'Standart Operasional Prosedur Berhasil Ditambahkan');
     }
 
@@ -60,7 +60,7 @@ class SOPController extends Controller
      */
     public function show($id_sop)
     {
-        $berita = SOP::where('id', $id_sop)->first();
+        $sop = SOP::where('id', $id_sop)->first();
         return view('admin.profile.sop.detail', compact('sop'));
     }
 
@@ -72,8 +72,8 @@ class SOPController extends Controller
      */
     public function edit($id_sop)
     {
-        $berita = DB::table('ppid')->where('id', $id_sop)->first();
-        return view('admin.profile.sop.edit', compact('ppid'));
+        $sop = DB::table('sop')->where('id', $id_sop)->first();
+        return view('admin.profile.sop.edit', compact('sop'));
     }
 
     /**
@@ -95,7 +95,7 @@ class SOPController extends Controller
                     'deskripsi' => $request-> deskripsi,
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.profile.sop.index')
+            return redirect('/admin-sop')
                 ->with('success', 'Standart Operasional Prosedur Berhasil Diupdate');
     }
 
@@ -109,7 +109,7 @@ class SOPController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         SOP::where('id', $id_sop)->delete();
-        return redirect('/admin/sop')  
+        return redirect('/admin-sop')  
             -> with('success', 'Standart Operasional Prosedur Berhasil Dihapus');       
     }
 }

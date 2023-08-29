@@ -20,6 +20,6 @@ class Galeri extends Model
         'name',
         'deskripsi',
         'tanggal',
-        'photo'
+        'photo',
     ];
 }

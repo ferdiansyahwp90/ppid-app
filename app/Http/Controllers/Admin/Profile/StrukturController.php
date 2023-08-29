@@ -48,7 +48,7 @@ class StrukturController extends Controller
         Struktur::create([
             'photo' => $request-> photo,
         ]);
-        return redirect('/admin/struktur')
+        return redirect('/admin-struktur')
             ->with('success', 'Struktur Berhasil Ditambahkan');
     }
 
@@ -60,8 +60,8 @@ class StrukturController extends Controller
      */
     public function show($id_struktur)
     {
-        $berita = Struktur::where('id', $id_struktur)->first();
-        return view('admin.profile.struktur.detail', compact('ppid'));
+        $struktur = Struktur::where('id', $id_struktur)->first();
+        return view('admin.profile.struktur.detail', compact('struktur'));
     }
 
     /**
@@ -72,8 +72,8 @@ class StrukturController extends Controller
      */
     public function edit($id_struktur)
     {
-        $berita = DB::table('ppid')->where('id', $id_struktur)->first();
-        return view('admin.profile.struktur.edit', compact('ppid'));
+        $struktur = DB::table('struktur')->where('id', $id_struktur)->first();
+        return view('admin.profile.struktur.edit', compact('struktur'));
     }
 
     /**
@@ -95,7 +95,7 @@ class StrukturController extends Controller
                     'photo' => $request-> photo,
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.profile.struktur.index')
+            return redirect('/admin-struktur')
                 ->with('success', 'Struktur Berhasil Diupdate');
     }
 
@@ -109,7 +109,7 @@ class StrukturController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         Struktur::where('id', $id_struktur)->delete();
-        return redirect('/admin/struktur')  
+        return redirect('/admin-struktur')  
             -> with('success', 'Struktur Berhasil Dihapus');       
     }
 }

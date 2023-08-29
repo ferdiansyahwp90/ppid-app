@@ -45,12 +45,9 @@ class BeritaController extends Controller
             'tanggal' => 'required',
             'photo' => 'required',
             'link' => 'required',
-        ]);
-        //fungsi eloquent untuk menambah data
-        Berita::create($request->all());//jika data berhasil ditambahkan, akan kembali ke halaman utama
-        
+        ]);        
         if ($request->file('photo')) {
-            $photo = $request->file('photo')->store('berita', 'public');
+            $validate['photo'] = $request->file('photo')->store('galeri', 'public');
         }
         
         //fungsi eloquent untuk menambah data
@@ -58,11 +55,10 @@ class BeritaController extends Controller
             'name' => $request-> name,
             'deskripsi' => $request-> deskripsi,
             'tanggal' => $request-> tanggal,
-            'photo' => $photo,
+            'photo'=>$request->file('photo')->move('berita', $request->file('photo')->getClientOriginalName()),
             'link' => $request-> link,
         ]);
-        return redirect('/berita')
-            ->with('success', 'Berita Berhasil Ditambahkan');
+        return redirect('/admin-berita')->with('status', "Data '" . $request->name . "' berhasil ditambahkan");//jika data berhasil ditambahkan, akan kembali ke halaman utama
     }
 
     /**
@@ -74,7 +70,7 @@ class BeritaController extends Controller
     public function show($id_berita)
     {
         $berita = Berita::where('id', $id_berita)->first();
-        return view('admin.kegiatan.berita.detail', compact('berita'));
+        return view('admin.kegiatan.berita.index', compact('berita'));
     }
 
     /**
@@ -112,11 +108,11 @@ class BeritaController extends Controller
                     'name' => $request-> name,
                     'deskripsi' => $request-> deskripsi,
                     'tanggal' => $request-> tanggal,
-                    'photo' => $request-> photo,
+                    'photo'=>$request->file('photo')->move('berita', $request->file('photo')->getClientOriginalName()),
                     'link' => $request-> link,
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.kegiatan.berita.index')
+            return redirect('/admin-berita')
                 ->with('success', 'Berita Berhasil Diupdate');
     }
 
@@ -130,7 +126,7 @@ class BeritaController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         Berita::where('id', $id_berita)->delete();
-        return redirect('/admin/berita')
+        return redirect('/admin-berita')
             -> with('success', 'Berita Berhasil Dihapus');       
     }
 }
