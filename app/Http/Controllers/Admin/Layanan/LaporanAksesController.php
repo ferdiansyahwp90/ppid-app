@@ -46,9 +46,12 @@ class LaporanAksesController extends Controller
         ]);
         
         //fungsi eloquent untuk menambah data
-        LaporanAkses::create($request->all());
+        LaporanAkses::create([
+            'nama' => $request-> nama,
+            'file'=>$request->file('file')->move('laporan_akses', $request->file('file')->getClientOriginalName()),
+        ]);
 
-        return redirect('/admin/laporan_Akses')
+        return redirect('admin-laporanAkses')
                 ->with('success', 'Laporan Akses Berhasil Ditambahkan');
     }
 
@@ -60,8 +63,8 @@ class LaporanAksesController extends Controller
      */
     public function show($id_laporanAkses)
     {
-        $berita = LaporanAkses::where('id', $id_laporanAkses)->first();
-        return view('admin.layanan.laporan_Akses.detail', compact('laporan_Akses'));
+        $laporanAkses = LaporanAkses::where('id', $id_laporanAkses)->first();
+        return view('admin.layanan.laporan_Akses.detail',compact('laporanAkses'));
     }
 
     /**
@@ -72,8 +75,8 @@ class LaporanAksesController extends Controller
      */
     public function edit($id_laporanAkses)
     {
-        $berita = DB::table('laporan_akses')->where('id', $id_laporanAkses)->first();
-        return view('admin.layanan.laporan_Akses.edit', compact('laporan_akses'));
+        $laporanAkses = DB::table('laporan_akses')->where('id', $id_laporanAkses)->first();
+        return view('admin.layanan.laporan_Akses.edit',compact('laporanAkses'));
     }
 
     /**
@@ -94,10 +97,10 @@ class LaporanAksesController extends Controller
            LaporanAkses::where('id', $id_laporanAkses)
                 ->update([
                     'nama' => $request-> nama,
-                    'file' => $request-> file,
+                    'file'=>$request->file('file')->move('laporan_akses', $request->file('file')->getClientOriginalName()),
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.layanan.laporan_Akses.index')
+            return redirect('admin-laporanAkses')
                 ->with('success', 'Laporan Akses Berhasil Diupdate');
     }
 
@@ -111,7 +114,7 @@ class LaporanAksesController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         LaporanAkses::where('id', $id_laporanAkses)->delete();
-        return redirect('/admin/laporan_Akses')  
+        return redirect('admin-laporanAkses')  
             -> with('success', 'Laporan Akses Berhasil Dihapus');       
     }
 }

@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'preventBackHistory' => \App\Http\Middleware\PreventBackHistory::class,
         'isAdmin' => \App\Http\Middleware\AdminMiddleware::class, 
         'isPemohon' => \App\Http\Middleware\PemohonMiddleware::class, 
+        'verified' => \App\Http\Middleware\RedirectIfNotVerified::class,
     ];
 }
