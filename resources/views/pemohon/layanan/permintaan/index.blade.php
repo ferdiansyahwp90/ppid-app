@@ -7,8 +7,8 @@
       <h1>Permintaan Informasi</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="">Permintaan Informasi</a></li>
-          <li class="breadcrumb-item active">Detail Informasi</li>
+          <li class="breadcrumb-item"><a href="">PERMINTAAN INFORMASI</a></li>
+          <li class="breadcrumb-item active">DETAIL INFORMASI</li>
         </ol>
       </nav>
     </div>
