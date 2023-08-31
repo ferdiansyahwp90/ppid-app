@@ -8,7 +8,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="">PERMINTAAN INFORMASI</a></li>
-          <li class="breadcrumb-item active">DETAIL INFORMASI</li>
+          <li class="breadcrumb-item active">PERMINTAAN INFORMASI PEMOHON</li>
         </ol>
       </nav>
     </div>
