@@ -21,6 +21,7 @@ class CreatePermintaan extends Migration
             $table->string('notelp');
             $table->string('email');
             $table->string('detailinfo');
+            $table->enum('status', ['Sudah', 'Belum'])->default('Belum');
             $table->timestamps();
         });
     }

@@ -38,9 +38,8 @@ use App\Http\Controllers\Admin\DaftarInformasi\{
 //use App\Http\Controllers\Pemohon\PemohonController;
 use App\Http\Controllers\Pemohon\{
     PermintaanController,
+    DetailInformasi,
     PemohonController,
-    InformasiController,
-    DetailController,
 };
 /*
 |--------------------------------------------------------------------------
@@ -177,15 +176,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::post('/galeri/store', [GaleriController::class, 'store']);
 });
 
-Route::middleware(['auth'])->group(function(){
-    Route::middleware(['isPemohon'])->group(function() {
-        Route::controller(PemohonController::class)->group(function(){
-            Route::get('pemohon', 'index');
-            Route::put('update_profile', 'update_profile');
-            Route::get('change_password', 'change_password');
-            Route::put('update_password', 'update_password');
-        });
-    });
+Route::middleware(['auth', 'isPemohon'])->group(function () {
+    Route::get('/pemohon', [PemohonController::class, 'index']);
+
+    Route::resource('pemohon-permintaan', PermintaanController::class);
 });
 
 Route::get('/home', function () {

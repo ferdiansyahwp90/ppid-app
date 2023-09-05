@@ -64,6 +64,11 @@
                         <label for="detailinfo">Detail Informasi</label>
                         <input type="detailinfo" name="detailinfo" class="form-control" id="detailinfo" value="{{ $permintaan->detailinfo }}" aria-describedby="detailinfo" >
                     </div>
+
+                    <div class="form-group">
+                      <label for="status">Status</label>
+                      <input type="status" name="status" class="form-control" id="status" value="{{ $permintaan->status }}" aria-describedby="status" >
+                  </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

@@ -22,7 +22,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/pemohon-detailinformasi">
               <i class="bi bi-circle"></i><span>Detail Informasi</span>
             </a>
           </li>

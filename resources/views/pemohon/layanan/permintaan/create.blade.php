@@ -70,6 +70,13 @@
                       Bidang ini Wajib Diisi!.
                     </div>
                 </div>
+                <div class="form-group">
+                  <label for="status">Status</label>
+                  <input type="text" name="status" class="form-control" id="status" ariadescribedby="status" >
+                  <div class="invalid-feedback">
+                    Bidang ini Wajib Diisi!.
+                  </div>
+              </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

@@ -33,7 +33,7 @@
                     <th scope="col">No. Telp:</th>
                     <th scope="col">Email</th>
                     <th scope="col">Detail Informasi Yang Dibutuhkan</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Status</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -46,6 +46,7 @@
                           <td>{{ $item->notelp }}</td>
                           <td>{{ $item->email }}</td>
                           <td>{{ $item->detailinfo}}</td>
+                          <td>{{ $item->status}}</td>
                           <form action="/pemohon-permintaan/{{ $item->id }}" method="post">
 
                           <td><a href="/pemohon-permintaan/{{ $item->id }}/edit" class="btn btn-primary text-light">UBAH</a></td>
