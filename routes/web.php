@@ -41,6 +41,8 @@ use App\Http\Controllers\Pemohon\{
     DetailInformasi,
     PemohonController,
 };
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,68 +67,52 @@ Route::get('/', function () {
     }
     return view('index');
 });
-Route::get('/ppid', function () {
-    return view('profile.ppid.index');
-});
-Route::get('/struktur', function () {
-    return view('profile.struktur.index');
-});
-Route::get('/tugas&fungsi', function () {
-    return view('profile.tugas&fungsi.index');
-});
-Route::get('/visi&misi', function () {
-    return view('profile.visi&misi.index');
-});
-Route::get('/SOPppid', function () {
-    return view('profile.SOPppid.index');
-});
-Route::get('/SK', function () {
-    return view('regulasi.SK.index');
-});
-Route::get('/informasi', function () {
-    return view('daftarinformasi.index');
-});
-Route::get('/berkala', function () {
-    return view('daftarinformasi.berkala.index');
-});
-Route::get('/sertamerta', function () {
-    return view('daftarinformasi.sertamerta.index');
-});
-Route::get('/setiapsaat', function () {
-    return view('daftarinformasi.setiapsaat.index');
-});
-Route::get('/dikecualikan', function () {
-    return view('daftarinformasi.dikecualikan.index');
-});
-Route::get('/kontak', function () {
-    return view('kontak.index');
-});
-Route::get('/formulir', function () {
-    return view('formulir.index');
-});
-Route::get('/lkjip', function () {
-    return view('layanan.lkjip.index');
-});
-Route::get('/permohonan', function () {
-    return view('layanan.permohonan.index');
-});
-Route::get('/laip', function () {
-    return view('layanan.laip.index');
-});
-Route::get('/mekanisme', function () {
-    return view('layanan.mekanisme.index');
-});
-Route::get('/pengajuanKeberatan', function () {
-    return view('layanan.pengajuanKeberatan.index');
-});
-Route::get('/penyelesaianSengketa', function () {
-    return view('layanan.penyelesaianSengketa.index');
-});
-Route::get('/galeri', function () {
-    return view('kegiatan.galeri.index');
-});
-Route::get('/berita', function () {
-    return view('kegiatan.berita.index');
+Route::controller(DashboardController::class)->group(function() {
+    //Profile
+    Route::get('profile-ppid', 'profile'); 
+    Route::get('profile-struktur', 'struktur'); 
+    Route::get('profile-tugas', 'tugas'); 
+    Route::get('profile-visi', 'visi'); 
+    Route::get('profile-sop', 'sop'); 
+
+    //Layanan
+    Route::get('layanan-permohonanLangsung', 'permohonanLangsung');
+    Route::get('layanan-mekanisme', 'mekanisme');
+    Route::get('layanan-pengajuanKeberatan', 'pengajuanKeberatan');
+    Route::get('layanan-penyelesaianSengketa', 'penyelesaianSengketa');
+    Route::get('layanan-laporanAkses', 'laporanAkses');
+    Route::get('layanan-laporanPelayanan', 'laporanPelayanan');
+
+    Route::get('/SK', function () {
+        return view('regulasi.SK.index');
+    });
+    Route::get('/informasi', function () {
+        return view('daftarinformasi.index');
+    });
+    Route::get('/berkala', function () {
+        return view('daftarinformasi.berkala.index');
+    });
+    Route::get('/sertamerta', function () {
+        return view('daftarinformasi.sertamerta.index');
+    });
+    Route::get('/setiapsaat', function () {
+        return view('daftarinformasi.setiapsaat.index');
+    });
+    Route::get('/dikecualikan', function () {
+        return view('daftarinformasi.dikecualikan.index');
+    });
+
+    //Kegiatan
+    Route::get('kegiatan-galeri', 'galeri');
+    Route::get('kegiatan-berita', 'berita');
+
+    //Formulir
+    Route::get('/kontak', function () {
+        return view('kontak.index');
+    });
+    Route::get('/formulir', function () {
+        return view('formulir.index');
+    });
 });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -150,29 +136,29 @@ Route::middleware(['preventBackHistory'])->group(function () {
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/admin/home', [AdminController::class, 'index'])->name('dashboard');
     //Profile
-    Route::resource('ppid', PPIDController::class);
-    Route::resource('sop', SOPController::class);
-    Route::resource('struktur', StrukturController::class);
-    Route::resource('tugas', TugasController::class);
-    Route::resource('visi', VisiController::class);
+    Route::resource('admin-ppid', PPIDController::class);
+    Route::resource('admin-sop', SOPController::class);
+    Route::resource('admin-struktur', StrukturController::class);
+    Route::resource('admin-tugas', TugasController::class);
+    Route::resource('admin-visi', VisiController::class);
 
     //Layanan
-    Route::resource('laporanAkses', LaporanAksesController::class);
-    Route::resource('laporanPelayanan', LaporanPelayananController::class);
-    Route::resource('mekanisme', MekanismeController::class);
-    Route::resource('pengajuanKeberatan', PengajuanKeberatanController::class);
-    Route::resource('penyelesaianSengketa', PenyelesaianSengketaController::class);
-    Route::resource('permohonanLangsung', PermohonanLangsungController::class);
+    Route::resource('admin-laporanAkses', LaporanAksesController::class);
+    Route::resource('admin-laporanPelayanan', LaporanPelayananController::class);
+    Route::resource('admin-mekanisme', MekanismeController::class);
+    Route::resource('admin-pengajuanKeberatan', PengajuanKeberatanController::class);
+    Route::resource('admin-penyelesaianSengketa', PenyelesaianSengketaController::class);
+    Route::resource('admin-permohonanLangsung', PermohonanLangsungController::class);
 
     //Daftar Informasi
-    Route::resource('bekala', BerkalaController::class);
-    Route::resource('dikecualikan', DikecualikanController::class);
-    Route::resource('sertamerta', SertamertaController::class);
-    Route::resource('setiapsaat', SetiapsaatController::class);
+    Route::resource('admin-bekala', BerkalaController::class);
+    Route::resource('admin-dikecualikan', DikecualikanController::class);
+    Route::resource('admin-sertamerta', SertamertaController::class);
+    Route::resource('admin-setiapsaat', SetiapsaatController::class);
 
     //Kegiatan
-    Route::resource('galeri', GaleriController::class);
-    Route::resource('berita', BeritaController::class);
+    Route::resource('admin-galeri', GaleriController::class);
+    Route::resource('admin-berita', BeritaController::class);
     Route::post('/galeri/store', [GaleriController::class, 'store']);
 });
 

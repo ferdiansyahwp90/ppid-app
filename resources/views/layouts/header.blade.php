@@ -38,9 +38,9 @@
                     <div class="dropdown-menu bg-light m-0">
                         <a href="{{ url('profile-ppid') }}" class="dropdown-item" id="ppid">Seputar PPID</a>
                         <a href="{{ url('profile-struktur')}}" class="dropdown-item" >Struktur Organisasi</a>
-                        <a href="{{ url('profile-tugas&fungsi')}}" class="dropdown-item">Tugas dan Fungsi PPID</a>
-                        <a href="{{ url('profile-visi&misi')}}" class="dropdown-item">Visi dan Misi PPID</a>
-                        <a href="{{ url('profile-SOPppid')}}" class="dropdown-item">SOP PPID</a>
+                        <a href="{{ url('profile-tugas')}}" class="dropdown-item">Tugas dan Fungsi PPID</a>
+                        <a href="{{ url('profile-visi')}}" class="dropdown-item">Visi dan Misi PPID</a>
+                        <a href="{{ url('profile-sop')}}" class="dropdown-item">SOP PPID</a>
                     </div>
                 </div>
 
@@ -61,12 +61,12 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Layanan</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="/permohonan" class="dropdown-item">Permohonan Informasi Datang Langsung</a>
-                        <a href="/mekanisme" class="dropdown-item">Mekanisme/Proses</a>
-                        <a href="/pengajuanKeberatan" class="dropdown-item">Pengajuan Keberatan</a>
-                        <a href="/penyelesaianSengketa" class="dropdown-item">Prosedur Penyelesaian Sengketa</a>
-                        <a href="/laip" class="dropdown-item">Laporan Akses Informasi Publik</a>
-                        <a href="/lkjip" class="dropdown-item">Laporan Pelayanan Informasi Publik</a>
+                        <a href="/layanan-permohonanLangsung" class="dropdown-item">Permohonan Informasi Datang Langsung</a>
+                        <a href="/layanan-mekanisme" class="dropdown-item">Mekanisme/Proses</a>
+                        <a href="/layanan-pengajuanKeberatan" class="dropdown-item">Pengajuan Keberatan</a>
+                        <a href="/layanan-penyelesaianSengketa" class="dropdown-item">Prosedur Penyelesaian Sengketa</a>
+                        <a href="/layanan-laporanAkses" class="dropdown-item">Laporan Akses Informasi Publik</a>
+                        <a href="/layanan-laporanPelayanan" class="dropdown-item">Laporan Pelayanan Informasi Publik</a>
                     </div>
                 </div>
 
@@ -85,8 +85,8 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Kegiatan</a>
                     <div class="dropdown-menu bg-light m-0">
-                          <a href="/galeri" class="dropdown-item">Galeri</a>
-                          <a href="/berita" class="dropdown-item">Berita</a>
+                          <a href="/kegiatan-galeri" class="dropdown-item">Galeri</a>
+                          <a href="/kegiatan-berita" class="dropdown-item">Berita</a>
                     </div>
                 </div>
 
