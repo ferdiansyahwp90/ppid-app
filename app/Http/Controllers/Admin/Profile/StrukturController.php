@@ -46,7 +46,7 @@ class StrukturController extends Controller
         
         //fungsi eloquent untuk menambah data
         Struktur::create([
-            'photo' => $request-> photo,
+            'photo'=>$request->file('photo')->move('struktur', $request->file('photo')->getClientOriginalName()),
         ]);
         return redirect('/admin-struktur')
             ->with('success', 'Struktur Berhasil Ditambahkan');
@@ -92,7 +92,7 @@ class StrukturController extends Controller
         //fungsi eloquent untuk mengupdate data inputan kita
            Struktur::where('id', $id_struktur)
                 ->update([
-                    'photo' => $request-> photo,
+                    'photo'=>$request->file('photo')->move('struktur', $request->file('photo')->getClientOriginalName()),
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
             return redirect('/admin-struktur')

@@ -35,10 +35,13 @@
 
                 <form method="post" action="{{route('admin-struktur.store')}}" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-group">
-                      <label for="photo">Deskripsi</label>
-                        <textarea name="photo" class="form-control" id="deskripsi" aria-describedby="photo" cols="30" rows="10"></textarea>
-                    </div>
+                      <div class="form-group">
+                          <label for="photo">Foto</label>
+                          <input type="file" name="photo" class="form-control rad-6 fs-normal @error('photo') is-invalid @enderror" placeholder="photo" >
+                          <div class="invalid-feedback">
+                            Bidang ini Wajib Diisi!.
+                          </div>
+                      </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

@@ -1,13 +1,13 @@
 @extends('layouts.firstpage')
 @section('content')
-<div class="container">       
-        <div class="header-ppid">
-            <div class="text-center">
-                <h2>Struktur PPID</h2>
-            </div>
-            <div align="middle">
-                <img src="assets/img/struktur_organisasi.png" alt="stuktur">
-            </div>
+    <div class="container">
+        <div class="text-center">
+            <h2>Struktur PPID</h2>
         </div>
-</div>
+        @foreach ($struktur as $item)
+            <div align="middle">
+                <img src="{{$item->photo}}" alt="struktur">
+            </div>
+        @endforeach
+    </div>
 @endsection
