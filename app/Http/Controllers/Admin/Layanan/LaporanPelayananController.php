@@ -42,13 +42,12 @@ class LaporanPelayananController extends Controller
         //melakukan validasi data
         $request->validate([
             'nama' => 'required',
-            'file' => 'required',
         ]);
         
         //fungsi eloquent untuk menambah data
         LaporanPelayanan::create($request->all());
 
-        return redirect('/admin/laporan_Pelayanan')
+        return redirect('/admin-laporanPelayanan')
                 ->with('success', 'Laporan Pelayanan Berhasil Ditambahkan');
     }
 
@@ -60,8 +59,8 @@ class LaporanPelayananController extends Controller
      */
     public function show($id_laporanPelayanan)
     {
-        $berita = LaporanPelayanan::where('id', $id_laporanPelayanan)->first();
-        return view('admin.layanan.laporan_Pelayanan.detail', compact('laporan_Pelayanan'));
+        $laporanPelayanan = LaporanPelayanan::where('id', $id_laporanPelayanan)->first();
+        return view('admin.layanan.laporan_Pelayanan.index', compact('laporan_Pelayanan'));
     }
 
     /**
@@ -72,8 +71,8 @@ class LaporanPelayananController extends Controller
      */
     public function edit($id_laporanPelayanan)
     {
-        $berita = DB::table('laporan_pelayanan')->where('id', $id_laporanPelayanan)->first();
-        return view('admin.layanan.laporan_Pelayanan.edit', compact('laporan_pelayanan'));
+        $laporanPelayanan = DB::table('laporan_pelayanan')->where('id', $id_laporanPelayanan)->first();
+        return view('admin.layanan.laporan_Pelayanan.edit', compact('laporanPelayanan'));
     }
 
     /**
@@ -88,16 +87,14 @@ class LaporanPelayananController extends Controller
         //melakukan validasi data
         $request->validate([
             'nama' => 'required',
-            'file' => 'required',
         ]);
         //fungsi eloquent untuk mengupdate data inputan kita
            LaporanPelayanan::where('id', $id_laporanPelayanan)
                 ->update([
                     'nama' => $request-> nama,
-                    'file' => $request-> file,
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.layanan.laporan_Pelayanan.index')
+            return redirect('admin-laporanPelayanan')
                 ->with('success', 'Laporan Pelayanan Berhasil Diupdate');
     }
 
@@ -111,7 +108,7 @@ class LaporanPelayananController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         LaporanPelayanan::where('id', $id_laporanPelayanan)->delete();
-        return redirect('/admin/laporan_Pelayanan')  
+        return redirect('/admin-laporanPelayanan')  
             -> with('success', 'Laporan Pelayanan Berhasil Dihapus');       
     }
 }

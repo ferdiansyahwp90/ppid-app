@@ -15,8 +15,7 @@ class CreateLaporanPelayananTable extends Migration
     {
         Schema::create('laporan_pelayanan', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('file')->nullable();
+            $table->longText('nama');
             $table->timestamps();
         });
     }

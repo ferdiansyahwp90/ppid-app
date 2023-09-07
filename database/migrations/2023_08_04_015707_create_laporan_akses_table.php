@@ -15,8 +15,7 @@ class CreateLaporanAksesTable extends Migration
     {
         Schema::create('laporan_akses', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('file')->nullable();
+            $table->longText('nama');
             $table->timestamps();
         });
     }

@@ -46,9 +46,12 @@ class PenyelesaianSengketaController extends Controller
         ]);
         
         //fungsi eloquent untuk menambah data
-        PenyelesaianSengketa::create($request->all());
+        PenyelesaianSengketa::create([
+            'nama'=>$request->nama,
+            'file'=>$request->file('file')->move('penyelesaianSengketa', $request->file('file')->getClientOriginalName()),
+        ]);
 
-        return redirect('/admin/penyelesaianSengketa')
+        return redirect('/admin-penyelesaianSengketa')
                 ->with('success', 'Penyelesaian Sengketa Berhasil Ditambahkan');
     }
 
@@ -60,8 +63,8 @@ class PenyelesaianSengketaController extends Controller
      */
     public function show($id_penyelesaianSengketa)
     {
-        $berita = PenyelesaianSengketa::where('id', $id_penyelesaianSengketa)->first();
-        return view('admin.layanan.penyelesaian_Sengketa.detail', compact('penyelesaianSengketa'));
+        $penyelesaianSengketa = PenyelesaianSengketa::where('id', $id_penyelesaianSengketa)->first();
+        return view('admin.layanan.penyelesaian_Sengketa.index', compact('penyelesaianSengketa'));
     }
 
     /**
@@ -72,7 +75,7 @@ class PenyelesaianSengketaController extends Controller
      */
     public function edit($id_penyelesaianSengketa)
     {
-        $berita = DB::table('penyelesaianSengketa')->where('id', $id_penyelesaianSengketa)->first();
+        $penyelesaianSengketa = DB::table('penyelesaian_Sengketa')->where('id', $id_penyelesaianSengketa)->first();
         return view('admin.layanan.penyelesaian_Sengketa.edit', compact('penyelesaianSengketa'));
     }
 
@@ -93,11 +96,11 @@ class PenyelesaianSengketaController extends Controller
         //fungsi eloquent untuk mengupdate data inputan kita
            PenyelesaianSengketa::where('id', $id_penyelesaianSengketa)
                 ->update([
-                    'nama' => $request-> nama,
-                    'file' => $request-> file,
+                    'nama'=>$request->nama,
+                    'file'=>$request->file('file')->move('penyelesaianSengketa', $request->file('file')->getClientOriginalName()),
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.layanan.penyelesaian_Sengketa.index')
+            return redirect('admin-penyelesaianSengketa')
                 ->with('success', 'Penyelesaian Sengketa Berhasil Diupdate');
     }
 
@@ -111,7 +114,7 @@ class PenyelesaianSengketaController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         PenyelesaianSengketa::where('id', $id_penyelesaianSengketa)->delete();
-        return redirect('/admin/penyelesaianSengketa')  
+        return redirect('/admin-penyelesaianSengketa')  
             -> with('success', 'Penyelesaian Sengketa Berhasil Dihapus');       
     }
 }

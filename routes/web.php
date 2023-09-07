@@ -16,10 +16,9 @@ use App\Http\Controllers\Admin\profile\{
 };
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\Kegiatan\{
-    // GaleriController,
+    GaleriController,
     BeritaController
 };
-use App\Http\Controllers\GaleriController;
 // use App\Http\Controllers\Admin\Kegiatan\GaleriController;    
 use App\Http\Controllers\Admin\Layanan\{
     LaporanAksesController,

@@ -46,9 +46,12 @@ class PengajuanKeberatanController extends Controller
         ]);
         
         //fungsi eloquent untuk menambah data
-        PengajuanKeberatan::create($request->all());
+        PengajuanKeberatan::create([
+            'nama'=>$request->nama,
+            'file'=>$request->file('file')->move('pengajuanKeberatan', $request->file('file')->getClientOriginalName()),
+        ]);
 
-        return redirect('/admin/pengajuanKeberatan')
+        return redirect('/admin-pengajuanKeberatan')
                 ->with('success', 'Pengajuan Keberatan Berhasil Ditambahkan');
     }
 
@@ -60,8 +63,8 @@ class PengajuanKeberatanController extends Controller
      */
     public function show($id_pengajuanKeberatan)
     {
-        $berita = PengajuanKeberatan::where('id', $id_pengajuanKeberatan)->first();
-        return view('admin.layanan.pengajuan_Keberatan.detail', compact('pengajuan_keberatan'));
+        $pengajuanKeberatan = PengajuanKeberatan::where('id', $id_pengajuanKeberatan)->first();
+        return view('admin.layanan.pengajuan_Keberatan.detail', compact('pengajuanKeberatan'));
     }
 
     /**
@@ -72,8 +75,8 @@ class PengajuanKeberatanController extends Controller
      */
     public function edit($id_pengajuanKeberatan)
     {
-        $berita = DB::table('pengajuan_keberatan')->where('id', $id_pengajuanKeberatan)->first();
-        return view('admin.layanan.pengajuan_Keberatan.edit', compact('pengajuan_keberatan'));
+        $pengajuanKeberatan = DB::table('pengajuan_keberatan')->where('id', $id_pengajuanKeberatan)->first();
+        return view('admin.layanan.pengajuan_Keberatan.edit', compact('pengajuanKeberatan'));
     }
 
     /**
@@ -93,11 +96,11 @@ class PengajuanKeberatanController extends Controller
         //fungsi eloquent untuk mengupdate data inputan kita
            PengajuanKeberatan::where('id', $id_pengajuanKeberatan)
                 ->update([
-                    'nama' => $request-> nama,
-                    'file' => $request-> file,
+                    'nama'=>$request->nama,
+            'file'=>$request->file('file')->move('pengajuanKeberatan', $request->file('file')->getClientOriginalName()),
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.layanan.pengajuan_Keberatan.index')
+            return redirect('admin-pengajuanKeberatan')
                 ->with('success', 'Pengajuan Keberatan Berhasil Diupdate');
     }
 
@@ -111,7 +114,7 @@ class PengajuanKeberatanController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         PengajuanKeberatan::where('id', $id_pengajuanKeberatan)->delete();
-        return redirect('/admin/pengajuanKeberatan')  
+        return redirect('/admin-pengajuanKeberatan')  
             -> with('success', 'Pengajuan Keberatan Berhasil Dihapus');       
     }
 }

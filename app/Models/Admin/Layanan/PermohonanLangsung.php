@@ -11,7 +11,6 @@ class PermohonanLangsung extends Model
     protected $table = 'permohonan_langsung';
     protected $primaryKey = 'id_permohonanLangsung';
     protected $fillable = [
-        'nama',
-        'file',
+        'deskripsi',
     ];
 }

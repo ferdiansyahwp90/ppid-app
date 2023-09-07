@@ -38,21 +38,12 @@
                 <form method="POST" action="{{route('admin-laporanAkses.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                      <label for="nama">Nama</label>
-                      <input type="nama" name="nama" class="form-control rad-6 fs-normal" placeholder="nama" >
+                      <label for="nama">Nama Laporan</label>
+                      <textarea name="nama" class="form-control" id="deskripsi" aria-describedby="deskripsi" cols="30" rows="10"></textarea>
                       <div class="invalid-feedback">
                         Bidang ini Wajib Diisi!.
                       </div>
                   </div>
-
-                  <div class="form-group">
-                      <label for="file">File</label>
-                      <input type="file" name="file" class="form-control rad-6 fs-normal @error('file') is-invalid @enderror" placeholder="file" >
-                      <div class="invalid-feedback">
-                        Bidang ini Wajib Diisi!.
-                      </div>
-                  </div>
-
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

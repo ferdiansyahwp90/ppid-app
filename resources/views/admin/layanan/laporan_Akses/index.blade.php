@@ -27,8 +27,7 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">File</th>
+                    <th scope="col">Nama Laporan</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -36,8 +35,7 @@
                   @forelse ($laporanAkses as $item)     
                       <tr>
                           <td>{{ $loop->iteration }}</td>
-                          <td>{{ $item->nama }}</td>
-                          <td>{{ $item->file }}</td>
+                          <td>{!!$item->nama !!}</td>
                           <td>
                             <form action="/admin-laporanAkses/{{ $item->id }}" method="post">
 
