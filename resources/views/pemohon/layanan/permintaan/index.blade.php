@@ -4,7 +4,7 @@
 
 <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Permintaan Informasi</h1>
+      <h1>PERMINTAAN INFORMASI / PEMOHON </h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="">PERMINTAAN INFORMASI</a></li>
