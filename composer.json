@@ -16,7 +16,9 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "laravelcollective/html": "*",
-        "tinymce/tinymce": "^6.6"
+        "tinymce/tinymce": "^6.6",
+        "unisharp/laravel-filemanager": "^2.6",
+        "ext-gd": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
