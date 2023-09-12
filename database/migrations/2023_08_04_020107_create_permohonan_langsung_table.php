@@ -15,8 +15,7 @@ class CreatePermohonanLangsungTable extends Migration
     {
         Schema::create('permohonan_langsung', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('file')->nullable();
+            $table->longText('deskripsi');
             $table->timestamps();
         });
     }

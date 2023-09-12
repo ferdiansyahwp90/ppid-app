@@ -12,6 +12,5 @@ class LaporanPelayanan extends Model
     protected $primaryKey = 'id_laporanPelayanan';
     protected $fillable = [
         'nama',
-        'file',
     ];
 }

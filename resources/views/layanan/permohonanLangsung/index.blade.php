@@ -3,7 +3,7 @@
 <div class="container">       
         <div class="header-ppid">
             <div class="text-center">
-            <h2>Prosedur Permohonan Informasi</h2>
+                <h2>Prosedur Permohonan Informasi</h2>
             </div>
             <h4>MEKANISME PERMOHONAN INFORMASI PUBLIK</h4>
             <p>1. Pemohon informasi datang ke desk layanan informasi mengisi formulir permintaan informas dengan melampirkan foto copy KTP pemohon dan pengguna informasi, bagi lembaga publik/ormas dilengkapi foto copy akta pendirian, surat keterangan terdaftar di Bakesbangpol Kabupaten Probolinggo/setempat, surat keterangan domisili lembaga publik/ormas.     

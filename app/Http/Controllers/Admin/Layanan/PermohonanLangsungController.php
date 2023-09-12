@@ -18,7 +18,7 @@ class PermohonanLangsungController extends Controller
     {
         $permohonanLangsung = PermohonanLangsung::all(); // Mengambil semua isi tabel
         $paginate = PermohonanLangsung::orderBy('id', 'asc')->paginate(5);
-        return view('admin.layanan.permohonan_Langsung.index', ['permohonanLangsung' => $permohonanLangsung,'paginate'=>$paginate]);
+        return view('admin.layanan.permohonanLangsung.index', ['permohonanLangsung' => $permohonanLangsung,'paginate'=>$paginate]);
     }
 
     /**
@@ -28,7 +28,7 @@ class PermohonanLangsungController extends Controller
      */
     public function create()
     {
-        // return view('admin.layanan.permohonan_Langsung.create'); 
+        return view('admin.layanan.permohonanLangsung.create'); 
     }
 
     /**
@@ -41,14 +41,13 @@ class PermohonanLangsungController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'nama' => 'required',
-            'file' => 'required',
+            'deskripsi' => 'required',
         ]);
         
         //fungsi eloquent untuk menambah data
         PermohonanLangsung::create($request->all());
 
-        return redirect('/admin/permohonanLangsung')
+        return redirect('/admin-permohonanLangsung')
                 ->with('success', 'Permohonan Langsung Berhasil Ditambahkan');
     }
 
@@ -60,8 +59,8 @@ class PermohonanLangsungController extends Controller
      */
     public function show($id_permohonanLangsung)
     {
-        $berita = PermohonanLangsung::where('id', $id_permohonanLangsung)->first();
-        return view('admin.layanan.permohonan_Langsung.detail', compact('permohonanLangsung'));
+        $permohonanLangsung = PermohonanLangsung::where('id', $id_permohonanLangsung)->first();
+        return view('admin.layanan.permohonanLangsung.index', compact('permohonanLangsung'));
     }
 
     /**
@@ -72,8 +71,8 @@ class PermohonanLangsungController extends Controller
      */
     public function edit($id_permohonanLangsung)
     {
-        $berita = DB::table('permohonanLangsung')->where('id', $id_permohonanLangsung)->first();
-        return view('admin.layanan.permohonan_Langsung.edit', compact('permohonanLangsung'));
+        $permohonanLangsung = DB::table('permohonan_Langsung')->where('id', $id_permohonanLangsung)->first();
+        return view('admin.layanan.permohonanLangsung.edit', compact('permohonanLangsung'));
     }
 
     /**
@@ -87,19 +86,17 @@ class PermohonanLangsungController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'nama' => 'required',
-            'file' => 'required',
+            'deskripsi' => 'required',
         ]);
         //fungsi eloquent untuk mengupdate data inputan kita
            PermohonanLangsung::where('id', $id_permohonanLangsung)
                 ->update([
-                    'nama' => $request-> nama,
-                    'file' => $request-> file,
+                    'deskripsi' => $request-> deskripsi,
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.layanan.permohonan_Langsung.index')
+            return redirect('admin-permohonanLangsung')
                 ->with('success', 'Permohonan Langsung Berhasil Diupdate');
-    }
+    }   
 
     /**
      * Remove the specified resource from storage.
@@ -111,7 +108,7 @@ class PermohonanLangsungController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         PermohonanLangsung::where('id', $id_permohonanLangsung)->delete();
-        return redirect('/admin/permohonanLangsung')  
+        return redirect('/admin-permohonanLangsung')  
             -> with('success', 'Permohonan Langsung Berhasil Dihapus');       
     }
 }

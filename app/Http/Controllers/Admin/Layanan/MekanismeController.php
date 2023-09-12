@@ -46,9 +46,12 @@ class MekanismeController extends Controller
         ]);
         
         //fungsi eloquent untuk menambah data
-        Mekanisme::create($request->all());
+        Mekanisme::create([
+            'nama'=>$request->nama,
+            'file'=>$request->file('file')->move('mekanisme', $request->file('file')->getClientOriginalName()),
+        ]);
 
-        return redirect('/admin/mekanisme')
+        return redirect('/admin-mekanisme')
                 ->with('success', 'Mekanisme Berhasil Ditambahkan');
     }
 
@@ -60,8 +63,8 @@ class MekanismeController extends Controller
      */
     public function show($id_mekanisme)
     {
-        $berita = Mekanisme::where('id', $id_mekanisme)->first();
-        return view('admin.layanan.mekanisme.detail', compact('mekanisme'));
+        $mekanisme = Mekanisme::where('id', $id_mekanisme)->first();
+        return view('admin.layanan.mekanisme.inde', compact('mekanisme'));
     }
 
     /**
@@ -72,7 +75,7 @@ class MekanismeController extends Controller
      */
     public function edit($id_mekanisme)
     {
-        $berita = DB::table('mekanisme')->where('id', $id_mekanisme)->first();
+        $mekanisme = DB::table('mekanisme')->where('id', $id_mekanisme)->first();
         return view('admin.layanan.mekanisme.edit', compact('mekanisme'));
     }
 
@@ -93,11 +96,11 @@ class MekanismeController extends Controller
         //fungsi eloquent untuk mengupdate data inputan kita
            Mekanisme::where('id', $id_mekanisme)
                 ->update([
-                    'nama' => $request-> nama,
-                    'file' => $request-> file,
+                    'nama'=>$request->nama,
+                    'file'=>$request->file('file')->move('mekanisme', $request->file('file')->getClientOriginalName()),
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.layanan.mekanisme.index')
+            return redirect('admin-mekanisme')
                 ->with('success', 'Mekanisme Berhasil Diupdate');
     }
 
@@ -111,7 +114,7 @@ class MekanismeController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         Mekanisme::where('id', $id_mekanisme)->delete();
-        return redirect('/admin/mekanisme')  
+        return redirect('/admin-mekanisme')  
             -> with('success', 'Mekanisme Berhasil Dihapus');       
     }
 }

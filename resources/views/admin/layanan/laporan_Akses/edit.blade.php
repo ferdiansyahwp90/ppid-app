@@ -37,22 +37,9 @@
                   @method("PUT")
                     @csrf
                     <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="nama" name="nama" class="form-control @error('nama') is-invalid @enderror" id="nama"  value="{{ $laporanAkses->nama }}" aria-describedby="nama" >
+                        <label for="nama" >Nama Laporan</label>
+                        <textarea name="nama" type="nama" class="form-control @error('nama') is-invalid @enderror" id="deskripsi" aria-describedby="nama" value={!! $laporanAkses->nama !!}></textarea>
                         @error('nama')
-                          <div class="invalid-feedback ml-1">Bidang ini wajib diisi</div>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label for="file">File</label>
-                            @if($laporanAkses->file)
-                            <img src="{{ asset('storage/'.$laporanAkses->file) }}" alt="" class="w-50">
-                            @else
-                            <img alt="" class="w-50">
-                            @endif
-                        <input type="file" name="file" class="form-control @error('file') is-invalid @enderror" id="file" value="{{ $laporanAkses->file }}" aria-describedby="file" >
-                        @error('file')
                           <div class="invalid-feedback ml-1">Bidang ini wajib diisi</div>
                         @enderror
                     </div>

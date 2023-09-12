@@ -42,13 +42,11 @@ class LaporanAksesController extends Controller
         //melakukan validasi data
         $request->validate([
             'nama' => 'required',
-            'file' => 'required',
         ]);
         
         //fungsi eloquent untuk menambah data
         LaporanAkses::create([
             'nama' => $request-> nama,
-            'file'=>$request->file('file')->move('laporan_akses', $request->file('file')->getClientOriginalName()),
         ]);
 
         return redirect('admin-laporanAkses')
@@ -91,13 +89,12 @@ class LaporanAksesController extends Controller
         //melakukan validasi data
         $request->validate([
             'nama' => 'required',
-            'file' => 'required',
         ]);
         //fungsi eloquent untuk mengupdate data inputan kita
            LaporanAkses::where('id', $id_laporanAkses)
                 ->update([
                     'nama' => $request-> nama,
-                    'file'=>$request->file('file')->move('laporan_akses', $request->file('file')->getClientOriginalName()),
+    
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
             return redirect('admin-laporanAkses')

@@ -3,10 +3,12 @@
 <div class="container" id="ppid">       
         <div class="header-ppid">
             <div class="text-center">
-                <h2>Mekanisme</h2>
-                <video controls width="1000" height="500">
-                    <source src="/assets/video/fasilitasi sengketa informasi.mp4" type="video/webm" />
-                </video>
+                <h2>Penyelesaian Sengketa</h2>
+                @foreach ($penyelesaianSengketa as $item)
+                    <video controls width="1000" height="500">
+                        <source src="{{$item->file}}" type="video/webm" />
+                    </video>
+                @endforeach
             </div>
         </div>
 </div>

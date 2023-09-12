@@ -16,10 +16,9 @@ use App\Http\Controllers\Admin\profile\{
 };
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\Kegiatan\{
-    // GaleriController,
+    GaleriController,
     BeritaController
 };
-use App\Http\Controllers\GaleriController;
 // use App\Http\Controllers\Admin\Kegiatan\GaleriController;    
 use App\Http\Controllers\Admin\Layanan\{
     LaporanAksesController,
@@ -133,6 +132,10 @@ Route::middleware(['preventBackHistory'])->group(function () {
 //     return redirect('/pemohon');
 // })->middleware(['auth', 'signed'])->name('verification.verify');
 
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/admin/home', [AdminController::class, 'index'])->name('dashboard');
     //Profile
@@ -159,7 +162,6 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     //Kegiatan
     Route::resource('admin-galeri', GaleriController::class);
     Route::resource('admin-berita', BeritaController::class);
-    Route::post('/galeri/store', [GaleriController::class, 'store']);
 });
 
 Route::middleware(['auth', 'isPemohon'])->group(function () {

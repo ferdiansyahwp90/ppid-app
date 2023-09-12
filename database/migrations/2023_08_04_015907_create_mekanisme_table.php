@@ -15,7 +15,7 @@ class CreateMekanismeTable extends Migration
     {
         Schema::create('mekanisme', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->longText('nama');
             $table->string('file')->nullable();
             $table->timestamps();
         });
