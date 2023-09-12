@@ -29,10 +29,8 @@ use App\Http\Controllers\Admin\Layanan\{
     PermohonanLangsungController,
 };
 use App\Http\Controllers\Admin\DaftarInformasi\{
-    BerkalaController,
-    DikecualikanController,
-    SertamertaController,
-    SetiapsaatController,
+    InformasiController,
+    KategoriController,
 };
 //use App\Http\Controllers\Pemohon\PemohonController;
 use App\Http\Controllers\Pemohon\{
@@ -40,6 +38,7 @@ use App\Http\Controllers\Pemohon\{
     DetailInformasi,
     PemohonController,
 };
+use App\Models\Admin\DaftarInformasi\Kategori;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -132,11 +131,12 @@ Route::middleware(['preventBackHistory'])->group(function () {
 //     return redirect('/pemohon');
 // })->middleware(['auth', 'signed'])->name('verification.verify');
 
+
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
-
 Route::middleware(['auth', 'isAdmin'])->group(function () {
+    
     Route::get('/admin/home', [AdminController::class, 'index'])->name('dashboard');
     //Profile
     Route::resource('admin-ppid', PPIDController::class);
@@ -154,10 +154,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::resource('admin-permohonanLangsung', PermohonanLangsungController::class);
 
     //Daftar Informasi
-    Route::resource('admin-bekala', BerkalaController::class);
-    Route::resource('admin-dikecualikan', DikecualikanController::class);
-    Route::resource('admin-sertamerta', SertamertaController::class);
-    Route::resource('admin-setiapsaat', SetiapsaatController::class);
+    Route::resource('admin-kategori', KategoriController::class);
+    Route::resource('admin-informasi', InformasiController::class);
 
     //Kegiatan
     Route::resource('admin-galeri', GaleriController::class);

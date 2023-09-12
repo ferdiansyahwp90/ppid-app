@@ -4,11 +4,11 @@
 
 <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Infromasi Yang Dikecualikan</h1>
+      <h1>Informasi</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="">Layanan</a></li>
-          <li class="breadcrumb-item active">Infromasi Yang Dikecualikan</li>
+          <li class="breadcrumb-item active">Informasi</li>
         </ol>
       </nav>
     </div>
@@ -19,29 +19,29 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Infromasi Yang Dikecualikan</h5>
-              <a href="{{ url('admin/ppid/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
+              <h5 class="card-title">Informasi</h5>
+              <a href="{{ url('admin-kategori/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col">id</th>
+                    <th scope="col">#</th>
                     <th scope="col">Nama</th>
-                    <th scope="col">File</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @forelse ($dikecualikan as $item)    
+                  @forelse ($kategori as $item)    
                       <tr>
-                          <td>{{ $item->id }}</td>
-                          <td>{{ $item->Nama }}</td>
-                          <td>{{ $item->file }}</td>
+                          <td>{{ $loop->iteration }}</td>
+                          <td>{{ $item->nama }}</td>
+                          <td>{{ $item->status }}</td>
                           <td>
-                            <form action="/admin/ppid/{{ $item->id }}" method="post">
+                            <form action="/admin-kategori/{{ $item->id }}" method="post">
 
-                                <a href="/admin/ppid/{{ $item->id }}/edit" class="btn btn-primary text-light">ubah</a>
+                                <a href="/admin-kategori/{{ $item->id }}/edit" class="btn btn-primary text-light">ubah</a>
 
                                 @csrf
                                 @method('DELETE')
@@ -52,7 +52,7 @@
                       @empty
                       <tr>
                           <td colspan="4" align="center">
-                              Infromasi Yang Dikecualikan Kosong
+                              Informasi Kosong
                           </td>
                       </tr>
                   @endforelse

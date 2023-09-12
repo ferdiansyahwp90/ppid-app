@@ -5,17 +5,14 @@ namespace App\Models\Admin\DaftarInformasi;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Berkala extends Model
+class Informasi extends Model
 {
-    protected $table='berkala'; 
-    protected $primaryKey = 'id_berkala'; 
+    protected $table='informasi'; 
+    protected $primaryKey = 'id_informasi'; 
 
     use HasFactory;
     protected $fillable = [
-        'name',
         'deskripsi',
-        'tanggal',
-        'file',
-        'link',
+        'status',
     ];
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSetiapsaatTable extends Migration
+class CreateInformasiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateSetiapsaatTable extends Migration
      */
     public function up()
     {
-        Schema::create('setiapsaat', function (Blueprint $table) {
+        Schema::create('informasi', function (Blueprint $table) {
             $table->id();
+            $table->longText('deskripsi');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateSetiapsaatTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('setiapsaat');
+        Schema::dropIfExists('informasi');
     }
 }

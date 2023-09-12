@@ -92,7 +92,7 @@
 
                 <a href="/kontak" class="nav-item nav-link">Kontak</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Formulir</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Permohonan Informasi </a>
                     <div class="dropdown-menu bg-light m-0">
                           <a href="/login" class="dropdown-item">Online</a>
                           <a href="/storage/formulir/Form Permohonan Informasi_PPID KAB PROB.pdf" class="dropdown-item">Offline</a>

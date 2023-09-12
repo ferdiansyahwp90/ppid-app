@@ -87,23 +87,13 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Informasi Berkala</span>
+            <a href="/admin-kategori">
+              <i class="bi bi-circle"></i><span>Kategori</span>
             </a>
           </li>
           <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Informasi Serta Merta</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Informasi Setiap Saat</span>
-            </a>
-          </li>
-          <li>
-            <a href="/admin-dikecualikan">
-              <i class="bi bi-circle"></i><span>Informasi Yang Dikecualikan</span>
+            <a href="/admin-informasi">
+              <i class="bi bi-circle"></i><span>Informasi</span>
             </a>
           </li>
         </ul>

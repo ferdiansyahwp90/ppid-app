@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin\DaftarInformasi;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\Admin\DaftarInformasi\Dikecualikan;
+use App\Models\Admin\DaftarInformasi\Kategori;
 use Illuminate\Support\Facades\DB;
 
-class DikecualikanController extends Controller
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class DikecualikanController extends Controller
      */
     public function index()
     {
-        $dikecualikan = Dikecualikan::all(); // Mengambil semua isi tabel
-        $paginate = Dikecualikan::orderBy('id', 'asc')->paginate(5);
-        return view('admin.daftarInformasi.dikecualikan.index', ['dikecualikan' => $dikecualikan,'paginate'=>$paginate]);
+        $kategori = Kategori::all(); // Mengambil semua isi tabel
+        $paginate = Kategori::orderBy('id', 'asc')->paginate(5);
+        return view('admin.daftarInformasi.kategori.index', ['kategori' => $kategori,'paginate'=>$paginate]);
     }
 
     /**
@@ -28,7 +28,7 @@ class DikecualikanController extends Controller
      */
     public function create()
     {
-        return view('admin.daftarInformasi.dikecualikan.create');
+        return view('admin.daftarInformasi.kategori.create');
     }
 
     /**
@@ -42,14 +42,14 @@ class DikecualikanController extends Controller
         //melakukan validasi data
         $request->validate([
             'nama' => 'required',
-            'file' => 'required',
+            'status' => 'required',
         ]);
         
         //fungsi eloquent untuk menambah data
-        Dikecualikan::create($request->all());
+        Kategori::create($request->all());
 
-        return redirect('/admin/dikecualikan')
-                ->with('success', 'Laporan Yang Dikecualikan Berhasil Ditambahkan');
+        return redirect('/admin-kategori')
+                ->with('success', 'Kategori Berhasil Ditambahkan');
     }
 
     /**
@@ -58,10 +58,10 @@ class DikecualikanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\response
      */
-    public function show($id_dikecualikan)
+    public function show($id_kategori)
     {
-        $berita = Dikecualikan::where('id', $id_dikecualikan)->first();
-        return view('admin.daftarInformasi.dikecualikan.detail', compact('dikecualikan'));
+        $kategori = Kategori::where('id', $id_kategori)->first();
+        return view('admin.daftarInformasi.kategori.detail', compact('kategori'));
     }
 
     /**
@@ -70,10 +70,10 @@ class DikecualikanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_dikecualikan)
+    public function edit($id_kategori)
     {
-        $berita = DB::table('dikecualikan')->where('id', $id_dikecualikan)->first();
-        return view('admin.daftarInformasi.dikecualikan.edit', compact('dikecualikan'));
+        $kategori = DB::table('kategori')->where('id', $id_kategori)->first();
+        return view('admin.daftarInformasi.kategori.edit', compact('kategori'));
     }
 
     /**
@@ -83,22 +83,22 @@ class DikecualikanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_dikecualikan)
+    public function update(Request $request, $id_kategori)
     {
         //melakukan validasi data
         $request->validate([
             'nama' => 'required',
-            'file' => 'required',
+            'status' => 'required',
         ]);
         //fungsi eloquent untuk mengupdate data inputan kita
-           Dikecualikan::where('id', $id_dikecualikan)
+           Kategori::where('id', $id_kategori)
                 ->update([
                     'nama' => $request-> nama,
-                    'file' => $request-> file,
+                    'status' => $request-> status,
             ]);
         //jika data berhasil diupdate, akan kembali ke halaman utama
-            return redirect()->route('admin.daftarInformasi.dikecualikan.index')
-                ->with('success', 'Laporan Yang Dikecualikan Berhasil Diupdate');
+            return redirect()->route('admin.daftarInformasi.kategori.index')
+                ->with('success', 'Kategori Berhasil Diupdate');
     }
 
     /**
@@ -107,11 +107,11 @@ class DikecualikanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id_dikecualikan)
+    public function destroy($id_kategori)
     {
         //fungsi eloquent untuk menghapus data
-        Dikecualikan::where('id', $id_dikecualikan)->delete();
-        return redirect('/admin/dikecualikan')  
-            -> with('success', 'Laporan Yang Dikecualikan Berhasil Dihapus');       
+        Kategori::where('id', $id_kategori)->delete();
+        return redirect('/admin/kategori')  
+            -> with('success', 'Laporan Yang kategori Berhasil Dihapus');       
     }
 }
