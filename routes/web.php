@@ -31,6 +31,10 @@ use App\Http\Controllers\Admin\Layanan\{
 use App\Http\Controllers\Admin\DaftarInformasi\{
     InformasiController,
     KategoriController,
+    BerkalaController,
+    DikecualikanController,
+    SetiapsaatController,
+    SertamertaController,
 };
 //use App\Http\Controllers\Pemohon\PemohonController;
 use App\Http\Controllers\Pemohon\{
@@ -38,8 +42,6 @@ use App\Http\Controllers\Pemohon\{
     DetailInformasi,
     PemohonController,
 };
-use App\Models\Admin\DaftarInformasi\Kategori;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,21 +86,12 @@ Route::controller(DashboardController::class)->group(function() {
     Route::get('/SK', function () {
         return view('regulasi.SK.index');
     });
-    Route::get('/informasi', function () {
-        return view('daftarinformasi.index');
-    });
-    Route::get('/berkala', function () {
-        return view('daftarinformasi.berkala.index');
-    });
-    Route::get('/sertamerta', function () {
-        return view('daftarinformasi.sertamerta.index');
-    });
-    Route::get('/setiapsaat', function () {
-        return view('daftarinformasi.setiapsaat.index');
-    });
-    Route::get('/dikecualikan', function () {
-        return view('daftarinformasi.dikecualikan.index');
-    });
+
+    //Daftar Informasi 
+    Route::get('daftarinformasi-berkala', 'berkala');
+    Route::get('daftarinformasi-dikecualikan', 'dikecualikan');
+    Route::get('daftarinformasi-setiapsaat', 'setiapsaat');
+    Route::get('daftarinformasi-sertamerta', 'sertamerta');
 
     //Kegiatan
     Route::get('kegiatan-galeri', 'galeri');
@@ -156,6 +149,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     //Daftar Informasi
     Route::resource('admin-kategori', KategoriController::class);
     Route::resource('admin-informasi', InformasiController::class);
+    Route::resource('admin-berkala', BerkalaController::class);
+    Route::resource('admin-dikecualikan', DikecualikanController::class);
+    Route::resource('admin-setiapsaat', SetiapsaatController::class);
+    Route::resource('admin-sertamerta', SertamertaController::class);
 
     //Kegiatan
     Route::resource('admin-galeri', GaleriController::class);

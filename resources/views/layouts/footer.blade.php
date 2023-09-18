@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Layanan Kami</h4>
-                    <a class="btn btn-link" href="/permohonan">Permohonan Informasi Datang Langsung</a>
+                    <a class="btn btn-link" href="layanan-permohonanLangsung">Permohonan Informasi Datang Langsung</a>
                     <a class="btn btn-link" href="/assets/video/Mekanisme atau proses.mp4">Mekanisme / Proses</a>
                     <a class="btn btn-link" href="/assets/video/Pengajuan Keberatan.mp4">Pengajuan Keberatan</a>
                     <a class="btn btn-link" href="/assets/video/fasilitasi sengketa informasi.mp4">Prosedur Penyelesaian Sengketa</a>
@@ -42,7 +42,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">PPID KABUPATEN PROBOLINGGO</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" href="#">Pejabat Pengelola Informasi dan Dokumentasi</a>. All Right Reserved.
                 </div>
                 <!-- <div class="col-md-6 text-center text-md-end">
                     Designed By <a class="border-bottom" href="#">PPI</a>

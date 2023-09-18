@@ -29,7 +29,7 @@
             <div class="form-outline mb-4">
               <label class="form-label" for="password">Password</label>
               {{-- <input type="password" id="password" name="password" class="form-control form-control-lg @error('password') is-invalid @enderror" required/> --}}
-              <input id="password" type="password" data-id="inputPassword" value="admin" class="form-control rad-10 form-spacer-25x20 fs-normal @error('password') is-invalid @enderror" name="password" autocomplete="current-password" placeholder="Password">
+              <input id="password" type="password" data-id="inputPassword" value="admin,ppid" class="form-control rad-10 form-spacer-25x20 fs-normal @error('password') is-invalid @enderror" name="password" autocomplete="current-password" placeholder="Password">
               @error('password')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>

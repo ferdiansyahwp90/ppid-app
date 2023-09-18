@@ -11,7 +11,6 @@
                         <h4 class="text-white mb-4">{{$item->name}}</h4>
                         <div class="d-flex">
                             <a class="btn btn-lg-square rounded-circle mx-2" href="{{$item->photo}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square rounded-circle mx-2" href=""><i class="fa fa-link"></i></a>
                         </div>
                     </div>
                 </div>

@@ -1,28 +1,28 @@
-            <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            {{-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+                <h1>Maintenance Website..</h1>
                 <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
-            </div> -->
+            </div> --}}
     
     <!-- Topbar Start -->
     <div class="container-fluid bg-dark text-light px-0 py-2">
         <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center me-4">
+                {{-- <div class="h-100 d-inline-flex align-items-center me-4">
                     <span class="fa fa-phone-alt me-2"></span>
                     <a style="color:white;" href="https://wa.me/+6281334302285">+6281334302285</a>
-                </div>
+                </div> --}}
                 <div class="h-100 d-inline-flex align-items-center">
                     <span class="fa fa-envelope me-2"></span>
-                    <a style="color:white;" href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=diskominfo@problinggokab.co.id" >diskominfo@problinggokab.co.id</a>
+                    <a style="color:white;" href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=diskominfo@problinggokab.co.id" >ppid@probolinggokab.co.id</a>
                 </div>
-            </div>
+            </div>8y6                                 
         </div>
     </div>
     <!-- Topbar End -->
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="https://probolinggokab.go.id/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="assets/img/logo-endless.jpg" alt="Portal Kabupaten Probolinggo" decoding="async" width="100" height="70">
+                           
             {{-- <img src="assets/img/logo.png" alt="Portal Kabupaten Probolinggo" decoding="async" width="262" height="70 "> --}}
             {{-- <h1 class="m-0">PPID</h1> --}}
         </a>
@@ -52,8 +52,8 @@
                         <a href="/storage/regulasi/PP No. 61 tahun 2010.pdf" class="dropdown-item">PERATURAN PEMERINTAH NO 61 TAHUN 2010</a>
                         <a href="/storage/regulasi/Perki No. 1 tahun 2013.pdf" class="dropdown-item">PERKI NO 1 TAHUN 2013</a>
                         <a href="/storage/regulasi/Perki No. 1 tahun 2021.pdf" class="dropdown-item">PERKI NO 1 TAHUN 2021</a>
-                       <a href="/storage/regulasi/Permendagri No. 3 tahun 2017.pdf" class="dropdown-item">PERMENDAGRI NO 3 TAHUN 2017</a>
-                       <a href="/storage/regulasi/Pergub No. 8 Tahun 2018 ttg Pedoman PPID.pdf" class="dropdown-item">PERGUB JATIM NO 8 TAHUN 2018</a>
+                        <a href="/storage/regulasi/Permendagri No. 3 tahun 2017.pdf" class="dropdown-item">PERMENDAGRI NO 3 TAHUN 2017</a>
+                        <a href="/storage/regulasi/PERBUP-NO-85-thn-2017-tentang-PEDOMAN-PENGELOLAAN-PELAYANAN-INF.pdf" class="dropdown-item">PERBUP JATIM NO 8 TAHUN 2017</a>
                         <a href="/storage/regulasi/SK_PENUNJUKAN PEJABAT PLID.pdf" class="dropdown-item">SK PPID</a></li>
                     </div>
                 </div>
@@ -73,35 +73,38 @@
                 <div class="nav-item dropdown">
                     <a href="/informasi" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Daftar Informasi</a>
                     <div class="dropdown-menu bg-light m-0">
-                          <a href="/berkala" class="dropdown-item">Informasi Berkala</a>
-                          <a href="/sertamerta" class="dropdown-item">Informasi Serta Merta</a>
-                          <a href="/setiapsaat" class="dropdown-item">Informasi Setiap Saat</a>
-                          <a href="/dikecualikan" class="dropdown-item">Informasi Yang Dikecualikan</a>
+                        <a href="/daftarinformasi-berkala" class="dropdown-item">Informasi Berkala</a>
+                        <a href="/daftarinformasi-sertamerta" class="dropdown-item">Informasi Serta Merta</a>
+                        <a href="/daftarinformasi-setiapsaat" class="dropdown-item">Informasi Setiap Saat</a>
+                        <a href="/daftarinformasi-dikecualikan" class="dropdown-item">Informasi Yang Dikecualikan</a>
                     </div>
                 </div>
 
-                <a class="nav-link scrollto"  href="https://katalog.satudata.go.id/dataset/?res_format=WMS&organization=pemerintah-kabupaten-probolinggo" class="nav-item nav-link">Data</a>
+                {{-- <a class="nav-link scrollto"  href="https://katalog.satudata.go.id/dataset/?res_format=WMS&organization=pemerintah-kabupaten-probolinggo" class="nav-item nav-link">Data</a> --}}
                 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Kegiatan</a>
                     <div class="dropdown-menu bg-light m-0">
-                          <a href="/kegiatan-galeri" class="dropdown-item">Galeri</a>
-                          <a href="/kegiatan-berita" class="dropdown-item">Berita</a>
+                        <a href="/kegiatan-galeri" class="dropdown-item">Galeri</a>
+                        <a href="/kegiatan-berita" class="dropdown-item">Berita</a>
                     </div>
                 </div>
-
-                <a href="/kontak" class="nav-item nav-link">Kontak</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Permohonan Informasi </a>
-                    <div class="dropdown-menu bg-light m-0">
-                          <a href="/login" class="dropdown-item">Online</a>
-                          <a href="/storage/formulir/Form Permohonan Informasi_PPID KAB PROB.pdf" class="dropdown-item">Offline</a>
+                <li>
+                    <a href="/kontak" class="nav-item nav-link">Kontak</a>
+                </li>
+                <li>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Permohonan Informasi </a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="/login" class="dropdown-item">Online</a>
+                            <a href="/storage/formulir/Form Permohonan Informasi_PPID KAB PROB.pdf" class="dropdown-item">Offline</a>
+                        </div>
                     </div>
-                </div>
-
+                </li>
+                {{-- <li>
+                    <a href="/login" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Masuk <i class="fa fa-arrow-right ms-3"></i></a>
+                </li> --}}
             </div>
-            <a href="/login" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Masuk <i class="fa fa-arrow-right ms-3"></i></a>
-
         </div>
     </nav>
     <!-- Navbar End -->

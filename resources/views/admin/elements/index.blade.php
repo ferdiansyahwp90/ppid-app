@@ -142,7 +142,7 @@
               </ul>
             </div>
 
-            <div class="card-body">
+            {{-- <div class="card-body">
               <h5 class="card-title">Reports <span>/Today</span></h5>
 
               <!-- Line Chart -->
@@ -202,7 +202,7 @@
               </script>
               <!-- End Line Chart -->
 
-            </div>
+            </div> --}}
 
           </div>
         </div><!-- End Reports -->
@@ -225,7 +225,7 @@
             </div>
 
             <div class="card-body">
-              <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+              <h5 class="card-title">Permintaan Terkini <span>| Today</span></h5>
 
               <table class="table table-borderless datatable">
                 <thead>
@@ -299,7 +299,7 @@
             </div>
 
             <div class="card-body pb-0">
-              <h5 class="card-title">Top Selling <span>| Today</span></h5>
+              <h5 class="card-title">Banyak Permintaan <span>| Hari ini</span></h5>
 
               <table class="table table-borderless">
                 <thead>
@@ -377,7 +377,7 @@
         </div>
 
         <div class="card-body">
-          <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+          <h5 class="card-title">Aktivitas Terkini <span>| Hari ini</span></h5>
 
           <div class="activity">
 
@@ -435,7 +435,7 @@
       </div><!-- End Recent Activity -->
 
       <!-- Budget Report -->
-      <div class="card">
+      {{-- <div class="card">
         <div class="filter">
           <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -506,9 +506,9 @@
           </script>
 
         </div>
-      </div><!-- End Budget Report -->
+      </div><!-- End Budget Report --> --}}
 
-      <!-- Website Traffic -->
+      {{-- <!-- Website Traffic -->
       <div class="card">
         <div class="filter">
           <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -584,7 +584,7 @@
           </script>
 
         </div>
-      </div><!-- End Website Traffic -->
+      </div><!-- End Website Traffic --> --}}
 
       <!-- News & Updates Traffic -->
       <div class="card">

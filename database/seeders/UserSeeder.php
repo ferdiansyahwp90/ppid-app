@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         $data = [
             [
                 'email' => 'admin@ppid.com',
-                'password' => Hash::make('admin'),
+                'password' => Hash::make('admin,ppid'),
                 'role_id' => 1
             ],
             [

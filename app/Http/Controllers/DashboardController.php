@@ -15,6 +15,10 @@ use App\Models\Admin\Layanan\Mekanisme;
 use App\Models\Admin\Layanan\PengajuanKeberatan;
 use App\Models\Admin\Layanan\PenyelesaianSengketa;
 use App\Models\Admin\Layanan\PermohonanLangsung;
+use App\Models\Admin\DaftarInformasi\Berkala;
+use App\Models\Admin\DaftarInformasi\Dikecualikan;
+use App\Models\Admin\DaftarInformasi\Sertamerta;
+use App\Models\Admin\DaftarInformasi\Setiapsaat;
 use App\Models\Admin\Kegiatan\Galeri;
 use App\Models\Admin\Kegiatan\Berita;
 
@@ -97,6 +101,35 @@ class DashboardController extends Controller
         $permohonanLangsung = PermohonanLangsung::all(); // Mengambil semua isi tabel
         $paginate = PermohonanLangsung::orderBy('id', 'asc')->paginate(5);
         return view('layanan.permohonanLangsung.index', ['permohonanLangsung' => $permohonanLangsung,'paginate'=>$paginate]);
+    }
+
+    //Daftar Informasi
+    public function berkala()
+    {
+        $berkala = Berkala::all(); // Mengambil semua isi tabel
+        $paginate = Berkala::orderBy('id', 'asc')->paginate(5);
+        return view('daftarInformasi.berkala.index', ['berkala' => $berkala,'paginate'=>$paginate]);
+    }
+
+    public function dikecualikan()
+    {
+        $dikecualikan = Dikecualikan::all(); // Mengambil semua isi tabel
+        $paginate = Dikecualikan::orderBy('id', 'asc')->paginate(5);
+        return view('daftarInformasi.dikecualikan.index', ['dikecualikan' => $dikecualikan,'paginate'=>$paginate]);
+    }
+
+    public function sertamerta()
+    {
+        $sertamerta = Sertamerta::all(); // Mengambil semua isi tabel
+        $paginate = Sertamerta::orderBy('id', 'asc')->paginate(5);
+        return view('daftarInformasi.sertamerta.index', ['sertamerta' => $sertamerta,'paginate'=>$paginate]);
+    }
+
+    public function setiapsaat()
+    {
+        $setiapsaat = Setiapsaat::all(); // Mengambil semua isi tabel
+        $paginate = Setiapsaat::orderBy('id', 'asc')->paginate(5);
+        return view('daftarInformasi.setiapsaat.index', ['setiapsaat' => $setiapsaat,'paginate'=>$paginate]);
     }
 
     //Kegiatan
