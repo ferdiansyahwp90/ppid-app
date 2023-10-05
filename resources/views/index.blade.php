@@ -49,7 +49,7 @@
                                     <div class="row justify-content-center">
                                         <div class="col-lg-8">
                                             <h1 class="display-1 text-white mb-5 animated slideInDown">PPID Pemerintah Kabupaten Probolinggo </h1>
-                                            <a href="" class="btn btn-primary py-sm-3 px-sm-4">Explore More</a>
+                                            <a href="" class="btn btn-primary py-sm-3 px-sm-4" target="_blank">Explore More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -144,7 +144,7 @@
                         <h1 class="display-5 mb-4">Pejabat Pengelola Informasi dan Dokumentasi</h1>
                         <p class="mb-4">PPID berfungsi sebagai pengelola dan penyampai dokumen yang dimiliki oleh badan publik sesuai dengan amanat UU 14/2008 tentang Keterbukaan Informasi Publik. 
                         Dengan keberadaan PPID maka masyarakat yang akan menyampaikan permohonan informasi lebih mudah dan tidak berbelit karena dilayani lewat satu pintu.</p>
-                        <a class="btn btn-primary py-3 px-4" href="">Explore More</a>
+                        <a class="btn btn-primary py-3 px-4" href="https://probolinggokab.go.id/" target="_blank">Explore More</a>
                     </div>
                     <!--<div class="col-lg-3 col-md-12 wow fadeInUp" data-wow-delay="0.5s">-->
                     <!--    <div class="row g-5">-->
@@ -171,7 +171,7 @@
 
 
     <!-- Facts Start -->
-    <div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="assets/img/carousel-1.jpg" >
+    <div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="assets/img/kantor.jpg" >
         <div class="container py-5">
             <div class="row g-5" >
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
@@ -453,17 +453,17 @@
             <!-- JavaScript Libraries -->
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="lib/wow/wow.min.js"></script>
-            <script src="lib/easing/easing.min.js"></script>
-            <script src="lib/waypoints/waypoints.min.js"></script>
-            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-            <script src="lib/counterup/counterup.min.js"></script>
-            <script src="lib/parallax/parallax.min.js"></script>
-            <script src="lib/isotope/isotope.pkgd.min.js"></script>
-            <script src="lib/lightbox/js/lightbox.min.js"></script>
+            <script src="assets/lib/wow/wow.min.js"></script>
+            <script src="assets/lib/easing/easing.min.js"></script>
+            <script src="assets/lib/waypoints/waypoints.min.js"></script>
+            <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
+            <script src="assets/lib/counterup/counterup.min.js"></script>
+            <script src="assets/lib/parallax/parallax.min.js"></script>
+            <script src="assets/lib/isotope/isotope.pkgd.min.js"></script>
+            <script src="assets/lib/lightbox/js/lightbox.min.js"></script>
 
             <!-- Template Javascript -->
-            <script src="js/main.js"></script>
+            <script src="assets/js/main.js"></script>
 
     </body>
 

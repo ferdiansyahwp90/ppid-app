@@ -3,8 +3,8 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                @foreach ($berita as $item)
+            @foreach ($berita as $item)
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item rounded d-flex h-100">
                         <div class="service-img rounded">
                             <img class="img-fluid" src="{{$item->photo}}" alt="">
@@ -18,8 +18,8 @@
                             <a class="btn btn-sm" href="{{$item->link}}"><i class="fa fa-plus text-primary me-2"></i>Read More</a>
                         </div>
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>

@@ -225,7 +225,7 @@
             </div>
 
             <div class="card-body">
-              <h5 class="card-title">Permintaan Terkini <span>| Today</span></h5>
+              <h5 class="card-title">Permintaan Terkini <span>| Hari ini</span></h5>
 
               <table class="table table-borderless datatable">
                 <thead>
@@ -298,7 +298,7 @@
               </ul>
             </div>
 
-            <div class="card-body pb-0">
+            {{-- <div class="card-body pb-0">
               <h5 class="card-title">Banyak Permintaan <span>| Hari ini</span></h5>
 
               <table class="table table-borderless">
@@ -350,7 +350,7 @@
                 </tbody>
               </table>
 
-            </div>
+            </div> --}}
 
           </div>
         </div><!-- End Top Selling -->
@@ -587,7 +587,7 @@
       </div><!-- End Website Traffic --> --}}
 
       <!-- News & Updates Traffic -->
-      <div class="card">
+      {{-- <div class="card">
         <div class="filter">
           <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -638,7 +638,7 @@
           </div><!-- End sidebar recent posts-->
 
         </div>
-      </div><!-- End News & Updates -->
+      </div><!-- End News & Updates --> --}}
 
     </div><!-- End Right side columns -->
 
