@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserAdmin extends Model
+class UserAdmin extends Model 
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'nama', 'gender', 'phone', 'identity_photo', 'driver_license', 'selfie_photo'];
+    protected $fillable = ['user_id', 'nama', 'phone', 'alamat', 'email', 'identity_photo'];
 
     public function user(){
         return $this->belongsTo(User::class, 'user_id', 'id');

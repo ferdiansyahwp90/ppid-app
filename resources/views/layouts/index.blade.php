@@ -9,7 +9,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <h1 class="display-1 text-white mb-5 animated slideInDown">PPID Pemerintah Kabupaten Probolinggo </h1>
-                                    <a href="https://probolinggokab.go.id/" class="btn btn-primary py-sm-3 px-sm-4">Explore More</a>
+                                    <a href="https://probolinggokab.go.id/" class="btn btn-primary py-sm-3 px-sm-4" target="_blank">Explore More</a>
                                 </div>
                             </div>
                         </div>
@@ -132,7 +132,7 @@
 
 
     <!-- Facts Start -->
-    <div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="assets/img/carousel-1.jpg">
+    <div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">

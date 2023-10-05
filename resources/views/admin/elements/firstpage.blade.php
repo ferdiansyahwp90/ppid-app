@@ -83,6 +83,7 @@
         <script src="{{ asset('pageUsers/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
         <script src="{{ asset('pageUsers/assets/vendor/tinymce/tinymce.min.js') }}"></script>
         <script src="{{ asset('pageUsers/assets/vendor/php-email-form/validate.js') }}"></script>
+        <script src="{{ asset('pageUsers/assets/settings/style.css') }}"></script>
 
         <!-- Template Main JS File -->
         <script src="{{ asset('pageUsers/assets/js/main.js') }}"></script>
@@ -90,15 +91,6 @@
         <script>flatpickr("input[type=datetime-local]", {})</script>
 
         <!-- Tinymce -->
-            {{-- <script>
-                tinymce.init({
-                    selector: "textarea#deskripsi",
-                    plugins: ['advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak','searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime','media', 'table', 'emoticons', 'template', 'help'],
-                    toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
-                    menu: {favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }},
-                    menubar: 'favs file edit view insert format tools table help',
-                });
-            </script> --}}
             <script>
                 var editor_config = {
                   path_absolute : "/",
@@ -135,6 +127,12 @@
               
                 tinymce.init(editor_config);
             </script>
+          
+            <!-- Setting -->
+            <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet">
+            <link href = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
+
 
     </body>
 </html>

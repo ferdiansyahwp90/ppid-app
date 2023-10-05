@@ -19,7 +19,6 @@ use App\Http\Controllers\Admin\Kegiatan\{
     GaleriController,
     BeritaController
 };
-// use App\Http\Controllers\Admin\Kegiatan\GaleriController;    
 use App\Http\Controllers\Admin\Layanan\{
     LaporanAksesController,
     LaporanPelayananController,
@@ -36,12 +35,15 @@ use App\Http\Controllers\Admin\DaftarInformasi\{
     SetiapsaatController,
     SertamertaController,
 };
-//use App\Http\Controllers\Pemohon\PemohonController;
+
+use App\Http\Controllers\Admin\Settings\MyprofileController;
+
 use App\Http\Controllers\Pemohon\{
     PermintaanController,
     DetailInformasi,
     PemohonController,
 };
+use App\Models\Admin\Settings\Myprofile;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,17 +114,18 @@ Route::post('/authCheck', [LoginController::class, 'authenticate']);
 Route::middleware(['preventBackHistory'])->group(function () {
     Auth::routes(['verified']);
 });
+
 // Route::get('/verify-email', function (){
 //     Mail::to('wardanaputraferdiansyah@gmail.com')
 //         ->send(new VerificationEmail());
 // });
-// Route::get('/email/verify', function () {
-//     return view('auth.verify');
-// })->middleware('auth')->name('verification.notice');
-// Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-//     $request->fulfill();
-//     return redirect('/pemohon');
-// })->middleware(['auth', 'signed'])->name('verification.verify');
+Route::get('/email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect('/pemohon');
+})->middleware(['auth', 'signed'])->name('verification.verify');
 
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
@@ -130,6 +133,9 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 });
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     
+    //settings
+    Route::resource('admin-myprofile',MyprofileController::class);
+
     Route::get('/admin/home', [AdminController::class, 'index'])->name('dashboard');
     //Profile
     Route::resource('admin-ppid', PPIDController::class);

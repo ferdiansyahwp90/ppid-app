@@ -17,11 +17,10 @@ class CreateUserAdminsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('nama', 50);
-            $table->enum('gender', ['male', 'female', 'hidden'])->default('hidden');
             $table->string('phone', 16)->nullable();
+            $table->string('alamat', 255)->nullable();
+            $table->string('email', 50)->nullable();
             $table->text('identity_photo')->nullable();
-            $table->text('driver_license')->nullable();
-            $table->text('selfie_photo')->nullable();
             $table->timestamps();
         });
     }

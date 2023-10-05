@@ -15,7 +15,7 @@
                     <span class="fa fa-envelope me-2"></span>
                     <a style="color:white;" href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=diskominfo@problinggokab.co.id" >ppid@probolinggokab.co.id</a>
                 </div>
-            </div>8y6                                 
+            </div>                       
         </div>
     </div>
     <!-- Topbar End -->
@@ -39,22 +39,24 @@
                         <a href="{{ url('profile-ppid') }}" class="dropdown-item" id="ppid">Seputar PPID</a>
                         <a href="{{ url('profile-struktur')}}" class="dropdown-item" >Struktur Organisasi</a>
                         <a href="{{ url('profile-tugas')}}" class="dropdown-item">Tugas dan Fungsi PPID</a>
+                        <a href="/storage/Maklumat/Maklumat_Pelayanan_PPID_KabProbolinggo.pdf" class="dropdown-item" target="_blank">Maklumat Pelayanan Informasi Publik</a>
                         <a href="{{ url('profile-visi')}}" class="dropdown-item">Visi dan Misi PPID</a>
                         <a href="{{ url('profile-sop')}}" class="dropdown-item">SOP PPID</a>
+                        <a href="/storage/SK/PERBUP_PENUNJUKAN PEJABAT PENGELOLA LAYANAN INFORMASI.pdf" class="dropdown-item" target="_blank">SK PPID</a></li>
                     </div>
                 </div>
 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Regulasi</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="/storage/regulasi/UU No. 14 Thn 2008.pdf" class="dropdown-item">UNDANG-UNDANG 14 TAHUN 2008</a>
-                        <a href="/storage/regulasi/UU No. 43 Tahun 2009.pdf" class="dropdown-item">UNDANG-UNDANG 43 TAHUN 2009</a>
-                        <a href="/storage/regulasi/PP No. 61 tahun 2010.pdf" class="dropdown-item">PERATURAN PEMERINTAH NO 61 TAHUN 2010</a>
-                        <a href="/storage/regulasi/Perki No. 1 tahun 2013.pdf" class="dropdown-item">PERKI NO 1 TAHUN 2013</a>
-                        <a href="/storage/regulasi/Perki No. 1 tahun 2021.pdf" class="dropdown-item">PERKI NO 1 TAHUN 2021</a>
-                        <a href="/storage/regulasi/Permendagri No. 3 tahun 2017.pdf" class="dropdown-item">PERMENDAGRI NO 3 TAHUN 2017</a>
-                        <a href="/storage/regulasi/PERBUP-NO-85-thn-2017-tentang-PEDOMAN-PENGELOLAAN-PELAYANAN-INF.pdf" class="dropdown-item">PERBUP JATIM NO 8 TAHUN 2017</a>
-                        <a href="/storage/regulasi/SK_PENUNJUKAN PEJABAT PLID.pdf" class="dropdown-item">SK PPID</a></li>
+                        <a href="/storage/regulasi/UU No. 14 Thn 2008.pdf" class="dropdown-item" target="_blank">UNDANG-UNDANG 14 TAHUN 2008</a>
+                        <a href="/storage/regulasi/UU No. 43 Tahun 2009.pdf" class="dropdown-item" target="_blank">UNDANG-UNDANG 43 TAHUN 2009</a>
+                        <a href="/storage/regulasi/PP No. 61 tahun 2010.pdf" class="dropdown-item" target="_blank">PERATURAN PEMERINTAH NO 61 TAHUN 2010</a>
+                        <a href="/storage/regulasi/Perki No. 1 tahun 2013.pdf" class="dropdown-item" target="_blank">PERKI NO 1 TAHUN 2013</a>
+                        <a href="/storage/regulasi/Perki No. 1 tahun 2021.pdf" class="dropdown-item" target="_blank">PERKI NO 1 TAHUN 2021</a>
+                        <a href="/storage/regulasi/Permendagri No. 3 tahun 2017.pdf" class="dropdown-item" target="_blank">PERMENDAGRI NO 3 TAHUN 2017</a>
+                        <a href="/storage/regulasi/PERBUP-NO-85-thn-2017-tentang-PEDOMAN-PENGELOLAAN-PELAYANAN-INF.pdf" class="dropdown-item" target="_blank">PERBUP JATIM NO 8 TAHUN 2017</a>
+                        <a href="/storage/regulasi/SK_PENUNJUKAN PEJABAT PLID.pdf" class="dropdown-item" target="_blank">SK PPID</a></li>
                     </div>
                 </div>
 
