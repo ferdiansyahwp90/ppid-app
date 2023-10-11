@@ -21,6 +21,7 @@ use App\Models\Admin\DaftarInformasi\Sertamerta;
 use App\Models\Admin\DaftarInformasi\Setiapsaat;
 use App\Models\Admin\Kegiatan\Galeri;
 use App\Models\Admin\Kegiatan\Berita;
+use Illuminate\Support\Facades\Mail;
 
 class DashboardController extends Controller
 {
@@ -146,6 +147,16 @@ class DashboardController extends Controller
         $berita = Berita::all(); // Mengambil semua isi tabel
         $paginate = Berita::orderBy('id', 'asc')->paginate(5);
         return view('kegiatan.berita.index', ['berita' => $berita,'paginate'=>$paginate]);
+    }
+
+    public function email(){
+        $recipientEmail = 'ludfyr@gmail.com';
+        $subject = 'Subject of the Email';
+        $message = 'This is the content of the email.';
+
+        Mail::raw($message, function ($message) use ($recipientEmail, $subject) {
+            $message->to($recipientEmail)->subject($subject);
+        });
     }
 
 }

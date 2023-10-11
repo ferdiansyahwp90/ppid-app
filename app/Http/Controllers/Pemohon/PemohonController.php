@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pemohon;
 
 use App\Models\User;
+use App\Models\Pemohon\Permintaan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades;
 use Illuminate\Routing\Controller;
@@ -17,9 +18,16 @@ class PemohonController extends Controller
      */
     public function index()
     {
-        $pemohon = User::all(); // Mengambil semua isi tabel
-        $paginate = User::orderBy('id', 'asc')->paginate(3);
-        return view('pemohon.home.index', ['pemohon' => $pemohon, 'paginate' => $paginate]);
+        // dd(auth()->user()->toArray());
+        $acc = Permintaan::where('status', 'Sudah')->get();
+        $revoke = Permintaan::where('status', 'Belum')->get();
+        return view('pemohon.home.dashboard', ['acc' => $acc, 'revoke' => $revoke]);
+    }
+
+    public function profile()
+    {
+        $title = 'Profile';
+        return view('pemohon.profile.index', ['title' => $title]);
     }
 
     /**
