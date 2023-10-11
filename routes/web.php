@@ -67,6 +67,7 @@ Route::get('/', function () {
     }
     return view('index');
 });
+Route::get('/email', [DashboardController::class,'email']);
 Route::controller(DashboardController::class)->group(function() {
     //Profile
     Route::get('profile-ppid', 'profile'); 
@@ -104,6 +105,11 @@ Route::controller(DashboardController::class)->group(function() {
     Route::get('/formulir', function () {
         return view('formulir.index');
     });
+
+    // route profilepemohon
+    Route::get('/profile', function () {
+        return view('pemohon.profile.index');
+    });
 });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -112,17 +118,10 @@ Route::post('/authCheck', [LoginController::class, 'authenticate']);
 Route::middleware(['preventBackHistory'])->group(function () {
     Auth::routes(['verified']);
 });
-// Route::get('/verify-email', function (){
-//     Mail::to('wardanaputraferdiansyah@gmail.com')
-//         ->send(new VerificationEmail());
-// });
-// Route::get('/email/verify', function () {
-//     return view('auth.verify');
-// })->middleware('auth')->name('verification.notice');
-// Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-//     $request->fulfill();
-//     return redirect('/pemohon');
-// })->middleware(['auth', 'signed'])->name('verification.verify');
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect('/pemohon');
+})->middleware(['auth', 'signed'])->name('verification.verify');
 
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

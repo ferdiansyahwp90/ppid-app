@@ -34,6 +34,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Detail Informasi Yang Dibutuhkan</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
