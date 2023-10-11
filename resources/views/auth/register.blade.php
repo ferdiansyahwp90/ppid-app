@@ -27,7 +27,7 @@
                   @enderror
                 </div>
 
-                <div class="form-outline mb-4">
+                <div class="form-outline mb-4 d-none">
                   <label class="form-label" for="role_id">Role</label>
                   <select name="role_id" id="role_id" class="form-control rad-10 @error('role_id') is-invalid @enderror">
                     <option value="2">Pemohon</option>
