@@ -19,7 +19,6 @@ use App\Http\Controllers\Admin\Kegiatan\{
     GaleriController,
     BeritaController
 };
-// use App\Http\Controllers\Admin\Kegiatan\GaleriController;    
 use App\Http\Controllers\Admin\Layanan\{
     LaporanAksesController,
     LaporanPelayananController,
