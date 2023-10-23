@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
+use App\Models\Pemohon\Permintaan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades;
 use Illuminate\Routing\Controller;
@@ -19,7 +20,8 @@ class AdminController extends Controller
     {
         $admin = User::all(); // Mengambil semua isi tabel
         $paginate = User::orderBy('id', 'asc')->paginate(3);
-        return view('admin.home.index', ['admin' => $admin, 'paginate' => $paginate]);
+        $permintaan = Permintaan::all(); // Mengambil semua isi tabel
+        return view('admin.home.index', ['admin' => $admin, 'paginate' => $paginate, 'permintaan' => $permintaan]);
     }
 
     /**

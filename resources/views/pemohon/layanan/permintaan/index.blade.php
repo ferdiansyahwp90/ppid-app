@@ -1,5 +1,8 @@
-@extends('pemohon.home.index')
+@php
+  $url = auth()->user()->role_id == 1 ? 'admin.elements.firstpage' : 'pemohon.home.index';
+@endphp
 
+@extends($url)
 @section('content')
 
 <main id="main" class="main">
@@ -80,7 +83,7 @@
                       </tr>
                   @endforelse
                   
-              </tbody>
+                </tbody>
               </table>
               <!-- End Table with stripped rows -->
 
