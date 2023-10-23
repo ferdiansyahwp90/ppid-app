@@ -20,7 +20,9 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Permintaan Informasi</h5>
-              <a href="{{ url('/pemohon-permintaan/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
+              @if (auth()->user()->role_id != 1)
+                <a href="{{ url('/pemohon-permintaan/create') }}" class="btn btn-primary py-2 px-3 fs-normal float-right mb-3 shadow-sm"></span>Tambah Data</a>
+              @endif
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
@@ -48,15 +50,27 @@
                           <td>{{ $item->email }}</td>
                           <td>{{ $item->detailinfo}}</td>
                           <td>{{ $item->status}}</td>
-                          <form action="/pemohon-permintaan/{{ $item->id }}" method="post">
-
-                          <td><a href="/pemohon-permintaan/{{ $item->id }}/edit" class="btn btn-primary text-light">UBAH</a></td>
-
-                                @csrf
-                                @method('DELETE')
-                          <td> <button type="submit" class="btn btn-danger text-light">HAPUS</button></td>
-                            </form>
-                        </td>
+                          <td>
+                            @if (auth()->user()->role_id != 1)
+                              <a href="{{isset($url) ? $url : "`/pemohon-permintaan/`"}}{{ $item->id }}/edit" class="btn btn-primary text-light">UBAH</a>
+                              <form action="{{isset($url) ? $url : "`/pemohon-permintaan/`"}}{{ $item->id }}" method="post" class="mt-2">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button type="submit" class="btn btn-danger text-light">HAPUS</button>
+                              </form>
+                              @else
+                              {{-- button confirm and reject --}}
+                              @if ($item->status == 'Sudah')
+                                  Sudah Diterima
+                              @else
+                                  <form action="{{ route('admin-pemohon-permintaan.updateStatus', $item->id) }}" method="post" class="mt-2">
+                                      @csrf
+                                      @method('PUT')
+                                      <input type="hidden" name="status" value="Sudah">
+                                      <button type="submit" class="btn btn-success text-light">CONFIRM</button>
+                                  </form>
+                              @endif
+                            @endif
                       </tr>
                       @empty
                       <tr>

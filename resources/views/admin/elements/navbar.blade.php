@@ -54,6 +54,11 @@
             </a>
           </li>
           <li>
+            <a href="/admin-pemohon-permintaan">
+              <i class="bi bi-circle"></i><span>Permintaan informasi</span>
+            </a>
+          </li>
+          <li>
             <a href="/admin-permohonanLangsung">
               <i class="bi bi-circle"></i><span>Permohonan Informasi Datang Langsung</span>
             </a>

@@ -22,6 +22,9 @@ use App\Models\Admin\DaftarInformasi\Setiapsaat;
 use App\Models\Admin\Kegiatan\Galeri;
 use App\Models\Admin\Kegiatan\Berita;
 use Illuminate\Support\Facades\Mail;
+use App\Models\User;
+//validate
+use Illuminate\Support\Facades\Validator;
 
 class DashboardController extends Controller
 {
@@ -157,6 +160,35 @@ class DashboardController extends Controller
         Mail::raw($message, function ($message) use ($recipientEmail, $subject) {
             $message->to($recipientEmail)->subject($subject);
         });
+    }
+
+    public function editProfile()
+    {
+        $ppid = PPID::all(); // Mengambil semua isi tabel
+        $paginate = PPID::orderBy('id', 'asc')->paginate(5);
+        return view('pemohon.profile.form', ['ppid' => $ppid,'paginate'=>$paginate]);
+    }
+
+    // function updateProfile
+    public function updateProfile(Request $request)
+    {
+        // validation request password and confirmation
+        $validator = Validator::make($request->all(), [
+            'password' => 'required|min:8',
+        ]);
+
+        $id = auth()->user()->id;
+
+        $user = User::find($id);
+        if($request->password != null){
+            if($request->password == $request->password_confirmation){
+                $user->password = bcrypt($request->password);
+                $user->save();
+                return redirect()->back()->with('success', 'Password berhasil diubah');
+            }else{
+                return redirect()->back()->with('error', 'Password tidak sama');
+            }
+        }
     }
 
 }

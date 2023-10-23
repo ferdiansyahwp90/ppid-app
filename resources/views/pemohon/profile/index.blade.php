@@ -39,6 +39,8 @@
       <div class="card px-2 py-2">
         <div class="card-title">
             Profile
+        </div>
+        <a href="{{url('/edit-profile')}}"><button class="btn btn-primary float-end">Edit Profile</button></a>
           <div class="card-body">
             <table class="table">
               <tr>

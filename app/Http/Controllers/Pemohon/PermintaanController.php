@@ -16,7 +16,8 @@ class PermintaanController extends Controller
 
         $permintaan = Permintaan::all(); // Mengambil semua isi tabel
         $paginate = Permintaan::orderBy('id', 'asc')->paginate(3);
-        return view('pemohon.layanan.permintaan.index', ['permintaan' => $permintaan, 'paginate' => $paginate]);
+        $url = 'admin-pemohon-permintaan/';
+        return view('pemohon.layanan.permintaan.index', ['permintaan' => $permintaan, 'paginate' => $paginate, 'url' => $url]);
     }
 
     public function create()
@@ -65,6 +66,14 @@ class PermintaanController extends Controller
     {
         $permintaan = DB::table('permintaan')->where('id', $id_permintaan)->first();
         return view('pemohon.layanan.permintaan.edit', compact('permintaan'));
+    }
+
+    public function updateStatus(Request $request, $id_permintaan){
+        $permintaan = Permintaan::where('id', $id_permintaan)
+            ->update([
+                'status' => $request->status,
+            ]);
+        return redirect('/admin-pemohon-permintaan')->with('status', "Data '" . $request->name . "' berhasil diuodate");
     }
 
     public function update(Request $request, $id_permintaan)

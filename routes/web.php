@@ -109,6 +109,10 @@ Route::controller(DashboardController::class)->group(function() {
     Route::get('/profile', function () {
         return view('pemohon.profile.index');
     });
+    Route::get('edit-profile', 'editProfile');
+
+    // updateprofile
+    Route::post('update-profile', 'updateProfile')->name('updateProfile');
 });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -127,7 +131,8 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-    
+    Route::resource('admin-pemohon-permintaan', PermintaanController::class);
+    Route::put('admin-pemohon-permintaan/{id_permintaan}/update', [PermintaanController::class, 'updateStatus'])->name('admin-pemohon-permintaan.updateStatus');
     Route::get('/admin/home', [AdminController::class, 'index'])->name('dashboard');
     //Profile
     Route::resource('admin-ppid', PPIDController::class);
