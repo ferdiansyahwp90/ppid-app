@@ -14,7 +14,11 @@ class PermintaanController extends Controller
     public function index()
     {
 
-        $permintaan = Permintaan::all(); // Mengambil semua isi tabel
+        $permintaan = Permintaan::query(); // Mengambil semua isi tabel
+        if(auth()->user()->role_id != 1){
+            $permintaan->where('created_by', auth()->user()->id);
+        }
+        $permintaan = $permintaan->get();
         $paginate = Permintaan::orderBy('id', 'asc')->paginate(3);
         $url = 'admin-pemohon-permintaan/';
         return view('pemohon.layanan.permintaan.index', ['permintaan' => $permintaan, 'paginate' => $paginate, 'url' => $url]);
@@ -50,7 +54,8 @@ class PermintaanController extends Controller
             'pekerjaan' => $request->pekerjaan,
             'notelp' => $request->notelp,
             'email' => $request->email,
-            'detailinfo' => $request->detailinfo
+            'detailinfo' => $request->detailinfo,
+            'created_by' => auth()->user()->id
         ]);
         return redirect('/pemohon-permintaan')->with('status', "Data '" . $request->name . "' berhasil ditambahkan"); //jika data berhasil ditambahkan, akan kembali ke halaman utama
     }

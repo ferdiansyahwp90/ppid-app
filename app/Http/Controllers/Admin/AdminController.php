@@ -20,7 +20,11 @@ class AdminController extends Controller
     {
         $admin = User::all(); // Mengambil semua isi tabel
         $paginate = User::orderBy('id', 'asc')->paginate(3);
-        $permintaan = Permintaan::all(); // Mengambil semua isi tabel
+        $permintaan = Permintaan::query(); // Mengambil semua isi tabel
+        if(auth()->user()->role_id != 1){
+            $permintaan->where('created_by', auth()->user()->id);
+        }
+        $permintaan = $permintaan->get();
         return view('admin.home.index', ['admin' => $admin, 'paginate' => $paginate, 'permintaan' => $permintaan]);
     }
 

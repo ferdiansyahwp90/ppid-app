@@ -18,6 +18,7 @@ class Permintaan extends Model
         'pekerjaan',
         'notelp',
         'email',
-        'detailinfo'
+        'detailinfo',
+        'created_by'
     ];
 }
