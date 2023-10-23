@@ -24,8 +24,10 @@ class AdminController extends Controller
         if(auth()->user()->role_id != 1){
             $permintaan->where('created_by', auth()->user()->id);
         }
+        $selesai = $permintaan->where('status', 'Sudah')->get();
+        $selesai = $permintaan->where('status', 'Sudah')->get();
         $permintaan = $permintaan->get();
-        return view('admin.home.index', ['admin' => $admin, 'paginate' => $paginate, 'permintaan' => $permintaan]);
+        return view('admin.home.index', ['admin' => $admin,'selesai' => $admin, 'paginate' => $paginate, 'permintaan' => $permintaan]);
     }
 
     /**

@@ -18,8 +18,8 @@ class PemohonController extends Controller
      */
     public function index()
     {
-        $acc = Permintaan::where('status', 'Sudah')->get();
-        $revoke = Permintaan::where('status', 'Belum')->get();
+        $acc = Permintaan::where('status', 'Sudah')->where('created_by', auth()->user()->id)->get();
+        $revoke = Permintaan::where('status', 'Belum')->where('created_by', auth()->user()->id)->get();
         return view('pemohon.home.dashboard', ['acc' => $acc, 'revoke' => $revoke]);
     }
 

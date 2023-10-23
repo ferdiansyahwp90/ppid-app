@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFieldCreatedByInPermintaanTable extends Migration
+class ChangeFieldDetailInfoInPermintaanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddFieldCreatedByInPermintaanTable extends Migration
     public function up()
     {
         Schema::table('permintaan', function (Blueprint $table) {
-            $table->string('created_by')->after('detailinfo')->nullable();
+            $table->text('detailinfo')->nullable()->change();
         });
     }
 
@@ -26,7 +26,7 @@ class AddFieldCreatedByInPermintaanTable extends Migration
     public function down()
     {
         Schema::table('permintaan', function (Blueprint $table) {
-            $table->dropColumn('created_by');
+            $table->text('detailinfo')->change();
         });
     }
 }
