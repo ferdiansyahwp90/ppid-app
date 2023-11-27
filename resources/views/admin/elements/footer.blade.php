@@ -1,7 +1,7 @@
 <!-- ======= Footer ======= -->
 <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>Pejabat Publik Informasi dan Dokumentasi</span></strong>. All Rights Reserved
+      Copyright &copy; 2023 <strong><span>Pejabat Publik Informasi dan Dokumentasi</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->

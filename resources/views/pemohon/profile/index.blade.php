@@ -1,4 +1,7 @@
-@extends('pemohon.home.index')
+@php
+    $content = auth()->user()->role_id == 1 ? 'admin.elements.firstpage' : 'pemohon.home.index';
+@endphp
+@extends($content)
 
 @section('content')
 <div class="page-breadcrumb">
