@@ -15,7 +15,7 @@
                     <span class="fa fa-envelope me-2"></span>
                     <a style="color:white;" href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=diskominfo@problinggokab.co.id" >ppid@probolinggokab.co.id</a>
                 </div>
-            </div>8y6                                 
+            </div>                                 
         </div>
     </div>
     <!-- Topbar End -->
